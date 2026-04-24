@@ -6,93 +6,243 @@
 <title>BlueLineNote</title>
 
 <style>
+* {
+box-sizing: border-box;
+}
+
 body {
 margin: 0;
-font-family: -apple-system, BlinkMacSystemFont;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 background: #0b0f14;
 color: white;
+}
+
+header {
+padding: 28px 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1100px;
+margin: auto;
+}
+
+.logo {
+font-weight: 800;
+font-size: 22px;
+}
+
+nav a {
+color: #9ca3af;
+text-decoration: none;
+margin-left: 18px;
+font-size: 14px;
+}
+
+.hero {
+max-width: 1000px;
+margin: auto;
+padding: 80px 24px 60px;
 text-align: center;
 }
 
-.container {
-max-width: 800px;
-margin: auto;
-padding: 60px 20px;
+.badge {
+display: inline-block;
+padding: 8px 14px;
+border: 1px solid #1f2937;
+border-radius: 999px;
+color: #93c5fd;
+background: rgba(37, 99, 235, 0.12);
+font-size: 14px;
+margin-bottom: 20px;
 }
 
 h1 {
-font-size: 42px;
-margin-bottom: 10px;
+font-size: 56px;
+line-height: 1.05;
+margin: 0 0 18px;
 }
 
-p {
-color: #aaa;
-font-size: 18px;
+.hero p {
+color: #a1a1aa;
+font-size: 20px;
+max-width: 720px;
+margin: auto;
 }
 
 .button {
 display: inline-block;
-margin-top: 30px;
-padding: 14px 24px;
-background: #007aff;
+margin-top: 32px;
+padding: 15px 24px;
+background: #2563eb;
 color: white;
 text-decoration: none;
-border-radius: 10px;
-font-weight: 600;
+border-radius: 12px;
+font-weight: 700;
+}
+
+.note {
+margin-top: 12px;
+color: #6b7280;
+font-size: 13px;
+}
+
+.grid {
+max-width: 1100px;
+margin: auto;
+padding: 30px 24px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+}
+
+.card {
+background: #111827;
+border: 1px solid #1f2937;
+border-radius: 18px;
+padding: 26px;
+}
+
+.card h3 {
+margin-top: 0;
+font-size: 20px;
+}
+
+.card p {
+color: #9ca3af;
+line-height: 1.5;
 }
 
 .section {
-margin-top: 80px;
+max-width: 900px;
+margin: auto;
+padding: 70px 24px;
+text-align: center;
+}
+
+.section h2 {
+font-size: 34px;
+margin-bottom: 14px;
+}
+
+.section p {
+color: #a1a1aa;
+font-size: 18px;
+line-height: 1.6;
 }
 
 .footer {
-margin-top: 80px;
+border-top: 1px solid #1f2937;
+margin-top: 50px;
+padding: 30px 24px;
+text-align: center;
+color: #6b7280;
 font-size: 14px;
-color: #666;
+}
+
+.footer a {
+color: #9ca3af;
+margin: 0 10px;
+text-decoration: none;
+}
+
+@media (max-width: 800px) {
+h1 {
+font-size: 40px;
+}
+
+.grid {
+grid-template-columns: 1fr;
+}
+
+header {
+flex-direction: column;
+gap: 12px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+<div class="logo">BlueLineNote</div>
+<nav>
+<a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy</a>
+<a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
+</nav>
+</header>
 
-<h1>BlueLineNote</h1>
-<p>Field Notes. Faster. Smarter.</p>
+<section class="hero">
+<div class="badge">Built for real-world field documentation</div>
+
+<h1>Field notes, faster and smarter.</h1>
+
+<p>
+BlueLineNote helps officers capture structured incident details, organize notes,
+and prepare report-ready information without slowing down field operations.
+</p>
 
 <a class="button" href="#">Download on the App Store</a>
+<div class="note">Coming soon on the App Store</div>
+</section>
 
-<div class="section">
-<h2>Why BlueLineNote?</h2>
-<p>Built for officers to capture structured field notes quickly and generate reports faster.</p>
+<section class="grid">
+<div class="card">
+<h3>Structured Field Notes</h3>
+<p>Capture key incident details using organized templates designed for fast, practical field use.</p>
 </div>
 
-<div class="section">
-<h2>Key Features</h2>
+<div class="card">
+<h3>Voice Dictation</h3>
+<p>Use speech-to-text tools to quickly document details while staying focused on the scene.</p>
+</div>
+
+<div class="card">
+<h3>Crash Reconstruction</h3>
+<p>Document crash scenes with structured tools, diagrams, and export-ready report formatting.</p>
+</div>
+
+<div class="card">
+<h3>OCR Scanning</h3>
+<p>Scan IDs and documents to help speed up data entry and reduce repeated typing.</p>
+</div>
+
+<div class="card">
+<h3>Report Review</h3>
+<p>Review narratives for clarity, structure, and missing details before finalizing reports.</p>
+</div>
+
+<div class="card">
+<h3>PDF Export</h3>
+<p>Export clean, organized notes into report-ready PDF documents when your work is complete.</p>
+</div>
+</section>
+
+<section class="section">
+<h2>Designed for quick note organization.</h2>
 <p>
-• Field Note Templates<br>
-• Crash Reconstruction<br>
-• Voice Dictation<br>
-• OCR Scanning<br>
-• Instant Report Export
+BlueLineNote is not designed for long-term sensitive case storage.
+It helps users organize field notes, export reports, and delete data when no longer needed.
 </p>
-</div>
+</section>
 
-<div class="section">
-<h2>Support</h2>
-<a class="button" href="https://marioavera.github.io/bluelinenote-support/">Support Page</a>
-</div>
+<section class="section">
+<h2>Simple. Focused. Field-ready.</h2>
+<p>
+Built to reduce friction, limit clutter, and help users move from incident details
+to structured reports faster.
+</p>
+</section>
 
-<div class="section">
-<h2>Privacy</h2>
-<a class="button" href="https://marioavera.github.io/bluelinenote-privacy/">Privacy Policy</a>
+<footer class="footer">
+<div>
+<a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy Policy</a>
+<a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
 </div>
-
-<div class="footer">
+<br>
 © 2026 BlueLineNote
-</div>
-
-</div>
+</footer>
 
 </body>
 </html>
