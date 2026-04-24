@@ -6,76 +6,97 @@
 <title>BlueLineNote</title>
 
 <style>
-* { box-sizing: border-box; }
+* { box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
 margin: 0;
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-background: #0b0f14;
+background: radial-gradient(circle at top, #132033 0%, #0b0f14 38%, #070a0f 100%);
 color: white;
+overflow-x: hidden;
 }
 
 header {
-padding: 28px 24px;
+padding: 24px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-max-width: 1100px;
+max-width: 1150px;
 margin: auto;
 }
 
 .logo {
-font-weight: 800;
-font-size: 22px;
+font-weight: 900;
+font-size: 23px;
+letter-spacing: -0.4px;
 }
 
 nav a {
 color: #9ca3af;
 text-decoration: none;
-margin-left: 18px;
+margin-left: 20px;
 font-size: 14px;
 }
 
+nav a:hover { color: white; }
+
 .hero {
-max-width: 1000px;
+max-width: 1050px;
 margin: auto;
-padding: 80px 24px 60px;
+padding: 90px 24px 70px;
 text-align: center;
+position: relative;
+}
+
+.glow {
+position: absolute;
+width: 420px;
+height: 420px;
+background: rgba(37, 99, 235, 0.22);
+filter: blur(90px);
+border-radius: 50%;
+left: 50%;
+top: 25px;
+transform: translateX(-50%);
+z-index: -1;
 }
 
 .badge {
 display: inline-block;
-padding: 8px 14px;
-border: 1px solid #1f2937;
+padding: 9px 16px;
+border: 1px solid #1e3a8a;
 border-radius: 999px;
 color: #93c5fd;
-background: rgba(37, 99, 235, 0.12);
+background: rgba(37, 99, 235, 0.16);
 font-size: 14px;
-margin-bottom: 20px;
+margin-bottom: 22px;
 }
 
 h1 {
-font-size: 56px;
-line-height: 1.05;
-margin: 0 0 18px;
+font-size: 64px;
+line-height: 1.02;
+margin: 0 0 20px;
+letter-spacing: -2px;
 }
 
 .hero p {
 color: #a1a1aa;
-font-size: 20px;
-max-width: 720px;
+font-size: 21px;
+max-width: 760px;
 margin: auto;
+line-height: 1.55;
 }
 
 .button {
 display: inline-block;
-margin-top: 32px;
-padding: 15px 24px;
-background: #2563eb;
+margin-top: 34px;
+padding: 16px 26px;
+background: linear-gradient(135deg, #2563eb, #1d4ed8);
 color: white;
 text-decoration: none;
-border-radius: 12px;
-font-weight: 700;
+border-radius: 14px;
+font-weight: 800;
+box-shadow: 0 18px 45px rgba(37,99,235,0.35);
 }
 
 .note {
@@ -85,36 +106,44 @@ font-size: 13px;
 }
 
 .screenshots {
-max-width: 1100px;
+max-width: 1150px;
 margin: auto;
-padding: 60px 24px;
+padding: 70px 24px 90px;
 text-align: center;
-margin-bottom: 100px;
 }
 
 .screenshots h2 {
-font-size: 32px;
-margin-bottom: 30px;
+font-size: 36px;
+margin-bottom: 34px;
 }
 
-.screenshot-grid {
+.device-row {
 display: flex;
 justify-content: center;
-gap: 24px;
+align-items: flex-start;
+gap: 30px;
 flex-wrap: wrap;
 }
 
-.screenshot-grid img {
-width: 260px;
-border-radius: 24px;
-border: 1px solid #1f2937;
-box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+.phone {
+width: 285px;
+padding: 12px;
+border-radius: 34px;
+background: linear-gradient(145deg, #2b3445, #06080c);
+box-shadow: 0 35px 80px rgba(0,0,0,0.65);
+border: 1px solid #334155;
+transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.screenshot-grid img:hover {
-transform: translateY(-10px) scale(1.02);
-box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+.phone:hover {
+transform: translateY(-12px);
+box-shadow: 0 45px 95px rgba(0,0,0,0.8);
+}
+
+.phone img {
+width: 100%;
+display: block;
+border-radius: 24px;
 }
 
 .grid {
@@ -127,10 +156,11 @@ gap: 18px;
 }
 
 .card {
-background: #111827;
+background: rgba(17,24,39,0.86);
 border: 1px solid #1f2937;
-border-radius: 18px;
-padding: 26px;
+border-radius: 20px;
+padding: 28px;
+backdrop-filter: blur(10px);
 }
 
 .card h3 {
@@ -140,31 +170,53 @@ font-size: 20px;
 
 .card p {
 color: #9ca3af;
-line-height: 1.5;
+line-height: 1.55;
 }
 
 .section {
 max-width: 900px;
 margin: auto;
-padding: 70px 24px;
+padding: 80px 24px;
 text-align: center;
 }
 
 .section h2 {
-font-size: 34px;
+font-size: 38px;
 margin-bottom: 14px;
 }
 
 .section p {
 color: #a1a1aa;
 font-size: 18px;
-line-height: 1.6;
+line-height: 1.65;
+}
+
+.cta {
+max-width: 950px;
+margin: 60px auto 40px;
+padding: 60px 24px;
+text-align: center;
+border-radius: 28px;
+background: linear-gradient(135deg, rgba(37,99,235,0.22), rgba(15,23,42,0.9));
+border: 1px solid #1f2937;
+}
+
+.cta h2 {
+font-size: 38px;
+margin: 0 0 12px;
+}
+
+.cta p {
+color: #cbd5e1;
+font-size: 18px;
+max-width: 650px;
+margin: auto;
 }
 
 .footer {
 border-top: 1px solid #1f2937;
-margin-top: 50px;
-padding: 30px 24px;
+margin-top: 70px;
+padding: 32px 24px;
 text-align: center;
 color: #6b7280;
 font-size: 14px;
@@ -176,22 +228,20 @@ margin: 0 10px;
 text-decoration: none;
 }
 
+.fade {
+animation: fadeUp .8s ease both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(18px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 800px) {
-h1 { font-size: 40px; }
-
-.grid {
-grid-template-columns: 1fr;
-}
-
-header {
-flex-direction: column;
-gap: 12px;
-}
-
-.screenshot-grid img {
-width: 85%;
-max-width: 300px;
-}
+h1 { font-size: 42px; }
+.grid { grid-template-columns: 1fr; }
+header { flex-direction: column; gap: 12px; }
+.phone { width: 82%; max-width: 310px; }
 }
 </style>
 </head>
@@ -201,18 +251,20 @@ max-width: 300px;
 <header>
 <div class="logo">BlueLineNote</div>
 <nav>
+<a href="#features">Features</a>
 <a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy</a>
 <a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
 </nav>
 </header>
 
-<section class="hero">
+<section class="hero fade">
+<div class="glow"></div>
 <div class="badge">Built for real-world field documentation</div>
 
 <h1>Field notes, faster and smarter.</h1>
 
 <p>
-BlueLineNote helps officers capture structured incident details, organize notes,
+BlueLineNote helps officers capture structured incident details, organize field notes,
 and prepare report-ready information without slowing down field operations.
 </p>
 
@@ -220,20 +272,28 @@ and prepare report-ready information without slowing down field operations.
 <div class="note">Coming soon on the App Store</div>
 </section>
 
-<section class="screenshots">
+<section class="screenshots fade">
 <h2>See BlueLineNote in action</h2>
 
-<div class="screenshot-grid">
+<div class="device-row">
+<div class="phone">
 <img src="screenshot1.png" alt="BlueLineNote workstation screenshot">
+</div>
+
+<div class="phone">
 <img src="screenshot2.png" alt="BlueLineNote report review screenshot">
+</div>
+
+<div class="phone">
 <img src="screenshot3.png" alt="BlueLineNote crash reconstruction screenshot">
+</div>
 </div>
 </section>
 
-<section class="grid">
+<section id="features" class="grid fade">
 <div class="card">
 <h3>Structured Field Notes</h3>
-<p>Capture key incident details using organized templates designed for fast, practical field use.</p>
+<p>Capture incident details using organized templates designed for fast, practical field use.</p>
 </div>
 
 <div class="card">
@@ -262,7 +322,7 @@ and prepare report-ready information without slowing down field operations.
 </div>
 </section>
 
-<section class="section">
+<section class="section fade">
 <h2>Designed for quick note organization.</h2>
 <p>
 BlueLineNote is not designed for long-term sensitive case storage.
@@ -270,12 +330,21 @@ It helps users organize field notes, export reports, and delete data when no lon
 </p>
 </section>
 
-<section class="section">
+<section class="section fade">
 <h2>Simple. Focused. Field-ready.</h2>
 <p>
 Built to reduce friction, limit clutter, and help users move from incident details
 to structured reports faster.
 </p>
+</section>
+
+<section class="cta fade">
+<h2>Built to save time in the field.</h2>
+<p>
+Capture cleaner notes, reduce repetitive typing, and move faster from incident details
+to report-ready documentation.
+</p>
+<a class="button" href="#">Download on the App Store</a>
 </section>
 
 <footer class="footer">
