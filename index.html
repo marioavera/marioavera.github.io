@@ -167,7 +167,7 @@ color: #9ca3af;
 }
 
 .section {
-max-width: 800px;
+max-width: 850px;
 margin: auto;
 padding: 70px 24px;
 text-align: center;
@@ -180,6 +180,28 @@ font-size: 34px;
 .section p {
 color: #9ca3af;
 font-size: 18px;
+line-height: 1.7;
+}
+
+.trust {
+max-width: 950px;
+margin: 40px auto;
+padding: 36px 28px;
+text-align: center;
+border-radius: 24px;
+background: linear-gradient(135deg, rgba(37,99,235,0.18), rgba(15,23,42,0.9));
+border: 1px solid #1f2937;
+}
+
+.trust h2 {
+font-size: 32px;
+margin-bottom: 14px;
+}
+
+.trust p {
+color: #cbd5e1;
+font-size: 18px;
+line-height: 1.7;
 }
 
 .footer {
@@ -207,8 +229,11 @@ to { opacity:1; transform:translateY(0); }
 }
 
 @media(max-width:800px){
+header { flex-direction: column; gap: 12px; text-align: center; }
+nav a { margin: 0 8px; }
 .grid { grid-template-columns: 1fr; }
 h1 { font-size: 40px; }
+.phone { width: 85%; max-width: 310px; }
 }
 </style>
 </head>
@@ -243,9 +268,9 @@ and generate report-ready documentation without slowing down field operations.
 <h2>See BlueLineNote in action</h2>
 
 <div class="device-row">
-<div class="phone"><img src="screenshot1.png"></div>
-<div class="phone"><img src="screenshot2.png"></div>
-<div class="phone"><img src="screenshot3.png"></div>
+<div class="phone"><img src="screenshot1.png" alt="BlueLineNote workstation screen"></div>
+<div class="phone"><img src="screenshot2.png" alt="BlueLineNote report review screen"></div>
+<div class="phone"><img src="screenshot3.png" alt="BlueLineNote crash reconstruction screen"></div>
 </div>
 </section>
 
@@ -258,7 +283,6 @@ and generate report-ready documentation without slowing down field operations.
 <div class="card"><h3>PDF Export</h3><p>Generate clean, report-ready documents.</p></div>
 </section>
 
-<!-- NEW TRUST SECTION -->
 <section class="grid fade">
 <div class="card"><h3>Built for Speed</h3><p>Capture details without delay.</p></div>
 <div class="card"><h3>Zero Clutter</h3><p>Simple UI designed for focus.</p></div>
@@ -266,9 +290,21 @@ and generate report-ready documentation without slowing down field operations.
 <div class="card"><h3>Export-Ready Reports</h3><p>Ready for documentation instantly.</p></div>
 </section>
 
+<section class="trust fade">
+<h2>Why officers trust BlueLineNote.</h2>
+<p>
+Built with direct input from active and former law enforcement professionals,
+leveraging decades of real-world experience in patrol, crash reconstruction,
+and criminal intelligence to ensure every feature supports real field operations.
+</p>
+</section>
+
 <section class="section fade">
 <h2>Who it’s for.</h2>
-<p>Patrol officers, crash investigators, field supervisors, and training officers.</p>
+<p>
+Patrol officers, crash investigators, field supervisors, and training officers
+who need fast, structured field note capture during real-world operations.
+</p>
 </section>
 
 <section class="section fade">
@@ -287,7 +323,7 @@ Export when needed. Delete anytime.
 <footer class="footer">
 <a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy</a>
 <a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
-<a href="#">Terms</a>
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
 <br><br>
 © 2026 BlueLineNote
 </footer>
