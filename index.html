@@ -86,48 +86,41 @@ max-width: 760px;
 margin: 18px auto 0;
 }
 
+.micro-tagline {
+color: #d1d5db;
+font-size: 18px;
+font-weight: 650;
+margin-top: 18px;
+}
+
 .identity {
 margin-top: 18px;
 color: #e5e7eb;
 font-weight: 700;
 }
 
-.app-badge {
+.app-button {
 display: inline-flex;
 align-items: center;
+justify-content: center;
 gap: 10px;
 margin-top: 32px;
-padding: 12px 22px;
+padding: 15px 24px;
 background: #000;
 color: white;
 border: 1px solid #374151;
-border-radius: 14px;
-text-decoration: none;
+border-radius: 16px;
+font-weight: 850;
+font-size: 17px;
+cursor: default;
 box-shadow: 0 18px 45px rgba(37,99,235,0.35);
 transition: all .25s ease;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.app-badge:hover {
+.app-button:hover {
 transform: translateY(-3px) scale(1.02);
 box-shadow: 0 28px 60px rgba(37,99,235,0.5);
-}
-
-.app-icon { font-size: 28px; }
-
-.app-small {
-display: block;
-font-size: 11px;
-color: #d1d5db;
-text-align: left;
-line-height: 1;
-}
-
-.app-large {
-display: block;
-font-size: 21px;
-font-weight: 800;
-text-align: left;
-line-height: 1.1;
 }
 
 .note {
@@ -199,6 +192,12 @@ color: #cbd5e1;
 font-size: 14px;
 font-weight: 700;
 margin: 12px 0 2px;
+}
+
+.mobile-note {
+margin-top: 26px;
+color: #9ca3af;
+font-size: 15px;
 }
 
 .grid {
@@ -316,6 +315,12 @@ text-decoration: none;
 
 .footer a:hover { color: white; }
 
+.footer-identity {
+color: #d1d5db;
+font-weight: 700;
+margin-top: 18px;
+}
+
 .fade {
 animation: fadeUp .9s ease both;
 }
@@ -369,24 +374,21 @@ max-width: 310px;
 
 <h1>One app for every scene, every shift, every report.</h1>
 
+<div class="micro-tagline">
+Capture structured incident details, organize notes, and generate report-ready documentation — fast.
+</div>
+
 <p>
-Capture structured incident details, organize notes, and generate report-ready documentation
-without slowing down field operations.
+BlueLineNote helps officers document the job without slowing down field operations.
 </p>
 
 <div class="identity">
 Designed from real-world law enforcement experience — not Silicon Valley.
 </div>
 
-<a class="app-badge" href="#">
-<span class="app-icon"></span>
-<span>
-<span class="app-small">Launching soon on the</span>
-<span class="app-large">App Store</span>
-</span>
-</a>
+<button class="app-button" type="button"> App Store — Coming Soon</button>
 
-<div class="note">Coming soon</div>
+<div class="note">Launching soon on the App Store</div>
 </section>
 
 <section class="section fade">
@@ -408,6 +410,10 @@ Designed from real-world law enforcement experience — not Silicon Valley.
 <p class="caption">Crash Reconstruction Tools</p>
 </div>
 </div>
+
+<p class="mobile-note">
+Mobile-first workflows built for the device officers actually carry in the field.
+</p>
 </section>
 
 <section class="highlight reveal">
@@ -425,10 +431,10 @@ BlueLineNote replaces Notes, Camera, Scanner, map screenshots, and email workaro
 Scan IDs, take photos, dictate notes, and record crash details.<br><br>
 
 <strong>2. Organize</strong><br>
-BlueLineNote structures everything into a clean case file.<br><br>
+BlueLineNote structures everything automatically into a clean case file.<br><br>
 
 <strong>3. Export</strong><br>
-Generate an export-ready PDF and email it when the report is complete.
+Generate a court-ready PDF and email it instantly.
 </p>
 </section>
 
@@ -465,6 +471,9 @@ and criminal intelligence.
 <section class="section reveal">
 <h2>Who it’s for</h2>
 <p>
+Purpose-built for the people who write reports, not the people who read them.
+</p>
+<p>
 Patrol officers • Crash investigators • Field supervisors • Training officers
 </p>
 </section>
@@ -496,7 +505,11 @@ Be first to know when BlueLineNote launches.
 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
 </div>
 
-<p style="color:#9ca3af; margin-top:18px;">
+<p class="footer-identity">
+Built for officers. Not for agencies.
+</p>
+
+<p style="color:#9ca3af; margin-top:12px;">
 BlueLineNote never stores your data. Everything stays on your device.
 </p>
 
