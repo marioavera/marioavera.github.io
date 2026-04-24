@@ -11,24 +11,21 @@
 body {
 margin: 0;
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-background: radial-gradient(circle at top, #132033 0%, #0b0f14 38%, #070a0f 100%);
+background: radial-gradient(circle at top, #132033 0%, #0b0f14 40%, #070a0f 100%);
 color: white;
-overflow-x: hidden;
 }
 
 header {
 padding: 24px;
 display: flex;
 justify-content: space-between;
-align-items: center;
 max-width: 1150px;
 margin: auto;
 }
 
 .logo {
 font-weight: 900;
-font-size: 23px;
-letter-spacing: -0.4px;
+font-size: 22px;
 }
 
 nav a {
@@ -41,109 +38,108 @@ font-size: 14px;
 nav a:hover { color: white; }
 
 .hero {
-max-width: 1050px;
+max-width: 1000px;
 margin: auto;
-padding: 90px 24px 70px;
+padding: 90px 24px;
 text-align: center;
 position: relative;
 }
 
 .glow {
 position: absolute;
-width: 420px;
-height: 420px;
-background: rgba(37, 99, 235, 0.22);
-filter: blur(90px);
+width: 400px;
+height: 400px;
+background: rgba(37,99,235,0.25);
+filter: blur(80px);
 border-radius: 50%;
 left: 50%;
-top: 25px;
 transform: translateX(-50%);
+top: 0;
 z-index: -1;
 }
 
 .badge {
 display: inline-block;
-padding: 9px 16px;
+padding: 8px 14px;
 border: 1px solid #1e3a8a;
 border-radius: 999px;
 color: #93c5fd;
-background: rgba(37, 99, 235, 0.16);
-font-size: 14px;
-margin-bottom: 22px;
+background: rgba(37,99,235,0.15);
+font-size: 13px;
+margin-bottom: 20px;
 }
 
 h1 {
-font-size: 64px;
-line-height: 1.02;
-margin: 0 0 20px;
+font-size: 60px;
+margin: 0;
 letter-spacing: -2px;
 }
 
 .hero p {
-color: #a1a1aa;
-font-size: 21px;
-max-width: 760px;
-margin: auto;
-line-height: 1.55;
+color: #9ca3af;
+font-size: 20px;
+margin-top: 16px;
+line-height: 1.6;
 }
 
 .button {
 display: inline-block;
-margin-top: 34px;
-padding: 16px 26px;
+margin-top: 30px;
+padding: 16px 28px;
 background: linear-gradient(135deg, #2563eb, #1d4ed8);
 color: white;
 text-decoration: none;
 border-radius: 14px;
 font-weight: 800;
 box-shadow: 0 18px 45px rgba(37,99,235,0.35);
+transition: all .25s ease;
+}
+
+.button:hover {
+transform: translateY(-3px) scale(1.02);
+box-shadow: 0 28px 60px rgba(37,99,235,0.5);
 }
 
 .note {
-margin-top: 12px;
+margin-top: 10px;
 color: #6b7280;
 font-size: 13px;
 }
 
 .screenshots {
-max-width: 1150px;
+max-width: 1100px;
 margin: auto;
-padding: 70px 24px 90px;
+padding: 80px 24px;
 text-align: center;
-}
-
-.screenshots h2 {
-font-size: 36px;
-margin-bottom: 34px;
 }
 
 .device-row {
 display: flex;
 justify-content: center;
-align-items: flex-start;
-gap: 30px;
+gap: 25px;
 flex-wrap: wrap;
 }
 
 .phone {
-width: 285px;
-padding: 12px;
-border-radius: 34px;
-background: linear-gradient(145deg, #2b3445, #06080c);
-box-shadow: 0 35px 80px rgba(0,0,0,0.65);
+width: 280px;
+padding: 10px;
+border-radius: 30px;
+background: linear-gradient(145deg, #1f2937, #020617);
+box-shadow: 0 30px 70px rgba(0,0,0,0.7);
 border: 1px solid #334155;
-transition: transform .3s ease, box-shadow .3s ease;
+transform: translateY(40px);
+opacity: 0;
+transition: all .6s ease;
 }
 
-.phone:hover {
-transform: translateY(-12px);
-box-shadow: 0 45px 95px rgba(0,0,0,0.8);
+.phone.show {
+transform: translateY(0);
+opacity: 1;
 }
 
 .phone img {
 width: 100%;
-display: block;
-border-radius: 24px;
+border-radius: 20px;
 }
 
 .grid {
@@ -151,72 +147,45 @@ max-width: 1100px;
 margin: auto;
 padding: 30px 24px;
 display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 18px;
+grid-template-columns: repeat(3,1fr);
+gap: 16px;
 }
 
 .card {
-background: rgba(17,24,39,0.86);
+background: rgba(17,24,39,0.85);
 border: 1px solid #1f2937;
-border-radius: 20px;
-padding: 28px;
-backdrop-filter: blur(10px);
+border-radius: 16px;
+padding: 25px;
 }
 
 .card h3 {
 margin-top: 0;
-font-size: 20px;
 }
 
 .card p {
 color: #9ca3af;
-line-height: 1.55;
 }
 
 .section {
-max-width: 900px;
+max-width: 800px;
 margin: auto;
-padding: 80px 24px;
+padding: 70px 24px;
 text-align: center;
 }
 
 .section h2 {
-font-size: 38px;
-margin-bottom: 14px;
+font-size: 34px;
 }
 
 .section p {
-color: #a1a1aa;
+color: #9ca3af;
 font-size: 18px;
-line-height: 1.65;
-}
-
-.cta {
-max-width: 950px;
-margin: 60px auto 40px;
-padding: 60px 24px;
-text-align: center;
-border-radius: 28px;
-background: linear-gradient(135deg, rgba(37,99,235,0.22), rgba(15,23,42,0.9));
-border: 1px solid #1f2937;
-}
-
-.cta h2 {
-font-size: 38px;
-margin: 0 0 12px;
-}
-
-.cta p {
-color: #cbd5e1;
-font-size: 18px;
-max-width: 650px;
-margin: auto;
 }
 
 .footer {
 border-top: 1px solid #1f2937;
-margin-top: 70px;
-padding: 32px 24px;
+margin-top: 60px;
+padding: 30px;
 text-align: center;
 color: #6b7280;
 font-size: 14px;
@@ -233,15 +202,13 @@ animation: fadeUp .8s ease both;
 }
 
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(18px); }
-to { opacity: 1; transform: translateY(0); }
+from { opacity:0; transform:translateY(15px); }
+to { opacity:1; transform:translateY(0); }
 }
 
-@media (max-width: 800px) {
-h1 { font-size: 42px; }
+@media(max-width:800px){
 .grid { grid-template-columns: 1fr; }
-header { flex-direction: column; gap: 12px; }
-.phone { width: 82%; max-width: 310px; }
+h1 { font-size: 40px; }
 }
 </style>
 </head>
@@ -264,98 +231,76 @@ header { flex-direction: column; gap: 12px; }
 <h1>Field notes, faster and smarter.</h1>
 
 <p>
-BlueLineNote helps officers capture structured incident details, organize field notes,
-and prepare report-ready information without slowing down field operations.
+Capture structured incident details, organize field notes,
+and generate report-ready documentation without slowing down field operations.
 </p>
 
-<a class="button" href="#">Download on the App Store</a>
-<div class="note">Coming soon on the App Store</div>
+<a class="button">Download on the App Store</a>
+<div class="note">Coming soon</div>
 </section>
 
 <section class="screenshots fade">
 <h2>See BlueLineNote in action</h2>
 
 <div class="device-row">
-<div class="phone">
-<img src="screenshot1.png" alt="BlueLineNote workstation screenshot">
-</div>
-
-<div class="phone">
-<img src="screenshot2.png" alt="BlueLineNote report review screenshot">
-</div>
-
-<div class="phone">
-<img src="screenshot3.png" alt="BlueLineNote crash reconstruction screenshot">
-</div>
+<div class="phone"><img src="screenshot1.png"></div>
+<div class="phone"><img src="screenshot2.png"></div>
+<div class="phone"><img src="screenshot3.png"></div>
 </div>
 </section>
 
 <section id="features" class="grid fade">
-<div class="card">
-<h3>Structured Field Notes</h3>
-<p>Capture incident details using organized templates designed for fast, practical field use.</p>
-</div>
+<div class="card"><h3>Structured Field Notes</h3><p>Capture organized incident details quickly.</p></div>
+<div class="card"><h3>Voice Dictation</h3><p>Document reports hands-free in real time.</p></div>
+<div class="card"><h3>Crash Reconstruction</h3><p>Diagram crash scenes with structured tools.</p></div>
+<div class="card"><h3>OCR Scanning</h3><p>Scan IDs and documents instantly.</p></div>
+<div class="card"><h3>Report Review</h3><p>Identify missing details before submission.</p></div>
+<div class="card"><h3>PDF Export</h3><p>Generate clean, report-ready documents.</p></div>
+</section>
 
-<div class="card">
-<h3>Voice Dictation</h3>
-<p>Use speech-to-text tools to quickly document details while staying focused on the scene.</p>
-</div>
-
-<div class="card">
-<h3>Crash Reconstruction</h3>
-<p>Document crash scenes with structured tools, diagrams, and export-ready report formatting.</p>
-</div>
-
-<div class="card">
-<h3>OCR Scanning</h3>
-<p>Scan IDs and documents to help speed up data entry and reduce repeated typing.</p>
-</div>
-
-<div class="card">
-<h3>Report Review</h3>
-<p>Review narratives for clarity, structure, and missing details before finalizing reports.</p>
-</div>
-
-<div class="card">
-<h3>PDF Export</h3>
-<p>Export clean, organized notes into report-ready PDF documents when your work is complete.</p>
-</div>
+<!-- NEW TRUST SECTION -->
+<section class="grid fade">
+<div class="card"><h3>Built for Speed</h3><p>Capture details without delay.</p></div>
+<div class="card"><h3>Zero Clutter</h3><p>Simple UI designed for focus.</p></div>
+<div class="card"><h3>Field-Tested Workflows</h3><p>Designed around real officer use.</p></div>
+<div class="card"><h3>Export-Ready Reports</h3><p>Ready for documentation instantly.</p></div>
 </section>
 
 <section class="section fade">
-<h2>Designed for quick note organization.</h2>
+<h2>Who it’s for.</h2>
+<p>Patrol officers, crash investigators, field supervisors, and training officers.</p>
+</section>
+
+<section class="section fade">
+<h2>Privacy & data handling.</h2>
 <p>
-BlueLineNote is not designed for long-term sensitive case storage.
-It helps users organize field notes, export reports, and delete data when no longer needed.
+Data stays on your device. No cloud storage. No retention.
+Export when needed. Delete anytime.
 </p>
 </section>
 
 <section class="section fade">
 <h2>Simple. Focused. Field-ready.</h2>
-<p>
-Built to reduce friction, limit clutter, and help users move from incident details
-to structured reports faster.
-</p>
-</section>
-
-<section class="cta fade">
-<h2>Built to save time in the field.</h2>
-<p>
-Capture cleaner notes, reduce repetitive typing, and move faster from incident details
-to report-ready documentation.
-</p>
-<a class="button" href="#">Download on the App Store</a>
+<p>Built to reduce friction and speed up report creation.</p>
 </section>
 
 <footer class="footer">
-<div>
-<a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy Policy</a>
+<a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy</a>
 <a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
-<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
-</div>
-<br>
+<a href="#">Terms</a>
+<br><br>
 © 2026 BlueLineNote
 </footer>
+
+<script>
+const phones = document.querySelectorAll('.phone');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) entry.target.classList.add('show');
+});
+});
+phones.forEach(phone => observer.observe(phone));
+</script>
 
 </body>
 </html>
