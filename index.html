@@ -15,6 +15,7 @@ background: radial-gradient(circle at top, #132033 0%, #0b0f14 40%, #070a0f 100%
 color: white;
 }
 
+/* HEADER */
 header {
 padding: 24px;
 display: flex;
@@ -37,6 +38,7 @@ font-size: 14px;
 
 nav a:hover { color: white; }
 
+/* HERO */
 .hero {
 max-width: 1000px;
 margin: auto;
@@ -82,6 +84,7 @@ margin-top: 16px;
 line-height: 1.6;
 }
 
+/* BUTTON */
 .button {
 display: inline-block;
 margin-top: 30px;
@@ -106,6 +109,7 @@ color: #6b7280;
 font-size: 13px;
 }
 
+/* SCREENSHOTS */
 .screenshots {
 max-width: 1100px;
 margin: auto;
@@ -127,14 +131,29 @@ border-radius: 30px;
 background: linear-gradient(145deg, #1f2937, #020617);
 box-shadow: 0 30px 70px rgba(0,0,0,0.7);
 border: 1px solid #334155;
-transform: translateY(40px);
+
+/* INITIAL STATE */
+transform: translateY(60px);
 opacity: 0;
-transition: all .6s ease;
+
+transition: all .7s cubic-bezier(.22,1,.36,1);
 }
 
+/* STAGGER EFFECT */
+.phone:nth-child(1) { transition-delay: 0.1s; }
+.phone:nth-child(2) { transition-delay: 0.25s; }
+.phone:nth-child(3) { transition-delay: 0.4s; }
+
+/* WHEN VISIBLE */
 .phone.show {
 transform: translateY(0);
 opacity: 1;
+}
+
+/* HOVER */
+.phone:hover {
+transform: translateY(-12px) scale(1.02);
+box-shadow: 0 45px 95px rgba(0,0,0,0.8);
 }
 
 .phone img {
@@ -142,6 +161,7 @@ width: 100%;
 border-radius: 20px;
 }
 
+/* GRID */
 .grid {
 max-width: 1100px;
 margin: auto;
@@ -158,14 +178,9 @@ border-radius: 16px;
 padding: 25px;
 }
 
-.card h3 {
-margin-top: 0;
-}
+.card p { color: #9ca3af; }
 
-.card p {
-color: #9ca3af;
-}
-
+/* SECTIONS */
 .section {
 max-width: 850px;
 margin: auto;
@@ -173,67 +188,34 @@ padding: 70px 24px;
 text-align: center;
 }
 
-.section h2 {
-font-size: 34px;
-}
-
 .section p {
 color: #9ca3af;
 font-size: 18px;
-line-height: 1.7;
 }
 
+/* TRUST */
 .trust {
 max-width: 950px;
 margin: 40px auto;
-padding: 36px 28px;
-text-align: center;
+padding: 36px;
 border-radius: 24px;
 background: linear-gradient(135deg, rgba(37,99,235,0.18), rgba(15,23,42,0.9));
 border: 1px solid #1f2937;
 }
 
-.trust h2 {
-font-size: 32px;
-margin-bottom: 14px;
-}
-
-.trust p {
-color: #cbd5e1;
-font-size: 18px;
-line-height: 1.7;
-}
-
+/* FOOTER */
 .footer {
 border-top: 1px solid #1f2937;
 margin-top: 60px;
 padding: 30px;
 text-align: center;
 color: #6b7280;
-font-size: 14px;
 }
 
-.footer a {
-color: #9ca3af;
-margin: 0 10px;
-text-decoration: none;
-}
-
-.fade {
-animation: fadeUp .8s ease both;
-}
-
-@keyframes fadeUp {
-from { opacity:0; transform:translateY(15px); }
-to { opacity:1; transform:translateY(0); }
-}
-
+/* MOBILE */
 @media(max-width:800px){
-header { flex-direction: column; gap: 12px; text-align: center; }
-nav a { margin: 0 8px; }
 .grid { grid-template-columns: 1fr; }
 h1 { font-size: 40px; }
-.phone { width: 85%; max-width: 310px; }
 }
 </style>
 </head>
@@ -249,8 +231,9 @@ h1 { font-size: 40px; }
 </nav>
 </header>
 
-<section class="hero fade">
+<section class="hero">
 <div class="glow"></div>
+
 <div class="badge">Built for real-world field documentation</div>
 
 <h1>Field notes, faster and smarter.</h1>
@@ -264,17 +247,17 @@ and generate report-ready documentation without slowing down field operations.
 <div class="note">Coming soon</div>
 </section>
 
-<section class="screenshots fade">
+<section class="screenshots">
 <h2>See BlueLineNote in action</h2>
 
 <div class="device-row">
-<div class="phone"><img src="screenshot1.png" alt="BlueLineNote workstation screen"></div>
-<div class="phone"><img src="screenshot2.png" alt="BlueLineNote report review screen"></div>
-<div class="phone"><img src="screenshot3.png" alt="BlueLineNote crash reconstruction screen"></div>
+<div class="phone"><img src="screenshot1.png"></div>
+<div class="phone"><img src="screenshot2.png"></div>
+<div class="phone"><img src="screenshot3.png"></div>
 </div>
 </section>
 
-<section id="features" class="grid fade">
+<section id="features" class="grid">
 <div class="card"><h3>Structured Field Notes</h3><p>Capture organized incident details quickly.</p></div>
 <div class="card"><h3>Voice Dictation</h3><p>Document reports hands-free in real time.</p></div>
 <div class="card"><h3>Crash Reconstruction</h3><p>Diagram crash scenes with structured tools.</p></div>
@@ -283,58 +266,40 @@ and generate report-ready documentation without slowing down field operations.
 <div class="card"><h3>PDF Export</h3><p>Generate clean, report-ready documents.</p></div>
 </section>
 
-<section class="grid fade">
-<div class="card"><h3>Built for Speed</h3><p>Capture details without delay.</p></div>
-<div class="card"><h3>Zero Clutter</h3><p>Simple UI designed for focus.</p></div>
-<div class="card"><h3>Field-Tested Workflows</h3><p>Designed around real officer use.</p></div>
-<div class="card"><h3>Export-Ready Reports</h3><p>Ready for documentation instantly.</p></div>
-</section>
-
-<section class="trust fade">
+<section class="trust">
 <h2>Why officers trust BlueLineNote.</h2>
 <p>
 Built with direct input from active and former law enforcement professionals,
 leveraging decades of real-world experience in patrol, crash reconstruction,
-and criminal intelligence to ensure every feature supports real field operations.
+and criminal intelligence.
 </p>
 </section>
 
-<section class="section fade">
+<section class="section">
 <h2>Who it’s for.</h2>
-<p>
-Patrol officers, crash investigators, field supervisors, and training officers
-who need fast, structured field note capture during real-world operations.
-</p>
+<p>Patrol officers, crash investigators, field supervisors, and training officers.</p>
 </section>
 
-<section class="section fade">
+<section class="section">
 <h2>Privacy & data handling.</h2>
-<p>
-Data stays on your device. No cloud storage. No retention.
-Export when needed. Delete anytime.
-</p>
-</section>
-
-<section class="section fade">
-<h2>Simple. Focused. Field-ready.</h2>
-<p>Built to reduce friction and speed up report creation.</p>
+<p>Data stays on your device. No cloud storage. No retention. Export when needed. Delete anytime.</p>
 </section>
 
 <footer class="footer">
-<a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy</a>
-<a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
-<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
-<br><br>
 © 2026 BlueLineNote
 </footer>
 
 <script>
 const phones = document.querySelectorAll('.phone');
+
 const observer = new IntersectionObserver(entries => {
 entries.forEach(entry => {
-if (entry.isIntersecting) entry.target.classList.add('show');
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+}
 });
-});
+}, { threshold: 0.2 });
+
 phones.forEach(phone => observer.observe(phone));
 </script>
 
