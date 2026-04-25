@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn More | BlueLineNote</title>
+
+<style>
+body {
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background: #0b1220;
+color: #e5e7eb;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background: radial-gradient(circle at 20% 10%, rgba(29,78,216,0.25), transparent 40%),
+radial-gradient(circle at 80% 90%, rgba(59,130,246,0.15), transparent 50%);
+z-index: -1;
+}
+
+.container {
+max-width: 1000px;
+margin: 0 auto;
+padding: 80px 20px;
+}
+
+.card {
+background: rgba(15,23,42,0.75);
+backdrop-filter: blur(14px);
+border-radius: 28px;
+padding: 48px;
+border: 1px solid rgba(255,255,255,0.08);
+box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+.kicker {
+color: #60a5fa;
+font-weight: 800;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+font-size: 0.78rem;
+margin-bottom: 18px;
+}
+
+h1 {
+margin: 0 0 24px;
+font-size: 2.8rem;
+color: #ffffff;
+}
+
+p {
+font-size: 1.05rem;
+line-height: 1.75;
+color: #cbd5f5;
+margin-bottom: 18px;
+}
+
+.divider {
+height: 1px;
+background: rgba(255,255,255,0.1);
+margin: 36px 0;
+}
+
+.feature-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 20px;
+}
+
+.feature {
+padding: 20px;
+border-radius: 18px;
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.08);
+}
+
+.feature h2 {
+margin: 0 0 10px;
+font-size: 1rem;
+color: #ffffff;
+}
+
+.feature p {
+margin: 0;
+font-size: 0.92rem;
+}
+
+.back-link {
+display: inline-block;
+margin-top: 32px;
+text-decoration: none;
+color: #60a5fa;
+font-weight: 800;
+border: 1px solid rgba(96,165,250,0.45);
+padding: 12px 20px;
+border-radius: 14px;
+}
+
+.back-link:hover {
+background: rgba(96,165,250,0.12);
+}
+
+@media (max-width: 700px) {
+.feature-grid {
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<div class="kicker">BlueLineNote Overview</div>
+
+<h1>Learn More About BlueLineNote</h1>
+
+<p>
+BlueLineNote is designed to simplify field note organization and report writing for real-world use. It replaces scattered notes, memory gaps, and disconnected tools with one structured workflow.
+</p>
+
+<p>
+Capture details in real time, organize them automatically, and generate clearer, more complete reports with less effort.
+</p>
+
+<div class="divider"></div>
+
+<div class="feature-grid">
+<div class="feature">
+<h2>Field Notes</h2>
+<p>Capture incidents, people, vehicles, and details as they happen.</p>
+</div>
+
+<div class="feature">
+<h2>Crash Documentation</h2>
+<p>Record crash data, diagrams, and structured vehicle information.</p>
+</div>
+
+<div class="feature">
+<h2>Structured Reports</h2>
+<p>Turn notes into organized, report-ready documentation.</p>
+</div>
+
+<div class="feature">
+<h2>OCR & Scanning</h2>
+<p>Scan IDs and documents to quickly populate fields.</p>
+</div>
+
+<div class="feature">
+<h2>Voice Dictation</h2>
+<p>Capture information hands-free while on scene.</p>
+</div>
+
+<div class="feature">
+<h2>Private & Secure</h2>
+<p>No cloud storage. Data stays on your device.</p>
+</div>
+</div>
+
+<a href="/" class="back-link">← Back to BlueLineNote</a>
+
+</div>
+</div>
+
+</body>
+</html>
