@@ -2,25 +2,166 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Field Report Writing Tool | BlueLineNote</title>
-<meta name="description" content="BlueLineNote is a field report writing tool that helps officers capture structured details in real time.">
+
+<style>
+body {
+margin: 0;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background: #0b1220;
+color: #e5e7eb;
+}
+
+body::before {
+content: "";
+position: fixed;
+inset: 0;
+background: radial-gradient(circle at 20% 10%, rgba(29,78,216,0.25), transparent 40%),
+radial-gradient(circle at 80% 90%, rgba(59,130,246,0.15), transparent 50%);
+z-index: -1;
+}
+
+.container {
+max-width: 900px;
+margin: 0 auto;
+padding: 80px 20px;
+}
+
+.card {
+background: rgba(15,23,42,0.75);
+backdrop-filter: blur(14px);
+border-radius: 28px;
+padding: 44px;
+border: 1px solid rgba(255,255,255,0.08);
+box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+.kicker {
+color: #60a5fa;
+font-weight: 800;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+font-size: 0.78rem;
+margin-bottom: 18px;
+}
+
+h1 {
+margin: 0 0 24px;
+font-size: 2.7rem;
+line-height: 1.1;
+color: #ffffff;
+}
+
+p {
+font-size: 1.05rem;
+line-height: 1.75;
+color: #cbd5f5;
+margin-bottom: 18px;
+}
+
+.divider {
+height: 1px;
+background: rgba(255,255,255,0.1);
+margin: 32px 0;
+}
+
+.feature-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+}
+
+.feature {
+padding: 18px;
+border-radius: 18px;
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.08);
+}
+
+.feature h2 {
+margin: 0 0 8px;
+font-size: 1rem;
+color: #ffffff;
+}
+
+.feature p {
+margin: 0;
+font-size: 0.92rem;
+line-height: 1.6;
+}
+
+.back-link {
+display: inline-block;
+margin-top: 28px;
+text-decoration: none;
+color: #60a5fa;
+font-weight: 800;
+border: 1px solid rgba(96,165,250,0.45);
+padding: 12px 18px;
+border-radius: 14px;
+}
+
+.back-link:hover {
+background: rgba(96,165,250,0.12);
+}
+
+@media (max-width: 700px) {
+.card {
+padding: 28px;
+}
+
+h1 {
+font-size: 2.1rem;
+}
+
+.feature-grid {
+grid-template-columns: 1fr;
+}
+}
+</style>
 </head>
 
-<body style="font-family:sans-serif; padding:40px; max-width:800px; margin:auto;">
+<body>
+
+<div class="container">
+<div class="card">
+
+<div class="kicker">Built for field reporting</div>
 
 <h1>Field Report Writing Tool</h1>
 
 <p>
-Instead of switching between notes, photos, and memory, BlueLineNote lets you capture structured details in real time while on scene.
+BlueLineNote helps users capture structured field details in real time instead of switching between scattered notes, photos, scans, and memory.
 </p>
 
 <p>
-Everything is organized automatically so reports are easier to complete and review later.
+Everything is organized into one workflow so reports are easier to complete, review, export, and finalize later.
 </p>
 
-<p>
-<a href="/">Back to BlueLineNote</a>
-</p>
+<div class="divider"></div>
+
+<div class="feature-grid">
+<div class="feature">
+<h2>Capture Details Fast</h2>
+<p>Record incident details, people, vehicles, locations, notes, and supporting information in one place.</p>
+</div>
+
+<div class="feature">
+<h2>Organized Workflow</h2>
+<p>Structured sections help reduce missed details and make reports easier to complete after the scene.</p>
+</div>
+
+<div class="feature">
+<h2>Private & Local</h2>
+<p>Data stays on the user’s device. No cloud storage. No developer access.</p>
+</div>
+</div>
+
+<a href="/" class="back-link">← Back to BlueLineNote</a>
+
+</div>
+</div>
 
 </body>
 </html>
