@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BlueLineNote</title>
+<title>BlueLineNote | Field Notes & Report Writing App for Law Enforcement</title>
 <meta name="google-site-verification" content="3uuBkNSX73JmQw50X6nnjQklkWIZ3uU4m1b0os3ABGU" />
 <meta name="description" content="BlueLineNote is a field note and report writing app for law enforcement, built to help officers capture structured notes, crash details, scans, photos, and report-ready documentation faster.">
 
-<meta name="keywords" content="police report writing app, law enforcement field notes, officer field notes app, crash report app, incident report app, field documentation app, police notes app">
+<meta name="keywords" content="police report writing app, law enforcement field notes, officer field notes app, crash report app, incident report app, field documentation app, police notes app, insurance claim documentation app">
 
 <meta property="og:title" content="BlueLineNote | Field Notes & Report Writing App">
 <meta property="og:description" content="Capture structured notes → generate report-ready documentation fast. Built for law enforcement.">
@@ -95,6 +95,8 @@ max-width: 760px;
 margin: 18px auto 0;
 }
 
+.hero a { color: #93c5fd; }
+
 .micro-tagline {
 color: #d1d5db;
 font-size: 18px;
@@ -133,9 +135,8 @@ transform: translateY(-3px);
 box-shadow: 0 30px 70px rgba(0,0,0,0.8);
 }
 
-.apple-logo {
-font-size: 26px;
-}
+.apple-logo { display: inline-flex; align-items: center; }
+.apple-logo svg { width: 22px; height: 22px; fill: #fff; }
 
 .btn-text small {
 font-size: 11px;
@@ -145,6 +146,25 @@ color: #9ca3af;
 .btn-text strong {
 font-size: 18px;
 letter-spacing: 0.5px;
+}
+
+/* Learn more text link in hero (was unstyled) */
+.app-button {
+display: inline-block;
+margin-top: 22px;
+padding: 12px 24px;
+border: 1px solid #334155;
+border-radius: 12px;
+color: #93c5fd;
+text-decoration: none;
+font-weight: 700;
+font-size: 15px;
+transition: all .25s ease;
+}
+.app-button:hover {
+border-color: #2563eb;
+color: #fff;
+transform: translateY(-2px);
 }
 
 .note {
@@ -170,6 +190,12 @@ color: #a1a1aa;
 font-size: 18px;
 line-height: 1.7;
 }
+
+.section a { color: #93c5fd; }
+
+/* Base hidden state for plain reveal sections (was missing) */
+.section.reveal { opacity: 0; transform: translateY(28px); transition: all .65s ease; }
+.section.reveal.show { opacity: 1; transform: none; }
 
 .device-row {
 display: flex;
@@ -289,38 +315,93 @@ font-size: 18px;
 line-height: 1.7;
 }
 
-.email-box {
-margin-top: 28px;
+.feature-points p { color: #cbd5e1; }
+
+/* ===== PRICING ===== */
+.plans {
 display: flex;
 justify-content: center;
-gap: 10px;
+gap: 20px;
 flex-wrap: wrap;
+margin-top: 40px;
+}
+.plan {
+width: 260px;
+background: rgba(17,24,39,0.85);
+border: 1px solid #1f2937;
+border-radius: 20px;
+padding: 32px 26px;
+text-align: center;
+}
+.plan.featured {
+border-color: #2563eb;
+box-shadow: 0 0 0 1px #2563eb, 0 20px 50px rgba(37,99,235,0.25);
+}
+.plan .plan-name {
+color: #9ca3af;
+text-transform: uppercase;
+letter-spacing: .08em;
+font-size: 13px;
+font-weight: 700;
+}
+.plan .plan-price {
+font-size: 44px;
+font-weight: 900;
+letter-spacing: -1px;
+margin-top: 10px;
+}
+.plan .plan-price span { font-size: 16px; color: #9ca3af; font-weight: 600; }
+.plan .plan-sub { color: #9ca3af; font-size: 14px; margin-top: 6px; }
+.plan .plan-save {
+display: inline-block;
+margin-top: 16px;
+background: rgba(37,99,235,0.18);
+color: #93c5fd;
+font-size: 13px;
+font-weight: 800;
+padding: 5px 14px;
+border-radius: 999px;
 }
 
-.email-box input {
-width: 280px;
-padding: 15px 16px;
-border-radius: 12px;
-border: 1px solid #334155;
-background: #0f172a;
-color: white;
-font-size: 15px;
-}
-
-.email-box a {
-padding: 15px 22px;
-border-radius: 12px;
+/* ===== AGENCY ===== */
+.agency-cta {
+display: inline-block;
+margin-top: 34px;
+padding: 15px 30px;
 background: #2563eb;
-color: white;
+color: #fff;
 text-decoration: none;
 font-weight: 800;
+border-radius: 12px;
+font-size: 16px;
 transition: all .25s ease;
 }
+.agency-cta:hover { background: #1d4ed8; transform: translateY(-3px); }
 
-.email-box a:hover {
-transform: translateY(-3px);
-background: #1d4ed8;
+/* ===== ANDROID BANNER ===== */
+.android {
+max-width: 950px;
+margin: 60px auto;
+padding: 44px 30px;
+text-align: center;
+border-radius: 26px;
+background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(15,23,42,0.92));
+border: 1px solid #1f2937;
 }
+.android .pill {
+display: inline-block;
+background: rgba(37,99,235,0.18);
+color: #93c5fd;
+font-weight: 800;
+font-size: 12px;
+letter-spacing: .08em;
+text-transform: uppercase;
+padding: 6px 16px;
+border-radius: 999px;
+margin-bottom: 16px;
+}
+.android h2 { font-size: 32px; margin: 0; }
+.android p { color: #cbd5e1; font-size: 18px; margin-top: 12px; }
 
 .footer {
 border-top: 1px solid #1f2937;
@@ -382,13 +463,13 @@ max-width: 310px;
 </head>
 
 <body>
-  
+
 <script>
 window.onload = function() {
 window.scrollTo(0, 0);
 };
 </script>
-  
+
 <header>
 <div class="logo" style="display:flex; align-items:center; gap:10px;">
 <img src="logo.png" style="height:32px; width:32px; border-radius:8px; object-fit:cover;">
@@ -396,6 +477,7 @@ window.scrollTo(0, 0);
 </div>
 <nav>
 <a href="#features-section">Features</a>
+<a href="#pricing-section">Pricing</a>
 <a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy</a>
 <a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
 </nav>
@@ -437,7 +519,9 @@ Designed for the people doing the job.
 target="_blank"
 class="app-store-btn">
 
-<span class="apple-logo"></span>
+<span class="apple-logo">
+<svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+</span>
 <span class="btn-text">
 <small>Download on the</small><br>
 <strong>App Store</strong>
@@ -455,25 +539,20 @@ style="width:110px; border-radius:10px;">
 </div>
 
 <div class="note">Now available on the App Store</div>
-  
+
+</section>
+
 <!-- LINK 3: RESULT / OUTCOME -->
-<section style="margin-top:60px; text-align:center;">
-
+<section class="section reveal">
 <h2>Finish Reports Faster</h2>
-
 <p>
 Stop spending hours writing reports after your shift. This
 <a href="/complete-reports-faster.html">faster way to complete reports</a>
 helps you finish documentation while still on scene.
 </p>
-
-<a href="/learn-more.html" class="app-button">
-Learn more →
-</a>
-
+<a href="/learn-more.html" class="app-button">Learn more →</a>
 </section>
 
-</section>
 <section class="section fade">
 <h2>See BlueLineNote in action</h2>
 <div style="display:flex; justify-content:center; margin:40px 0;">
@@ -505,13 +584,13 @@ allowfullscreen>
 </div>
 
 <div class="phone">
-<img src="screenshot2.png" alt="BlueLineNote report review screen">
-<p class="caption">AI Report Review</p>
+<img src="screenshot2.png" alt="BlueLineNote V.E.R.A. crash reconstruction screen">
+<p class="caption">V.E.R.A. Crash Reconstruction</p>
 </div>
 
 <div class="phone">
-<img src="screenshot3.png" alt="BlueLineNote crash reconstruction screen">
-<p class="caption">Crash Reconstruction Tools</p>
+<img src="screenshot3.png" alt="BlueLineNote AI claim review screen">
+<p class="caption">AI Claim Review</p>
 </div>
 </div>
 
@@ -554,12 +633,12 @@ Generate a court-ready PDF and email it instantly.
 <section class="highlight reveal">
 <h2>What makes BlueLineNote different</h2>
 <p>
-• Offline-first workflow for dead zones and low-signal areas<br>
-• Zero cloud storage — no retention, no unnecessary exposure<br>
-• Crash reconstruction tools built in<br>
-• OCR scanning for faster data capture<br>
-• Report review that flags missing details<br>
-• Export-ready PDF reports
+- Offline-first workflow for dead zones and low-signal areas<br>
+- Zero cloud storage — no retention, no unnecessary exposure<br>
+- Crash reconstruction tools built in<br>
+- OCR scanning for faster data capture<br>
+- Report review that flags missing details<br>
+- Export-ready PDF reports
 </p>
 </section>
 
@@ -578,8 +657,46 @@ and criminal intelligence.
 Purpose-built for the people who write reports, not the people who read them.
 </p>
 <p>
-Patrol officers • Crash investigators • Field supervisors • Training officers
+Patrol officers • Crash investigators • Field supervisors • Training officers • Insurance investigators
 </p>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing-section" class="section reveal">
+<h2>Simple pricing for individuals</h2>
+<p>Full Pro access. No cloud, no accounts — your data stays on your device.</p>
+<div class="plans">
+<div class="plan">
+<div class="plan-name">Monthly</div>
+<div class="plan-price">$6.99<span>/mo</span></div>
+<div class="plan-sub">Cancel anytime.</div>
+</div>
+<div class="plan featured">
+<div class="plan-name">Yearly</div>
+<div class="plan-price">$59.99<span>/yr</span></div>
+<div class="plan-sub">Billed annually.</div>
+<div class="plan-save">Best value — save ~28%</div>
+</div>
+</div>
+</section>
+
+<!-- ===== FOR AGENCIES ===== -->
+<section class="section reveal">
+<h2>For agencies</h2>
+<p>
+Seat-based licensing with centralized control — built for departments standardizing
+field reporting across a team. Activate everyone with an agency code, assign and reclaim
+seats as personnel change, and keep validation on the backend while report content stays
+on each officer's device.
+</p>
+<a href="mailto:support@bluelinenote.app?subject=BlueLineNote%20Agency%20Pricing" class="agency-cta">Request agency pricing</a>
+</section>
+
+<!-- ===== ANDROID COMING SOON ===== -->
+<section class="android reveal">
+<span class="pill">Coming Soon</span>
+<h2>Android version on the way</h2>
+<p>BlueLineNote for Android is in active development — same field-first design, built natively for Android.</p>
 </section>
 
 <section class="section reveal">
@@ -604,6 +721,7 @@ It is built for fast capture, structured reporting, and immediate export when it
 <p>• Export reports instantly</p>
 <p>• Designed from real field experience</p>
 </div>
+</section>
 
 <footer class="footer">
 <div>
