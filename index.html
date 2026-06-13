@@ -14,6 +14,25 @@
 <meta property="og:image" content="https://bluelinenote.app/logo.png">
 <meta property="og:url" content="https://bluelinenote.app">
 <meta property="og:type" content="website">
+
+<!-- Structured data: lets Google show app name, platform, and price in results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "BlueLineNote",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS",
+  "description": "Field note and report writing app for law enforcement. Capture structured notes, crash details, scans, and photos, then generate report-ready documentation fast. No cloud, no accounts — data stays on your device.",
+  "url": "https://bluelinenote.app",
+  "image": "https://bluelinenote.app/logo.png",
+  "downloadUrl": "https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561",
+  "offers": [
+    { "@type": "Offer", "price": "6.99", "priceCurrency": "USD", "description": "Pro — Monthly" },
+    { "@type": "Offer", "price": "59.99", "priceCurrency": "USD", "description": "Pro — Yearly" }
+  ]
+}
+</script>
 <style>
 * { box-sizing: border-box; scroll-behavior: smooth; }
 
@@ -378,6 +397,100 @@ transition: all .25s ease;
 }
 .agency-cta:hover { background: #1d4ed8; transform: translateY(-3px); }
 
+/* ===== QUOTE FORM (static — builds a prefilled email on submit) ===== */
+.quote-form {
+max-width: 560px;
+margin: 32px auto 0;
+text-align: left;
+display: grid;
+gap: 14px;
+}
+.quote-form .row { display: flex; gap: 14px; }
+.quote-form .row > * { flex: 1; }
+.quote-form label {
+display: block;
+font-size: 13px;
+font-weight: 700;
+color: #9ca3af;
+margin-bottom: 6px;
+}
+.quote-form input,
+.quote-form textarea {
+width: 100%;
+background: rgba(17,24,39,0.85);
+border: 1px solid #1f2937;
+border-radius: 12px;
+color: #fff;
+padding: 12px 14px;
+font-size: 15px;
+font-family: inherit;
+transition: border-color .2s ease;
+}
+.quote-form textarea { resize: vertical; min-height: 90px; }
+.quote-form input::placeholder,
+.quote-form textarea::placeholder { color: #6b7280; }
+.quote-form input:focus,
+.quote-form textarea:focus { outline: none; border-color: #2563eb; }
+.quote-form button {
+margin-top: 6px;
+width: 100%;
+border: none;
+cursor: pointer;
+font-family: inherit;
+}
+
+/* ===== SECURITY & DATA HANDLING ===== */
+.sec-grid {
+max-width: 900px;
+margin: 36px auto 0;
+display: grid;
+grid-template-columns: repeat(2,1fr);
+gap: 16px;
+}
+.sec-note {
+max-width: 760px;
+margin: 26px auto 0;
+color: #6b7280;
+font-size: 14px;
+line-height: 1.6;
+}
+
+/* ===== FAQ ===== */
+.faq {
+max-width: 760px;
+margin: 28px auto 0;
+text-align: left;
+}
+.faq details {
+border: 1px solid #1f2937;
+border-radius: 14px;
+background: rgba(17,24,39,0.6);
+margin-bottom: 12px;
+padding: 2px 20px;
+}
+.faq summary {
+cursor: pointer;
+padding: 18px 0;
+font-weight: 700;
+color: #e5e7eb;
+font-size: 16px;
+list-style: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: #93c5fd; font-weight: 800; font-size: 20px; }
+.faq details[open] summary::after { content: "\2013"; }
+.faq details p {
+color: #9ca3af;
+padding: 0 0 18px;
+margin: 0;
+line-height: 1.65;
+font-size: 15px;
+}
+
 /* ===== ANDROID BANNER ===== */
 .android {
 max-width: 950px;
@@ -402,6 +515,8 @@ margin-bottom: 16px;
 }
 .android h2 { font-size: 32px; margin: 0; }
 .android p { color: #cbd5e1; font-size: 18px; margin-top: 12px; }
+.android .agency-cta { background: #16a34a; }
+.android .agency-cta:hover { background: #15803d; }
 
 .footer {
 border-top: 1px solid #1f2937;
@@ -435,6 +550,24 @@ from { opacity: 0; transform: translateY(18px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== accessibility: keyboard focus + reduced motion ===== */
+a:focus-visible, summary:focus-visible {
+outline: 2px solid #2563eb;
+outline-offset: 2px;
+border-radius: 6px;
+}
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation: none !important;
+transition: none !important;
+scroll-behavior: auto !important;
+}
+.section.reveal, .card, .phone, .highlight {
+opacity: 1 !important;
+transform: none !important;
+}
+}
+
 @media(max-width:800px){
 header {
 flex-direction: column;
@@ -454,10 +587,16 @@ font-size: 42px;
 grid-template-columns: 1fr;
 }
 
+.sec-grid {
+grid-template-columns: 1fr;
+}
+
 .phone {
 width: 85%;
 max-width: 310px;
 }
+
+.quote-form .row { flex-direction: column; gap: 14px; }
 }
 </style>
 </head>
@@ -472,12 +611,13 @@ window.scrollTo(0, 0);
 
 <header>
 <div class="logo" style="display:flex; align-items:center; gap:10px;">
-<img src="logo.png" style="height:32px; width:32px; border-radius:8px; object-fit:cover;">
+<img src="logo.png" alt="BlueLineNote logo" style="height:32px; width:32px; border-radius:8px; object-fit:cover;">
 <span>BlueLineNote</span>
 </div>
 <nav>
 <a href="#features-section">Features</a>
 <a href="#pricing-section">Pricing</a>
+<a href="#faq-section">FAQ</a>
 <a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy</a>
 <a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
 </nav>
@@ -566,6 +706,7 @@ box-shadow:0 30px 80px rgba(0,0,0,0.8);
 ">
 <iframe
 src="https://www.youtube.com/embed/pVxc-4p1b_A"
+title="BlueLineNote demo"
 style="
 width:100%;
 height:100%;
@@ -681,7 +822,7 @@ Patrol officers • Crash investigators • Field supervisors • Training offic
 </section>
 
 <!-- ===== FOR AGENCIES ===== -->
-<section class="section reveal">
+<section id="agency-section" class="section reveal">
 <h2>For agencies</h2>
 <p>
 Seat-based licensing with centralized control — built for departments standardizing
@@ -689,7 +830,108 @@ field reporting across a team. Activate everyone with an agency code, assign and
 seats as personnel change, and keep validation on the backend while report content stays
 on each officer's device.
 </p>
-<a href="mailto:support@bluelinenote.app?subject=BlueLineNote%20Agency%20Pricing" class="agency-cta">Request agency pricing</a>
+<form class="quote-form" id="quoteForm" onsubmit="return sendQuote(event)">
+<div>
+<label for="q-agency">Agency / department</label>
+<input id="q-agency" type="text" placeholder="e.g. Springfield Police Department" required>
+</div>
+<div class="row">
+<div>
+<label for="q-name">Your name</label>
+<input id="q-name" type="text" placeholder="First and last" required>
+</div>
+<div>
+<label for="q-email">Work email</label>
+<input id="q-email" type="email" placeholder="you@agency.gov" required>
+</div>
+</div>
+<div class="row">
+<div>
+<label for="q-officers">Number of officers</label>
+<input id="q-officers" type="number" min="1" placeholder="e.g. 45">
+</div>
+<div>
+<label for="q-state">State / region</label>
+<input id="q-state" type="text" placeholder="e.g. Maryland">
+</div>
+</div>
+<div>
+<label for="q-role">Your role</label>
+<input id="q-role" type="text" placeholder="e.g. Lieutenant, Admin">
+</div>
+<div>
+<label for="q-msg">Anything we should know? (optional)</label>
+<textarea id="q-msg" placeholder="Rollout timeline, current tools, questions…"></textarea>
+</div>
+<button type="submit" class="agency-cta">Request quote</button>
+</form>
+</section>
+
+<!-- ===== SECURITY & DATA HANDLING ===== -->
+<section class="section reveal">
+<h2>Security &amp; data handling</h2>
+<p>
+The most common question from agencies is simple: where does the data live, and who can see it?
+Here's the straight answer.
+</p>
+<div class="sec-grid">
+<div class="card">
+<h3>Report content stays on the device</h3>
+<p>Notes, photos, scans, and crash diagrams are stored on the officer's device. BlueLineNote keeps no server-side copy of report content.</p>
+</div>
+<div class="card">
+<h3>No cloud, no accounts</h3>
+<p>There are no user accounts and no cloud sync. Nothing about a report is uploaded, retained, or backed up off-device by the app.</p>
+</div>
+<div class="card">
+<h3>Licensing only on the backend</h3>
+<p>The server validates purchases and agency seats by device ID. It verifies who's licensed — it never receives or stores your report content.</p>
+</div>
+<div class="card">
+<h3>You control retention</h3>
+<p>Export a report when you need it, delete it when you're done. Records live and die by your action, on your device.</p>
+</div>
+</div>
+<p class="sec-note">
+A note on records and discovery: because notes live on your device, whether they are discoverable or subject to retention
+depends on your agency's policy and applicable law. BlueLineNote doesn't change those obligations — follow your
+department's records and retention policy. This is general information, not legal advice.
+</p>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq-section" class="section reveal">
+<h2>Questions, answered</h2>
+<div class="faq">
+<details>
+<summary>Does it work without signal?</summary>
+<p>Yes. BlueLineNote is offline-first — capture notes, photos, scans, and crash details in dead zones with no connection. Export when you're back in range.</p>
+</details>
+<details>
+<summary>Where does my data go?</summary>
+<p>It stays on your device. There's no cloud storage, no account, and no retention. The backend only checks your license and purchase status — it never sees or stores your report content.</p>
+</details>
+<details>
+<summary>Can my department see my notes?</summary>
+<p>No. Report content never leaves your device. Agency licensing validates seats on the backend by code; it does not sync, read, or store what you write.</p>
+</details>
+<details>
+<summary>What about records requests or discovery?</summary>
+<p>Notes you create may fall under your agency's records-retention and discovery policies — check your department's rules on field documentation. BlueLineNote itself keeps nothing in the cloud and retains nothing; what's on your device is yours to export or delete.</p>
+</details>
+<details>
+<summary>Do I need an account?</summary>
+<p>No sign-up, no account. Buy Pro through the App Store and your access is tied to your device. Nothing to provision, nothing to recover.</p>
+</details>
+<details>
+<summary>How does agency licensing work?</summary>
+<p>One agency code activates your whole team. Assign and reclaim seats as personnel change, with validation handled on the backend while every officer's report content stays on their own device.</p>
+</details>
+<details>
+<summary>When is Android coming?</summary>
+<p>It's in active development — same field-first design, built natively for Android. Email us and we'll let you know when it's live.</p>
+</details>
+</div>
 </section>
 
 <!-- ===== ANDROID COMING SOON ===== -->
@@ -697,6 +939,7 @@ on each officer's device.
 <span class="pill">Coming Soon</span>
 <h2>Android version on the way</h2>
 <p>BlueLineNote for Android is in active development — same field-first design, built natively for Android.</p>
+<a href="mailto:support@bluelinenote.app?subject=Notify%20me%20when%20BlueLineNote%20for%20Android%20launches" class="agency-cta">Email me at launch</a>
 </section>
 
 <section class="section reveal">
@@ -756,6 +999,28 @@ entry.target.classList.add('show');
 
 phones.forEach(phone => observer.observe(phone));
 revealItems.forEach(item => observer.observe(item));
+</script>
+
+<script>
+/* Agency quote form: builds a prefilled email to support@. Fully static — no backend. */
+function sendQuote(e) {
+e.preventDefault();
+function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+var agency = val('q-agency'), name = val('q-name'), email = val('q-email'),
+officers = val('q-officers'), state = val('q-state'), role = val('q-role'), msg = val('q-msg');
+var subject = 'Agency quote request — ' + (agency || 'BlueLineNote');
+var body =
+'Agency / department: ' + agency + '\n' +
+'Contact name: ' + name + '\n' +
+'Work email: ' + email + '\n' +
+'Number of officers: ' + officers + '\n' +
+'State / region: ' + state + '\n' +
+'Role: ' + role + '\n\n' +
+'Message:\n' + msg + '\n';
+window.location.href = 'mailto:support@bluelinenote.app?subject=' +
+encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+return false;
+}
 </script>
 
 </body>
