@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BlueLineNote | Field Notes & Report Writing App for Law Enforcement</title>
 <meta name="google-site-verification" content="3uuBkNSX73JmQw50X6nnjQklkWIZ3uU4m1b0os3ABGU" />
-<meta name="description" content="BlueLineNote is a field note and report writing app for law enforcement, built to help officers capture structured notes, crash details, scans, photos, and report-ready documentation faster.">
+<meta name="description" content="BlueLineNote is a field note and report writing app for law enforcement, built to help officers capture structured notes, crash details, scans, photos, and report-ready documentation faster. Now on iOS and Android.">
 
-<meta name="keywords" content="police report writing app, law enforcement field notes, officer field notes app, crash report app, incident report app, field documentation app, police notes app, insurance claim documentation app">
+<meta name="keywords" content="police report writing app, law enforcement field notes, officer field notes app, crash report app, incident report app, field documentation app, police notes app, NIBRS reporting app, MMUCC crash app">
 
 <meta property="og:title" content="BlueLineNote | Field Notes & Report Writing App">
-<meta property="og:description" content="Capture structured notes → generate report-ready documentation fast. Built for law enforcement.">
+<meta property="og:description" content="Capture structured notes → generate report-ready documentation fast. Built for law enforcement. Now on iOS and Android.">
 <meta property="og:image" content="https://bluelinenote.app/logo.png">
 <meta property="og:url" content="https://bluelinenote.app">
 <meta property="og:type" content="website">
@@ -22,11 +22,14 @@
   "@type": "SoftwareApplication",
   "name": "BlueLineNote",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "iOS",
+  "operatingSystem": "iOS, Android",
   "description": "Field note and report writing app for law enforcement. Capture structured notes, crash details, scans, and photos, then generate report-ready documentation fast. No cloud, no accounts — data stays on your device.",
   "url": "https://bluelinenote.app",
   "image": "https://bluelinenote.app/logo.png",
-  "downloadUrl": "https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561",
+  "downloadUrl": [
+    "https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561",
+    "https://play.google.com/store/apps/details?id=com.bluelinenote.app"
+  ],
   "offers": [
     { "@type": "Offer", "price": "6.99", "priceCurrency": "USD", "description": "Pro — Monthly" },
     { "@type": "Offer", "price": "59.99", "priceCurrency": "USD", "description": "Pro — Yearly" }
@@ -53,10 +56,7 @@ max-width: 1150px;
 margin: auto;
 }
 
-.logo {
-font-weight: 900;
-font-size: 22px;
-}
+.logo { font-weight: 900; font-size: 22px; }
 
 nav a {
 color: #9ca3af;
@@ -64,7 +64,6 @@ text-decoration: none;
 margin-left: 20px;
 font-size: 14px;
 }
-
 nav a:hover { color: white; }
 
 .hero {
@@ -99,12 +98,7 @@ font-size: 13px;
 margin-bottom: 20px;
 }
 
-h1 {
-font-size: 62px;
-margin: 0;
-letter-spacing: -2px;
-line-height: 1.05;
-}
+h1 { font-size: 62px; margin: 0; letter-spacing: -2px; line-height: 1.05; }
 
 .hero p {
 color: #9ca3af;
@@ -113,21 +107,11 @@ line-height: 1.6;
 max-width: 760px;
 margin: 18px auto 0;
 }
-
 .hero a { color: #93c5fd; }
 
-.micro-tagline {
-color: #d1d5db;
-font-size: 18px;
-font-weight: 650;
-margin-top: 18px;
-}
+.micro-tagline { color: #d1d5db; font-size: 18px; font-weight: 650; margin-top: 18px; }
 
-.identity {
-margin-top: 18px;
-color: #e5e7eb;
-font-weight: 700;
-}
+.identity { margin-top: 18px; color: #e5e7eb; font-weight: 700; }
 
 .app-store-btn {
 display: inline-flex;
@@ -135,39 +119,23 @@ align-items: center;
 gap: 12px;
 padding: 14px 22px;
 margin-top: 30px;
-
 background: #000;
 color: white;
-
 border-radius: 14px;
 border: 1px solid #1f2937;
-
 text-decoration: none;
 cursor: pointer;
-
 box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 transition: all .25s ease;
 }
-
-.app-store-btn:hover {
-transform: translateY(-3px);
-box-shadow: 0 30px 70px rgba(0,0,0,0.8);
-}
+.app-store-btn:hover { transform: translateY(-3px); box-shadow: 0 30px 70px rgba(0,0,0,0.8); }
 
 .apple-logo { display: inline-flex; align-items: center; }
 .apple-logo svg { width: 22px; height: 22px; fill: #fff; }
 
-.btn-text small {
-font-size: 11px;
-color: #9ca3af;
-}
+.btn-text small { font-size: 11px; color: #9ca3af; }
+.btn-text strong { font-size: 18px; letter-spacing: 0.5px; }
 
-.btn-text strong {
-font-size: 18px;
-letter-spacing: 0.5px;
-}
-
-/* Learn more text link in hero (was unstyled) */
 .app-button {
 display: inline-block;
 margin-top: 22px;
@@ -180,49 +148,18 @@ font-weight: 700;
 font-size: 15px;
 transition: all .25s ease;
 }
-.app-button:hover {
-border-color: #2563eb;
-color: #fff;
-transform: translateY(-2px);
-}
+.app-button:hover { border-color: #2563eb; color: #fff; transform: translateY(-2px); }
 
-.note {
-margin-top: 10px;
-color: #6b7280;
-font-size: 13px;
-}
+.note { margin-top: 10px; color: #6b7280; font-size: 13px; }
 
-.section {
-max-width: 1050px;
-margin: auto;
-padding: 80px 24px;
-text-align: center;
-}
-
-.section h2 {
-font-size: 36px;
-margin-bottom: 16px;
-}
-
-.section p {
-color: #a1a1aa;
-font-size: 18px;
-line-height: 1.7;
-}
-
+.section { max-width: 1050px; margin: auto; padding: 80px 24px; text-align: center; }
+.section h2 { font-size: 36px; margin-bottom: 16px; }
+.section p { color: #a1a1aa; font-size: 18px; line-height: 1.7; }
 .section a { color: #93c5fd; }
-
-/* Base hidden state for plain reveal sections (was missing) */
 .section.reveal { opacity: 0; transform: translateY(28px); transition: all .65s ease; }
 .section.reveal.show { opacity: 1; transform: none; }
 
-.device-row {
-display: flex;
-justify-content: center;
-gap: 26px;
-flex-wrap: wrap;
-margin-top: 36px;
-}
+.device-row { display: flex; justify-content: center; gap: 26px; flex-wrap: wrap; margin-top: 36px; }
 
 .phone {
 width: 280px;
@@ -235,39 +172,15 @@ transform: translateY(60px);
 opacity: 0;
 transition: all .75s cubic-bezier(.22,1,.36,1);
 }
-
 .phone:nth-child(1) { transition-delay: .1s; }
 .phone:nth-child(2) { transition-delay: .25s; }
 .phone:nth-child(3) { transition-delay: .4s; }
+.phone.show { transform: translateY(0); opacity: 1; }
+.phone:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 45px 95px rgba(0,0,0,0.85); }
+.phone img { width: 100%; border-radius: 20px; display: block; }
 
-.phone.show {
-transform: translateY(0);
-opacity: 1;
-}
-
-.phone:hover {
-transform: translateY(-12px) scale(1.02);
-box-shadow: 0 45px 95px rgba(0,0,0,0.85);
-}
-
-.phone img {
-width: 100%;
-border-radius: 20px;
-display: block;
-}
-
-.caption {
-color: #cbd5e1;
-font-size: 14px;
-font-weight: 700;
-margin: 12px 0 2px;
-}
-
-.mobile-note {
-margin-top: 26px;
-color: #9ca3af;
-font-size: 15px;
-}
+.caption { color: #cbd5e1; font-size: 14px; font-weight: 700; margin: 12px 0 2px; }
+.mobile-note { margin-top: 26px; color: #9ca3af; font-size: 15px; }
 
 .grid {
 max-width: 1100px;
@@ -288,21 +201,9 @@ transform: translateY(30px);
 opacity: 0;
 transition: all .65s ease;
 }
-
-.card.show {
-transform: translateY(0);
-opacity: 1;
-}
-
-.card h3 {
-margin-top: 0;
-font-size: 20px;
-}
-
-.card p {
-color: #9ca3af;
-line-height: 1.55;
-}
+.card.show { transform: translateY(0); opacity: 1; }
+.card h3 { margin-top: 0; font-size: 20px; }
+.card p { color: #9ca3af; line-height: 1.55; }
 
 .highlight {
 max-width: 950px;
@@ -317,33 +218,14 @@ transform: translateY(35px);
 opacity: 0;
 transition: all .75s ease;
 }
-
-.highlight.show {
-transform: translateY(0);
-opacity: 1;
-}
-
-.highlight h2 {
-font-size: 34px;
-margin-top: 0;
-}
-
-.highlight p {
-color: #cbd5e1;
-font-size: 18px;
-line-height: 1.7;
-}
+.highlight.show { transform: translateY(0); opacity: 1; }
+.highlight h2 { font-size: 34px; margin-top: 0; }
+.highlight p { color: #cbd5e1; font-size: 18px; line-height: 1.7; }
 
 .feature-points p { color: #cbd5e1; }
 
 /* ===== PRICING ===== */
-.plans {
-display: flex;
-justify-content: center;
-gap: 20px;
-flex-wrap: wrap;
-margin-top: 40px;
-}
+.plans { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
 .plan {
 width: 260px;
 background: rgba(17,24,39,0.85);
@@ -352,35 +234,12 @@ border-radius: 20px;
 padding: 32px 26px;
 text-align: center;
 }
-.plan.featured {
-border-color: #2563eb;
-box-shadow: 0 0 0 1px #2563eb, 0 20px 50px rgba(37,99,235,0.25);
-}
-.plan .plan-name {
-color: #9ca3af;
-text-transform: uppercase;
-letter-spacing: .08em;
-font-size: 13px;
-font-weight: 700;
-}
-.plan .plan-price {
-font-size: 44px;
-font-weight: 900;
-letter-spacing: -1px;
-margin-top: 10px;
-}
+.plan.featured { border-color: #2563eb; box-shadow: 0 0 0 1px #2563eb, 0 20px 50px rgba(37,99,235,0.25); }
+.plan .plan-name { color: #9ca3af; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; font-weight: 700; }
+.plan .plan-price { font-size: 44px; font-weight: 900; letter-spacing: -1px; margin-top: 10px; }
 .plan .plan-price span { font-size: 16px; color: #9ca3af; font-weight: 600; }
 .plan .plan-sub { color: #9ca3af; font-size: 14px; margin-top: 6px; }
-.plan .plan-save {
-display: inline-block;
-margin-top: 16px;
-background: rgba(37,99,235,0.18);
-color: #93c5fd;
-font-size: 13px;
-font-weight: 800;
-padding: 5px 14px;
-border-radius: 999px;
-}
+.plan .plan-save { display: inline-block; margin-top: 16px; background: rgba(37,99,235,0.18); color: #93c5fd; font-size: 13px; font-weight: 800; padding: 5px 14px; border-radius: 999px; }
 
 /* ===== AGENCY ===== */
 .agency-cta {
@@ -397,25 +256,12 @@ transition: all .25s ease;
 }
 .agency-cta:hover { background: #1d4ed8; transform: translateY(-3px); }
 
-/* ===== QUOTE FORM (static — builds a prefilled email on submit) ===== */
-.quote-form {
-max-width: 560px;
-margin: 32px auto 0;
-text-align: left;
-display: grid;
-gap: 14px;
-}
+/* ===== QUOTE FORM ===== */
+.quote-form { max-width: 560px; margin: 32px auto 0; text-align: left; display: grid; gap: 14px; }
 .quote-form .row { display: flex; gap: 14px; }
 .quote-form .row > * { flex: 1; }
-.quote-form label {
-display: block;
-font-size: 13px;
-font-weight: 700;
-color: #9ca3af;
-margin-bottom: 6px;
-}
-.quote-form input,
-.quote-form textarea {
+.quote-form label { display: block; font-size: 13px; font-weight: 700; color: #9ca3af; margin-bottom: 6px; }
+.quote-form input, .quote-form textarea {
 width: 100%;
 background: rgba(17,24,39,0.85);
 border: 1px solid #1f2937;
@@ -427,186 +273,113 @@ font-family: inherit;
 transition: border-color .2s ease;
 }
 .quote-form textarea { resize: vertical; min-height: 90px; }
-.quote-form input::placeholder,
-.quote-form textarea::placeholder { color: #6b7280; }
-.quote-form input:focus,
-.quote-form textarea:focus { outline: none; border-color: #2563eb; }
-.quote-form button {
-margin-top: 6px;
-width: 100%;
-border: none;
-cursor: pointer;
-font-family: inherit;
-}
+.quote-form input::placeholder, .quote-form textarea::placeholder { color: #6b7280; }
+.quote-form input:focus, .quote-form textarea:focus { outline: none; border-color: #2563eb; }
+.quote-form button { margin-top: 6px; width: 100%; border: none; cursor: pointer; font-family: inherit; }
 
-/* ===== SECURITY & DATA HANDLING ===== */
-.sec-grid {
-max-width: 900px;
-margin: 36px auto 0;
-display: grid;
-grid-template-columns: repeat(2,1fr);
-gap: 16px;
-}
-.sec-note {
-max-width: 760px;
-margin: 26px auto 0;
-color: #6b7280;
-font-size: 14px;
-line-height: 1.6;
-}
+/* ===== SECURITY ===== */
+.sec-grid { max-width: 900px; margin: 36px auto 0; display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+.sec-note { max-width: 760px; margin: 26px auto 0; color: #6b7280; font-size: 14px; line-height: 1.6; }
 
 /* ===== FAQ ===== */
-.faq {
-max-width: 760px;
-margin: 28px auto 0;
-text-align: left;
-}
-.faq details {
-border: 1px solid #1f2937;
-border-radius: 14px;
-background: rgba(17,24,39,0.6);
-margin-bottom: 12px;
-padding: 2px 20px;
-}
-.faq summary {
-cursor: pointer;
-padding: 18px 0;
-font-weight: 700;
-color: #e5e7eb;
-font-size: 16px;
-list-style: none;
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 16px;
-}
+.faq { max-width: 760px; margin: 28px auto 0; text-align: left; }
+.faq details { border: 1px solid #1f2937; border-radius: 14px; background: rgba(17,24,39,0.6); margin-bottom: 12px; padding: 2px 20px; }
+.faq summary { cursor: pointer; padding: 18px 0; font-weight: 700; color: #e5e7eb; font-size: 16px; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; color: #93c5fd; font-weight: 800; font-size: 20px; }
 .faq details[open] summary::after { content: "\2013"; }
-.faq details p {
-color: #9ca3af;
-padding: 0 0 18px;
-margin: 0;
-line-height: 1.65;
-font-size: 15px;
-}
+.faq details p { color: #9ca3af; padding: 0 0 18px; margin: 0; line-height: 1.65; font-size: 15px; }
 
-/* ===== ANDROID BANNER ===== */
-.android {
-max-width: 950px;
-margin: 60px auto;
-padding: 44px 30px;
-text-align: center;
-border-radius: 26px;
-background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(15,23,42,0.92));
-border: 1px solid #1f2937;
-}
-.android .pill {
-display: inline-block;
-background: rgba(37,99,235,0.18);
-color: #93c5fd;
-font-weight: 800;
-font-size: 12px;
-letter-spacing: .08em;
-text-transform: uppercase;
-padding: 6px 16px;
-border-radius: 999px;
-margin-bottom: 16px;
-}
+/* ===== ANDROID ===== */
+.android { max-width: 950px; margin: 60px auto; padding: 44px 30px; text-align: center; border-radius: 26px; background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(15,23,42,0.92)); border: 1px solid #1f2937; }
+.android .pill { display: inline-block; background: rgba(34,197,94,0.18); color: #86efac; font-weight: 800; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 16px; border-radius: 999px; margin-bottom: 16px; }
 .android h2 { font-size: 32px; margin: 0; }
 .android p { color: #cbd5e1; font-size: 18px; margin-top: 12px; }
 .android .agency-cta { background: #16a34a; }
 .android .agency-cta:hover { background: #15803d; }
 
-.footer {
-border-top: 1px solid #1f2937;
-margin-top: 60px;
-padding: 32px 24px;
-text-align: center;
-color: #6b7280;
-font-size: 14px;
-}
-
-.footer a {
-color: #9ca3af;
-margin: 0 10px;
-text-decoration: none;
-}
-
+.footer { border-top: 1px solid #1f2937; margin-top: 60px; padding: 32px 24px; text-align: center; color: #6b7280; font-size: 14px; }
+.footer a { color: #9ca3af; margin: 0 10px; text-decoration: none; }
 .footer a:hover { color: white; }
+.footer-identity { color: #d1d5db; font-weight: 700; margin-top: 18px; }
 
-.footer-identity {
-color: #d1d5db;
-font-weight: 700;
-margin-top: 18px;
-}
+.fade { animation: fadeUp .9s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 
-.fade {
-animation: fadeUp .9s ease both;
-}
-
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(18px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== accessibility: keyboard focus + reduced motion ===== */
-a:focus-visible, summary:focus-visible {
-outline: 2px solid #2563eb;
-outline-offset: 2px;
-border-radius: 6px;
-}
+a:focus-visible, summary:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; border-radius: 6px; }
 @media (prefers-reduced-motion: reduce) {
-*, *::before, *::after {
-animation: none !important;
-transition: none !important;
-scroll-behavior: auto !important;
-}
-.section.reveal, .card, .phone, .highlight {
-opacity: 1 !important;
-transform: none !important;
-}
+*, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+.section.reveal, .card, .phone, .highlight { opacity: 1 !important; transform: none !important; }
 }
 
 @media(max-width:800px){
-header {
-flex-direction: column;
-gap: 14px;
-text-align: center;
-}
-
-nav a {
-margin: 0 8px;
-}
-
-h1 {
-font-size: 42px;
-}
-
-.grid {
-grid-template-columns: 1fr;
-}
-
-.sec-grid {
-grid-template-columns: 1fr;
-}
-
-.phone {
-width: 85%;
-max-width: 310px;
-}
-
+header { flex-direction: column; gap: 14px; text-align: center; }
+nav a { margin: 0 8px; }
+h1 { font-size: 42px; }
+.grid { grid-template-columns: 1fr; }
+.sec-grid { grid-template-columns: 1fr; }
+.phone { width: 85%; max-width: 310px; }
 .quote-form .row { flex-direction: column; gap: 14px; }
 }
+
+/* ===== COMING-SOON SYSTEM (cs-*) ===== */
+.cs-soon{ display:inline-flex;align-items:center;gap:8px; background:rgba(37,99,235,0.18);color:#93c5fd; font-weight:800;font-size:12px;letter-spacing:.10em;text-transform:uppercase; padding:7px 16px;border-radius:999px;border:1px solid #1e3a8a;margin-bottom:20px; }
+.cs-soon .dot{width:7px;height:7px;border-radius:50%;background:#22c55e; box-shadow:0 0 0 0 rgba(34,197,94,.7);animation:cs-pulse 2s infinite;}
+@keyframes cs-pulse{ 0%{box-shadow:0 0 0 0 rgba(34,197,94,.6);} 70%{box-shadow:0 0 0 8px rgba(34,197,94,0);} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+.cs-kicker{color:#93c5fd;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:14px;}
+.cs-mega{font-size:48px;line-height:1.06;letter-spacing:-1.5px;margin:0 0 8px;}
+.cs-mega .accent{color:#93c5fd;}
+.cs-grid2{max-width:1100px;margin:34px auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:18px;text-align:left;}
+.cs-grid3{max-width:1100px;margin:34px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left;}
+.cs-spec{position:relative;background:rgba(17,24,39,0.85);border:1px solid #1f2937;border-radius:20px;padding:26px;overflow:hidden;}
+.cs-spec::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,99,235,.10),transparent 60%);pointer-events:none;}
+.cs-spec .cs-tag{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#93c5fd;background:rgba(37,99,235,.15);border:1px solid #1e3a8a;padding:4px 10px;border-radius:999px;}
+.cs-spec h3{margin:0 0 6px;font-size:22px;display:flex;align-items:center;gap:10px;}
+.cs-spec h3 .ic{font-size:20px;}
+.cs-spec .lead{color:#cbd5e1;font-weight:700;font-size:15px;margin:0 0 6px;}
+.cs-spec .body{color:#9ca3af;line-height:1.6;font-size:15px;margin:0;}
+.cs-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.cs-chip{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:600;color:#cfe0ff;background:rgba(37,99,235,.10);border:1px solid #24407a;padding:6px 10px;border-radius:8px;letter-spacing:.02em;}
+.cs-chip.ok{color:#bbf7d0;background:rgba(34,197,94,.10);border-color:#1f6f44;}
+.cs-stamp{display:inline-block;margin-top:8px;transform:rotate(-7deg);border:3px solid #22c55e;color:#22c55e;border-radius:12px;padding:8px 18px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:18px;opacity:.92;}
+.cs-benefit{background:rgba(17,24,39,0.7);border:1px solid #1f2937;border-radius:16px;padding:22px;text-align:left;}
+.cs-benefit .big{font-size:26px;font-weight:900;color:#fff;letter-spacing:-.5px;}
+.cs-benefit .lbl{color:#93c5fd;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin:4px 0 8px;}
+.cs-benefit p{margin:0;color:#9ca3af;font-size:14px;line-height:1.55;}
+.cs-seal-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:8px;}
+.cs-seal{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:#cfe0ff;background:rgba(37,99,235,.12);border:1px solid #24407a;padding:9px 14px;border-radius:10px;font-weight:700;}
+.cs-alert{max-width:700px;margin:26px auto 0;text-align:left;background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(17,24,39,.92));border:1px solid #7c5310;border-left:4px solid #f59e0b;border-radius:16px;padding:20px 22px;}
+.cs-alert .hd{display:flex;align-items:center;gap:10px;color:#fbbf24;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;}
+.cs-alert .match{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:rgba(0,0,0,.28);border:1px solid #334155;border-radius:12px;padding:14px;}
+.cs-alert .who{font-weight:800;color:#fff;font-size:17px;}
+.cs-alert .meta{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:#fcd34d;background:rgba(245,158,11,.12);border:1px solid #7c5310;padding:5px 10px;border-radius:8px;font-weight:700;}
+.cs-alert .foot{margin:12px 0 0;color:#cbd5e1;font-size:14px;}
+.cs-line{max-width:760px;margin:38px auto 0;position:relative;text-align:left;}
+.cs-line::before{content:"";position:absolute;left:23px;top:8px;bottom:8px;width:2px;background:linear-gradient(#2563eb,#3b82f6,#22c55e);border-radius:2px;}
+.cs-stage{position:relative;padding:0 0 20px 66px;}
+.cs-stage:last-child{padding-bottom:0;}
+.cs-stage .node{position:absolute;left:0;top:0;width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:20px;background:rgba(11,17,32,0.98);border:1px solid #24407a;box-shadow:0 0 0 4px rgba(37,99,235,.10);}
+.cs-stage .card2{background:rgba(17,24,39,0.72);border:1px solid #1f2937;border-radius:14px;padding:14px 16px;}
+.cs-stage h4{margin:0 0 4px;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.cs-stage .tag2{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10px;color:#93c5fd;background:rgba(37,99,235,.12);border:1px solid #24407a;padding:2px 7px;border-radius:6px;text-transform:uppercase;letter-spacing:.05em;font-weight:700;}
+.cs-stage .tag2.safe{color:#fcd34d;background:rgba(245,158,11,.12);border-color:#7c5310;}
+.cs-stage .tag2.done{color:#bbf7d0;background:rgba(34,197,94,.10);border-color:#1f6f44;}
+.cs-stage p{margin:0;color:#9ca3af;font-size:14px;line-height:1.5;}
+.cs-letterhead{max-width:560px;margin:26px auto 0;background:#f8fafc;color:#0f172a;border-radius:12px;padding:18px 20px;text-align:left;box-shadow:0 24px 60px rgba(0,0,0,.55);}
+.cs-letterhead .top{display:flex;align-items:center;gap:14px;border-bottom:2px solid #0f172a;padding-bottom:12px;}
+.cs-letterhead .lg{width:48px;height:48px;border-radius:8px;border:2px dashed #94a3b8;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:9px;color:#64748b;text-align:center;font-weight:800;line-height:1.1;}
+.cs-letterhead .dept{font-weight:900;font-size:16px;letter-spacing:.02em;}
+.cs-letterhead .sub{color:#475569;font-size:12px;margin-top:2px;}
+.cs-letterhead .meta3{margin-top:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;color:#334155;}
+.cs-finehint{color:#6b7280;font-size:13px;margin-top:18px;}
+@media(max-width:800px){ .cs-mega{font-size:34px;} .cs-grid2,.cs-grid3{grid-template-columns:1fr;} }
 </style>
 </head>
 
 <body>
 
 <script>
-window.onload = function() {
-window.scrollTo(0, 0);
-};
+window.onload = function() { window.scrollTo(0, 0); };
 </script>
 
 <header>
@@ -618,73 +391,75 @@ window.scrollTo(0, 0);
 <a href="#features-section">Features</a>
 <a href="#pricing-section">Pricing</a>
 <a href="#faq-section">FAQ</a>
+<a href="#whats-next">What's Next</a>
 <a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy</a>
 <a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
 </nav>
 </header>
 
 <section class="hero fade">
-
 <div class="glow"></div>
 <div class="badge">Built for real-world field documentation</div>
-
 <h1>One app for every scene, every shift, every report.</h1>
-
-<!-- LINK 1: WHAT IT IS -->
 <p>
-BlueLineNote is a
-<a href="/police-report-writing-app.html">police report writing app</a>
+BlueLineNote is a <a href="/police-report-writing-app.html">police report writing app</a>
 designed for officers who need to document incidents quickly and accurately in the field.
 </p>
-
-<!-- SUPPORT TEXT -->
 <p>
 Capture structured incident details, organize notes, and generate report-ready documentation — fast.
 </p>
-
-<!-- LINK 2: HOW IT WORKS -->
 <p>
-Use a
-<a href="/field-report-writing-tool.html">field report writing tool</a>
+Use a <a href="/field-report-writing-tool.html">field report writing tool</a>
 to capture information in real time without switching between multiple apps.
 </p>
+<div class="identity">Designed for the people doing the job.</div>
 
-<div class="identity">
-Designed for the people doing the job.
-</div>
-
-<div style="display:flex; justify-content:center; align-items:center; gap:18px; margin-top:20px; flex-wrap:wrap;">
-
-<a href="https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561"
-target="_blank"
-class="app-store-btn">
-
+<div style="display:flex; justify-content:center; align-items:center; gap:14px; margin-top:24px; flex-wrap:wrap;">
+<a href="https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561" target="_blank" class="app-store-btn">
 <span class="apple-logo">
 <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
 </span>
-<span class="btn-text">
-<small>Download on the</small><br>
-<strong>App Store</strong>
-</span>
-
+<span class="btn-text"><small>Download on the</small><br><strong>App Store</strong></span>
 </a>
 
+<a href="https://play.google.com/store/apps/details?id=com.bluelinenote.app" target="_blank" class="app-store-btn">
+<span class="apple-logo">
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg>
+</span>
+<span class="btn-text"><small>Get it on</small><br><strong>Google Play</strong></span>
+</a>
+</div>
+
+<div style="display:flex; justify-content:center; gap:30px; margin-top:24px; flex-wrap:wrap;">
 <div style="text-align:center;">
-<div style="display:inline-block; background:#fff; padding:12px; border-radius:14px;">
-<img src="BlueLineNote_AppStore_QR.png"
-alt="Scan to download BlueLineNote on the App Store"
-style="width:190px; height:190px; display:block;">
+<div style="display:inline-block; background:#fff; padding:12px; border-radius:16px; border:3px solid #2563eb; box-shadow:0 0 0 4px rgba(37,99,235,.18), 0 18px 40px rgba(0,0,0,.45);">
+<img src="BlueLineNote_AppStore_QR.png" alt="Scan to download BlueLineNote on the App Store" style="width:170px; height:170px; display:block;">
 </div>
-<div style="font-size:11px; margin-top:6px; color:#aaa;">Scan</div>
+<div style="display:inline-flex; align-items:center; gap:7px; margin-top:12px; background:rgba(37,99,235,.16); color:#93c5fd; border:1px solid #1e3a8a; padding:6px 14px; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:.04em;">
+<svg viewBox="0 0 384 512" width="13" height="13" fill="#93c5fd" xmlns="http://www.w3.org/2000/svg"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+SCAN · APP STORE
+</div>
+</div>
+<div style="text-align:center;">
+<div style="display:inline-block; background:#fff; padding:12px; border-radius:16px; border:3px solid #16a34a; box-shadow:0 0 0 4px rgba(34,197,94,.18), 0 18px 40px rgba(0,0,0,.45);">
+<img src="qr-code_android.png" alt="Scan to download BlueLineNote on Google Play" style="width:170px; height:170px; display:block;">
+</div>
+<div style="display:inline-flex; align-items:center; gap:7px; margin-top:12px; background:rgba(34,197,94,.16); color:#86efac; border:1px solid #1f6f44; padding:6px 14px; border-radius:999px; font-size:12px; font-weight:800; letter-spacing:.04em;">
+<svg viewBox="0 0 512 512" width="13" height="13" fill="#86efac" xmlns="http://www.w3.org/2000/svg"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg>
+SCAN · GOOGLE PLAY
+</div>
+</div>
 </div>
 
+<div class="note">Now available on the App Store and Google Play</div>
+
+<div style="margin-top:18px;">
+<a href="#whats-next" style="color:#93c5fd;font-weight:700;font-size:15px;text-decoration:none;border-bottom:1px solid rgba(147,197,253,.4);padding-bottom:3px;">
+🚧 Coming next: NIBRS · MMUCC · on-device supervisor → RMS sign-off — see what's next →
+</a>
 </div>
-
-<div class="note">Now available on the App Store</div>
-
 </section>
 
-<!-- LINK 3: RESULT / OUTCOME -->
 <section class="section reveal">
 <h2>Finish Reports Faster</h2>
 <p>
@@ -698,56 +473,21 @@ helps you finish documentation while still on scene.
 <section class="section fade">
 <h2>See BlueLineNote in action</h2>
 <div style="display:flex; justify-content:center; margin:40px 0;">
-<div style="
-width:280px;
-height:560px;
-border-radius:40px;
-padding:12px;
-background:#000;
-box-shadow:0 30px 80px rgba(0,0,0,0.8);
-">
-<iframe
-src="https://www.youtube.com/embed/pVxc-4p1b_A"
-title="BlueLineNote demo"
-style="
-width:100%;
-height:100%;
-border:none;
-border-radius:28px;
-"
-allow="encrypted-media; picture-in-picture"
-allowfullscreen>
-</iframe>
+<div style="width:280px; height:560px; border-radius:40px; padding:12px; background:#000; box-shadow:0 30px 80px rgba(0,0,0,0.8);">
+<iframe src="https://www.youtube.com/embed/pVxc-4p1b_A" title="BlueLineNote demo" style="width:100%; height:100%; border:none; border-radius:28px;" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 <div class="device-row">
-<div class="phone">
-<img src="screenshot1.png" alt="BlueLineNote workstation screen">
-<p class="caption">Workstation Dashboard</p>
+<div class="phone"><img src="screenshot1.png" alt="BlueLineNote workstation screen"><p class="caption">Workstation Dashboard</p></div>
+<div class="phone"><img src="screenshot2.png" alt="BlueLineNote V.E.R.A. crash reconstruction screen"><p class="caption">V.E.R.A. Crash Reconstruction</p></div>
+<div class="phone"><img src="screenshot3.png" alt="BlueLineNote AI report review screen"><p class="caption">AI Report Review</p></div>
 </div>
-
-<div class="phone">
-<img src="screenshot2.png" alt="BlueLineNote V.E.R.A. crash reconstruction screen">
-<p class="caption">V.E.R.A. Crash Reconstruction</p>
-</div>
-
-<div class="phone">
-<img src="screenshot3.png" alt="BlueLineNote AI claim review screen">
-<p class="caption">AI Claim Review</p>
-</div>
-</div>
-
-<p class="mobile-note">
-Mobile-first workflows built for the device officers actually carry in the field.
-</p>
+<p class="mobile-note">Mobile-first workflows built for the device officers actually carry in the field.</p>
 </section>
 
 <section class="highlight reveal">
 <h2>Why it matters</h2>
-<p>
-Stop juggling five apps on every call.
-BlueLineNote replaces Notes, Camera, Scanner, map screenshots, and email workarounds with one clean workflow.
-</p>
+<p>Stop juggling five apps on every call. BlueLineNote replaces Notes, Camera, Scanner, map screenshots, and email workarounds with one clean workflow.</p>
 </section>
 
 <section class="highlight reveal">
@@ -755,10 +495,8 @@ BlueLineNote replaces Notes, Camera, Scanner, map screenshots, and email workaro
 <p>
 <strong>1. Capture</strong><br>
 Scan IDs, take photos, dictate notes, and record crash details.<br><br>
-
 <strong>2. Organize</strong><br>
 BlueLineNote structures everything automatically into a clean case file.<br><br>
-
 <strong>3. Export</strong><br>
 Generate a court-ready PDF and email it instantly.
 </p>
@@ -771,7 +509,6 @@ Generate a court-ready PDF and email it instantly.
 <div class="card reveal"><h3>OCR Scanning</h3><p>Scan IDs and documents instantly.</p></div>
 <div class="card reveal"><h3>Report Review</h3><p>Identify missing details before submission.</p></div>
 <div class="card reveal"><h3>PDF Export</h3><p>Generate clean, report-ready documents.</p></div>
-<div class="card reveal"><h3>NIBRS Export</h3><p>Export NIBRS-coded incidents as a 2025.0 XML file for your own submission process.</p></div>
 </section>
 
 <section class="highlight reveal">
@@ -788,24 +525,15 @@ Generate a court-ready PDF and email it instantly.
 
 <section class="highlight reveal">
 <h2>Why officers trust BlueLineNote</h2>
-<p>
-Built with direct input from active and former law enforcement professionals,
-leveraging decades of real-world experience in patrol, crash reconstruction,
-and criminal intelligence.
-</p>
+<p>Built with direct input from active and former law enforcement professionals, leveraging decades of real-world experience in patrol, crash reconstruction, and criminal intelligence.</p>
 </section>
 
 <section class="section reveal">
 <h2>Who it’s for</h2>
-<p>
-Purpose-built for the people who write reports, not the people who read them.
-</p>
-<p>
-Patrol officers • Crash investigators • Field supervisors • Training officers • Insurance investigators
-</p>
+<p>Purpose-built for the people who write reports, not the people who read them.</p>
+<p>Patrol officers • Crash investigators • Field supervisors • Training officers • Detectives</p>
 </section>
 
-<!-- ===== PRICING ===== -->
 <section id="pricing-section" class="section reveal">
 <h2>Simple pricing for individuals</h2>
 <p>Full Pro access. No cloud, no accounts — your data stays on your device.</p>
@@ -824,174 +552,68 @@ Patrol officers • Crash investigators • Field supervisors • Training offic
 </div>
 </section>
 
-<!-- ===== FOR AGENCIES ===== -->
 <section id="agency-section" class="section reveal">
 <h2>For agencies</h2>
-<p>
-Seat-based licensing with centralized control — built for departments standardizing
-field reporting across a team. Activate everyone with an agency code, assign and reclaim
-seats as personnel change, and keep validation on the backend while report content stays
-on each officer's device.
-</p>
+<p>Seat-based licensing with centralized control — built for departments standardizing field reporting across a team. Activate everyone with an agency code, assign and reclaim seats as personnel change, and keep validation on the backend while report content stays on each officer's device.</p>
 <form class="quote-form" id="quoteForm" onsubmit="return sendQuote(event)">
 <div>
 <label for="q-agency">Agency / department</label>
-<input id="q-agency" type="text" placeholder="e.g. Springfield Police Department" required>
+<input id="q-agency" type="text" placeholder="e.g. Your Police Department" required>
 </div>
 <div class="row">
-<div>
-<label for="q-name">Your name</label>
-<input id="q-name" type="text" placeholder="First and last" required>
-</div>
-<div>
-<label for="q-email">Work email</label>
-<input id="q-email" type="email" placeholder="you@agency.gov" required>
-</div>
+<div><label for="q-name">Your name</label><input id="q-name" type="text" placeholder="First and last" required></div>
+<div><label for="q-email">Work email</label><input id="q-email" type="email" placeholder="you@agency.gov" required></div>
 </div>
 <div class="row">
-<div>
-<label for="q-officers">Number of officers</label>
-<input id="q-officers" type="number" min="1" placeholder="e.g. 45">
+<div><label for="q-officers">Number of officers</label><input id="q-officers" type="number" min="1" placeholder="e.g. 45"></div>
+<div><label for="q-state">State / region</label><input id="q-state" type="text" placeholder="e.g. Maryland"></div>
 </div>
-<div>
-<label for="q-state">State / region</label>
-<input id="q-state" type="text" placeholder="e.g. Maryland">
-</div>
-</div>
-<div>
-<label for="q-role">Your role</label>
-<input id="q-role" type="text" placeholder="e.g. Lieutenant, Admin">
-</div>
-<div>
-<label for="q-msg">Anything we should know? (optional)</label>
-<textarea id="q-msg" placeholder="Rollout timeline, current tools, questions…"></textarea>
-</div>
+<div><label for="q-role">Your role</label><input id="q-role" type="text" placeholder="e.g. Lieutenant, Admin"></div>
+<div><label for="q-msg">Anything we should know? (optional)</label><textarea id="q-msg" placeholder="Rollout timeline, current tools, questions…"></textarea></div>
 <button type="submit" class="agency-cta">Request quote</button>
 </form>
 </section>
 
-<!-- ===== NIBRS XML EXPORT ===== -->
-<section class="section reveal">
-<h2>NIBRS incident reporting</h2>
-<p>
-For agencies that report to NIBRS, BlueLineNote captures incidents in NIBRS structure and
-exports them as a standards-formatted XML file — built to fit the process you already run,
-not to replace it.
-</p>
-<div class="sec-grid">
-<div class="card">
-<h3>Coded as officers work</h3>
-<p>Offense, victim, offender, and property segments are entered with NIBRS values (2025.0 standard) during documentation — structured from the start, not re-keyed later.</p>
-</div>
-<div class="card">
-<h3>Checked before export</h3>
-<p>Report review flags missing or incomplete NIBRS segments — such as an incident with no offense — before a file is generated.</p>
-</div>
-<div class="card">
-<h3>A NIBRS XML file per incident</h3>
-<p>Each incident exports as a NIBRS XML document in the 2025.0 IEPD format, ready to hand to your own submission process.</p>
-</div>
-<div class="card">
-<h3>You submit it, your way</h3>
-<p>BlueLineNote produces the file; your agency validates and submits it through your existing UCR/RMS pipeline. It doesn't submit for you, and it isn't a certification — that stays with your state's UCR program.</p>
-</div>
-</div>
-<p class="sec-note">
-The export is a NIBRS-formatted file for your own validation and submission. It is not a guarantee of state acceptance, and BlueLineNote keeps no copy — the file stays on the officer's device until they share it.
-</p>
-</section>
-
-<!-- ===== SECURITY & DATA HANDLING ===== -->
 <section class="section reveal">
 <h2>Security &amp; data handling</h2>
-<p>
-The most common question from agencies is simple: where does the data live, and who can see it?
-Here's the straight answer.
-</p>
+<p>The most common question from agencies is simple: where does the data live, and who can see it? Here's the straight answer.</p>
 <div class="sec-grid">
-<div class="card">
-<h3>Report content stays on the device</h3>
-<p>Notes, photos, scans, and crash diagrams are stored on the officer's device. BlueLineNote keeps no server-side copy of report content.</p>
+<div class="card"><h3>Report content stays on the device</h3><p>Notes, photos, scans, and crash diagrams are stored on the officer's device. BlueLineNote keeps no server-side copy of report content.</p></div>
+<div class="card"><h3>No cloud, no accounts</h3><p>There are no user accounts and no cloud sync. Nothing about a report is uploaded, retained, or backed up off-device by the app.</p></div>
+<div class="card"><h3>Licensing only on the backend</h3><p>The server validates purchases and agency seats by device ID. It verifies who's licensed — it never receives or stores your report content.</p></div>
+<div class="card"><h3>You control retention</h3><p>Export a report when you need it, delete it when you're done. Records live and die by your action, on your device.</p></div>
 </div>
-<div class="card">
-<h3>No cloud, no accounts</h3>
-<p>There are no user accounts and no cloud sync. Nothing about a report is uploaded, retained, or backed up off-device by the app.</p>
-</div>
-<div class="card">
-<h3>Licensing only on the backend</h3>
-<p>The server validates purchases and agency seats by device ID. It verifies who's licensed — it never receives or stores your report content.</p>
-</div>
-<div class="card">
-<h3>You control retention</h3>
-<p>Export a report when you need it, delete it when you're done. Records live and die by your action, on your device.</p>
-</div>
-</div>
-<p class="sec-note">
-A note on records and discovery: because notes live on your device, whether they are discoverable or subject to retention
-depends on your agency's policy and applicable law. BlueLineNote doesn't change those obligations — follow your
-department's records and retention policy. This is general information, not legal advice.
-</p>
+<p class="sec-note">A note on records and discovery: because notes live on your device, whether they are discoverable or subject to retention depends on your agency's policy and applicable law. BlueLineNote doesn't change those obligations — follow your department's records and retention policy. This is general information, not legal advice.</p>
 </section>
 
-<!-- ===== FAQ ===== -->
 <section id="faq-section" class="section reveal">
 <h2>Questions, answered</h2>
 <div class="faq">
-<details>
-<summary>Does it work without signal?</summary>
-<p>Yes. BlueLineNote is offline-first — capture notes, photos, scans, and crash details in dead zones with no connection. Export when you're back in range.</p>
-</details>
-<details>
-<summary>Where does my data go?</summary>
-<p>It stays on your device. There's no cloud storage, no account, and no retention. The backend only checks your license and purchase status — it never sees or stores your report content.</p>
-</details>
-<details>
-<summary>Can my department see my notes?</summary>
-<p>No. Report content never leaves your device. Agency licensing validates seats on the backend by code; it does not sync, read, or store what you write.</p>
-</details>
-<details>
-<summary>What about records requests or discovery?</summary>
-<p>Notes you create may fall under your agency's records-retention and discovery policies — check your department's rules on field documentation. BlueLineNote itself keeps nothing in the cloud and retains nothing; what's on your device is yours to export or delete.</p>
-</details>
-<details>
-<summary>Do I need an account?</summary>
-<p>No sign-up, no account. Buy Pro through the App Store and your access is tied to your device. Nothing to provision, nothing to recover.</p>
-</details>
-<details>
-<summary>How does agency licensing work?</summary>
-<p>One agency code activates your whole team. Assign and reclaim seats as personnel change, with validation handled on the backend while every officer's report content stays on their own device.</p>
-</details>
-<details>
-<summary>When is Android coming?</summary>
-<p>It's in active development — same field-first design, built natively for Android. Email us and we'll let you know when it's live.</p>
-</details>
+<details><summary>Does it work without signal?</summary><p>Yes. BlueLineNote is offline-first — capture notes, photos, scans, and crash details in dead zones with no connection. Export when you're back in range.</p></details>
+<details><summary>Where does my data go?</summary><p>It stays on your device. There's no cloud storage, no account, and no retention. The backend only checks your license and purchase status — it never sees or stores your report content.</p></details>
+<details><summary>Can my department see my notes?</summary><p>No. Report content never leaves your device. Agency licensing validates seats on the backend by code; it does not sync, read, or store what you write.</p></details>
+<details><summary>What about records requests or discovery?</summary><p>Notes you create may fall under your agency's records-retention and discovery policies — check your department's rules on field documentation. BlueLineNote itself keeps nothing in the cloud and retains nothing; what's on your device is yours to export or delete.</p></details>
+<details><summary>Do I need an account?</summary><p>No sign-up, no account. Buy Pro through the App Store or Google Play and your access is tied to your device. Nothing to provision, nothing to recover.</p></details>
+<details><summary>How does agency licensing work?</summary><p>One agency code activates your whole team. Assign and reclaim seats as personnel change, with validation handled on the backend while every officer's report content stays on their own device.</p></details>
+<details><summary>Is BlueLineNote on Android?</summary><p>Yes — BlueLineNote is live on Google Play, built natively for Android with the same field-first design. <a href="https://play.google.com/store/apps/details?id=com.bluelinenote.app" target="_blank">Get it on Google Play</a>.</p></details>
 </div>
 </section>
 
-<!-- ===== ANDROID COMING SOON ===== -->
 <section class="android reveal">
-<span class="pill">Coming Soon</span>
-<h2>Android version on the way</h2>
-<p>BlueLineNote for Android is in active development — same field-first design, built natively for Android.</p>
-<a href="mailto:support@bluelinenote.app?subject=Notify%20me%20when%20BlueLineNote%20for%20Android%20launches" class="agency-cta">Email me at launch</a>
+<span class="pill">Now Available</span>
+<h2>BlueLineNote is live on Google Play</h2>
+<p>BlueLineNote for Android is here — same field-first design, built natively for Android. Download it now and start capturing reports in the field.</p>
+<a href="https://play.google.com/store/apps/details?id=com.bluelinenote.app" target="_blank" class="agency-cta">Get it on Google Play</a>
 </section>
 
 <section class="section reveal">
 <h2>Privacy & data handling</h2>
-<p>
-Data stays on your device. No cloud storage. No retention.
-Export when needed. Delete anytime.
-</p>
+<p>Data stays on your device. No cloud storage. No retention. Export when needed. Delete anytime.</p>
 </section>
 
 <section class="highlight reveal">
 <h2>Built for real-world use</h2>
-
-<p>
-BlueLineNote is not cloud-based, not data-retaining, and not designed for long-term storage.
-It is built for fast capture, structured reporting, and immediate export when it matters most.
-</p>
-
+<p>BlueLineNote is not cloud-based, not data-retaining, and not designed for long-term storage. It is built for fast capture, structured reporting, and immediate export when it matters most.</p>
 <div class="feature-points">
 <p>• Capture once → structured output</p>
 <p>• No cloud storage or data retention</p>
@@ -1000,21 +622,175 @@ It is built for fast capture, structured reporting, and immediate export when it
 </div>
 </section>
 
+<!-- ░░ COMING SOON — OPENER ░░ -->
+<section id="whats-next" class="highlight reveal" style="background:linear-gradient(135deg,rgba(37,99,235,0.22),rgba(7,10,15,0.96));">
+<span class="cs-soon"><span class="dot"></span>Next release · in development</span>
+<h2 class="cs-mega">Your notes just became <span class="accent">the report.</span></h2>
+<p style="max-width:720px;margin:14px auto 0;">Not another form to fill. The form — <strong>filled</strong>. The next BlueLineNote turns the notes you already take into NIBRS-structured, MMUCC-coded, signature-sealed records that walk out the door submission-ready. This is the part nobody else builds for the officer.</p>
+<a href="#agency-section" class="agency-cta">Get your agency in early →</a>
+<div class="cs-finehint">Want the full rundown before anyone else? Use the agency quote form — tell us your department and we'll bring you in.</div>
+</section>
+
+<!-- ░░ NIBRS + MMUCC ░░ -->
+<section class="section reveal">
+<div class="cs-kicker">The compliance engine</div>
+<h2>Standards-grade reports, written in cop.</h2>
+<p style="max-width:760px;margin:0 auto;">NIBRS and MMUCC are where reports go to die — re-typed into a database, kicked back for a missing segment, re-coded weeks later. We flipped it. You write the way you think; the structure builds itself.</p>
+<div class="cs-grid2">
+<div class="cs-spec">
+<span class="cs-tag">Coming soon</span>
+<h3><span class="ic">🗂️</span> NIBRS, without the NIBRS headache</h3>
+<p class="lead">Type like an officer. Submit like a records clerk.</p>
+<p class="body">BlueLineNote structures your incident into the segments the state actually wants — offense, victim, offender, property — and flags the gaps that get reports rejected <em>before</em> you submit, not three days later in an email from records.</p>
+<div class="cs-chips">
+<span class="cs-chip">OFFENSE</span><span class="cs-chip">VICTIM</span><span class="cs-chip">OFFENDER</span><span class="cs-chip">PROPERTY</span><span class="cs-chip ok">✓ SEGMENT CHECK</span>
+</div>
+</div>
+<div class="cs-spec">
+<span class="cs-tag">Coming soon</span>
+<h3><span class="ic">🚗</span> Every crash, coded to the national standard</h3>
+<p class="lead">MMUCC 6th edition — built into the crash flow, not bolted on after.</p>
+<p class="body">Manner of collision, first harmful event, sequence of events, KABCO injury severity — coded as you work the scene. The state crash file gets what it needs, and your narrative and your codes finally tell the same story.</p>
+<div class="cs-chips">
+<span class="cs-chip">MANNER OF COLLISION</span><span class="cs-chip">FIRST HARMFUL EVENT</span><span class="cs-chip">KABCO</span><span class="cs-chip ok">✓ MMUCC-READY</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ░░ SIGNATURES + RMS REVIEWER SIGN-OFF ░░ -->
+<section class="section reveal">
+<div class="cs-kicker">Chain of approval — from the field</div>
+<h2>Drafted, reviewed, signed, and pushed to RMS — without leaving the scene.</h2>
+<p style="max-width:780px;margin:0 auto;">A report isn't done when it's written — it's done when it's <em>signed and submitted</em>. The officer sends a draft to the supervisor for review, signs the final on-device, and the supervisor signs off and routes it to RMS. The entire approval chain, on the device, in the field.</p>
+<div class="cs-grid2">
+<div class="cs-spec">
+<span class="cs-tag">Coming soon</span>
+<h3><span class="ic">✍️</span> Sign on the glass</h3>
+<p class="lead">The reporting officer signs right on the device.</p>
+<p class="body">A real signature, captured at the scene and embedded in the exported report — no printing, no scanning back in, no "I'll sign it at the station."</p>
+<div style="margin-top:6px;"><span class="cs-stamp">Officer ✓ Signed</span></div>
+</div>
+<div class="cs-spec">
+<span class="cs-tag">Coming soon</span>
+<h3><span class="ic">🛡️</span> Supervisor &amp; RMS reviewer sign-off</h3>
+<p class="lead">A real approval chain — supervisor signs, then it moves to RMS.</p>
+<p class="body">The supervisor digitally signs off and submits the report to RMS personnel for review — reviewer and RMS approval signatures living in the document itself. Accountability you can see, baked into the PDF.</p>
+<div style="margin-top:6px;"><span class="cs-stamp">Reviewed ✓ Approved</span></div>
+</div>
+</div>
+</section>
+
+<!-- ░░ REPORT REVIEW ░░ -->
+<section class="highlight reveal">
+<span class="cs-soon"><span class="dot"></span>Coming soon</span>
+<h2>It reads your report before your supervisor does.</h2>
+<p style="max-width:740px;margin:14px auto 0;">The built-in review gives every report a readiness score and a punch list — missing NIBRS segments, un-coded MMUCC fields, an empty signature block — with a one-tap jump straight to the field that needs fixing. Fewer kickbacks. Fewer "see me" notes. Reports that pass the first time.</p>
+<div class="cs-seal-row" style="margin-top:22px;">
+<span class="cs-seal">⚑ Missing offender segment</span>
+<span class="cs-seal">⚑ KABCO not set</span>
+<span class="cs-seal cs-chip ok" style="color:#bbf7d0;background:rgba(34,197,94,.10);border-color:#1f6f44;">✓ Ready to submit</span>
+</div>
+</section>
+
+<!-- ░░ INSIGHTS — OFFICER SAFETY ░░ -->
+<section class="section reveal">
+<div class="cs-kicker" style="color:#fbbf24;">Insights · officer safety</div>
+<h2>The driver on today's crash report was a suspect last month.</h2>
+<p style="max-width:790px;margin:0 auto;">Insights quietly cross-checks the people, plates, and details in the report you're writing against the reports you've already saved — and flags the overlaps. The driver you're walking up to turned up as a suspect in a prior assault? You'll know <em>before</em> you reach the window.</p>
+<div class="cs-alert">
+<div class="hd">⚠ Possible match in your saved reports</div>
+<div class="match">
+<span class="who">John Doe</span>
+<span class="meta">SUSPECT · COMMON ASSAULT</span>
+<span class="meta">SAVED 03/14</span>
+<span class="meta">CASE 26-04417</span>
+</div>
+<p class="foot">Pull your own file, verify the match, and approach accordingly — a heads-up, not a determination.</p>
+</div>
+<p style="max-width:790px;margin:22px auto 0;color:#9ca3af;">It draws only from your own on-device reports — no cloud, no outside database, nothing leaving the phone. Officer safety starts with what you already know; Insights makes sure a busy shift doesn't bury it.</p>
+</section>
+
+<!-- ░░ FULL REPORT LIFECYCLE ░░ -->
+<section class="section reveal">
+<div class="cs-kicker">The whole report — scene to RMS, one device</div>
+<h2>From the DL in your hand to the report on the record.</h2>
+<p style="max-width:780px;margin:0 auto 8px;">Every step of the build, start to finish — without leaving the field or re-typing a thing.</p>
+<div class="cs-line">
+<div class="cs-stage"><div class="node">📍</div><div class="card2"><h4>At the scene <span class="tag2">Step 1</span></h4><p>Pull the driver's license or ID from every party involved — drivers, suspects, witnesses.</p></div></div>
+<div class="cs-stage"><div class="node">🪪</div><div class="card2"><h4>Scan <span class="tag2">Capture</span></h4><p>OCR reads each license. Name, DOB, address, and ID number fill themselves — no typing at the window.</p></div></div>
+<div class="cs-stage"><div class="node">📝</div><div class="card2"><h4>Review &amp; add <span class="tag2">Build</span></h4><p>Fix anything the scan missed, then add the narrative, photos, dictation, and crash details.</p></div></div>
+<div class="cs-stage"><div class="node">🗂️</div><div class="card2"><h4>Classify <span class="tag2">NIBRS · MMUCC</span></h4><p>Offense / victim / offender / property segments and MMUCC crash codes build automatically as you go.</p></div></div>
+<div class="cs-stage"><div class="node">🤖</div><div class="card2"><h4>AI review <span class="tag2">Check</span></h4><p>A readiness score and punch list flag missing fields, codes, and signatures — with a one-tap jump to the fix.</p></div></div>
+<div class="cs-stage"><div class="node">⚠️</div><div class="card2"><h4>Insights <span class="tag2 safe">Officer safety</span></h4><p>Cross-checks your saved reports and flags prior contacts — so you know who you're approaching before you do.</p></div></div>
+<div class="cs-stage"><div class="node">✍️</div><div class="card2"><h4>Sign <span class="tag2">Sign</span></h4><p>The reporting officer signs the final right on the glass.</p></div></div>
+<div class="cs-stage"><div class="node">📤</div><div class="card2"><h4>Draft to supervisor <span class="tag2">Review</span></h4><p>Email a draft — clearly marked DRAFT — for the supervisor's eyes before it's final.</p></div></div>
+<div class="cs-stage"><div class="node">🛡️</div><div class="card2"><h4>Supervisor signs <span class="tag2">Approve</span></h4><p>The supervisor digitally signs off, on the device — the approval chain rides on the document.</p></div></div>
+<div class="cs-stage"><div class="node">🏛️</div><div class="card2"><h4>Lands at RMS <span class="tag2 done">Submitted</span></h4><p>Submitted to RMS for review — or routed to your supervisor for crash. A court-ready PDF, on your agency's letterhead.</p></div></div>
+</div>
+</section>
+
+<!-- ░░ BENEFITS ░░ -->
+<section class="section reveal">
+<div class="cs-kicker">Why it lands</div>
+<h2>What it actually buys you.</h2>
+<div class="cs-grid3">
+<div class="cs-benefit"><div class="big">First-time</div><div class="lbl">Pass rate</div><p>Reports leave compliant, so they stop boomeranging back from records for a missing field.</p></div>
+<div class="cs-benefit"><div class="big">Minutes</div><div class="lbl">Not hours</div><p>Finish on scene instead of buried at the station after shift. The report's done when you walk away.</p></div>
+<div class="cs-benefit"><div class="big">One</div><div class="lbl">Standard, shift-wide</div><p>Every officer's report comes out structured the same way — no more depending on who wrote it.</p></div>
+<div class="cs-benefit"><div class="big">Audit-ready</div><div class="lbl">Signed &amp; sealed</div><p>Signature and approval chain embedded in every PDF — accountability that's visible on the document.</p></div>
+<div class="cs-benefit"><div class="big">On-device</div><div class="lbl">No cloud, no accounts</div><p>Report content never leaves the officer's phone. Licensing validates on the backend; your words don't.</p></div>
+<div class="cs-benefit"><div class="big">Field-built</div><div class="lbl">By people who filed them</div><p>Designed from decades on patrol and in crash reconstruction — for the people who write reports, not read them.</p></div>
+</div>
+</section>
+
+<!-- ░░ COMPLIANCE SEAL BAND ░░ -->
+<section class="highlight reveal" style="background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(15,23,42,0.94));">
+<div class="cs-kicker" style="color:#86efac;">Compliance, by design</div>
+<h2>NIBRS-structured. MMUCC-coded. Signature-sealed.</h2>
+<p style="max-width:720px;margin:14px auto 0;">Three things every agency report needs — and the three things that slow it down — handled in the same pass you were already making. Submission-ready isn't a step at the end. It's the way it's built.</p>
+<div class="cs-seal-row">
+<span class="cs-seal">NIBRS · incident-based</span>
+<span class="cs-seal">MMUCC · 6th edition</span>
+<span class="cs-seal">Officer + RMS signatures</span>
+</div>
+<p class="cs-finehint" style="max-width:680px;margin:18px auto 0;">Built to align with national reporting standards. Final acceptance always follows your state and agency's own submission rules — this gets your report there clean.</p>
+</section>
+
+<!-- ░░ AGENCY BRANDING ░░ -->
+<section class="highlight reveal">
+<span class="cs-soon"><span class="dot"></span>Coming soon · agencies</span>
+<h2>Your department's name on every page.</h2>
+<p style="max-width:720px;margin:14px auto 0;">Customized branding for agencies — your logo, your letterhead, your case-number format. Reports come off the device looking like your agency's own form, not a generic app export. One agency code sets it for the whole team.</p>
+<div class="cs-letterhead">
+<div class="top">
+<div class="lg">YOUR<br>LOGO</div>
+<div>
+<div class="dept">TEST POLICE DEPARTMENT</div>
+<div class="sub">Office of Field Operations · Incident Report</div>
+</div>
+</div>
+<div class="meta3">CASE 26-04417 · REPORTING OFFICER #1187 · 06/20/2026 · NIBRS / MMUCC CODED</div>
+</div>
+</section>
+
+<!-- ░░ AGENCY CTA ░░ -->
+<section class="section reveal">
+<span class="cs-soon"><span class="dot"></span>Early access · agencies first</span>
+<h2>Bring it to your department before anyone else.</h2>
+<p style="max-width:720px;margin:0 auto;">These are rolling out to agency partners first. If standardized, compliant, signature-sealed field reporting is what your department has been missing — this is the one to get ahead of. Tell us about your agency and we'll walk you through it and get you in early.</p>
+<a href="#agency-section" class="agency-cta">Request agency access →</a>
+<div class="cs-finehint">Use the agency quote form below — agency, size, and a line about your current setup is all we need to start.</div>
+</section>
+
 <footer class="footer">
 <div>
 <a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy Policy</a>
 <a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
 </div>
-
-<p class="footer-identity">
-Designed for people doing the job - built from real-world experience.
-</p>
-
-<p style="color:#9ca3af; margin-top:12px;">
-BlueLineNote never stores your data. Everything stays on your device.
-</p>
-
+<p class="footer-identity">Designed for people doing the job - built from real-world experience.</p>
+<p style="color:#9ca3af; margin-top:12px;">BlueLineNote never stores your data. Everything stays on your device.</p>
 <br>
 © 2026 BlueLineNote
 </footer>
@@ -1022,15 +798,9 @@ BlueLineNote never stores your data. Everything stays on your device.
 <script>
 const phones = document.querySelectorAll('.phone');
 const revealItems = document.querySelectorAll('.reveal, .card');
-
 const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('show');
-}
-});
+entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } });
 }, { threshold: 0.15 });
-
 phones.forEach(phone => observer.observe(phone));
 revealItems.forEach(item => observer.observe(item));
 </script>
