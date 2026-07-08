@@ -3,165 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complete Reports Faster | BlueLineNote</title>
+<title>Complete Police Reports Faster | BlueLineNote</title>
+<meta name="description" content="Stop spending hours writing reports after your shift. BlueLineNote helps officers capture structured incident details in the field so the report is already built before you sit down — on iOS and Android.">
+<link rel="canonical" href="https://bluelinenote.app/complete-reports-faster.html">
+<meta name="theme-color" content="#f6f3ec">
+<meta property="og:title" content="Complete Police Reports Faster | BlueLineNote">
+<meta property="og:description" content="Capture structured details in the field so the report is built before you sit down. On-device, no cloud. iOS and Android.">
+<meta property="og:image" content="https://bluelinenote.app/logo.png">
+<meta property="og:url" content="https://bluelinenote.app/complete-reports-faster.html">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700;900&family=JetBrains+Mono:wght@400;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-margin: 0;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-background: #0b1220;
-color: #e5e7eb;
+:root{
+--paper:#f6f3ec;
+--paper2:#fdfcf8;
+--ink:#101c2c;
+--ink-soft:#3d4a5c;
+--ink-faint:#8a93a1;
+--rule:#c9c3b4;
+--blue:#1a4fd6;
+--blue-soft:#e8edfb;
+--green:#1c7a43;
+--shadow:6px 6px 0 var(--ink);
+--shadow-sm:4px 4px 0 var(--ink);
 }
-
-body::before {
-content: "";
-position: fixed;
-inset: 0;
-background: radial-gradient(circle at 20% 10%, rgba(29,78,216,0.25), transparent 40%),
-radial-gradient(circle at 80% 90%, rgba(59,130,246,0.15), transparent 50%);
-z-index: -1;
+*{box-sizing:border-box;}
+body{
+margin:0;
+font-family:'Public Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+background:var(--paper);
+background-image:repeating-linear-gradient(0deg,transparent,transparent 31px,rgba(16,28,44,0.035) 31px,rgba(16,28,44,0.035) 32px);
+color:var(--ink);
+line-height:1.6;
 }
-
-.container {
-max-width: 900px;
-margin: 0 auto;
-padding: 80px 20px;
+.container{max-width:900px;margin:0 auto;padding:70px 20px;}
+.card{
+background:var(--paper2);
+border:2px solid var(--ink);
+padding:44px;
+box-shadow:var(--shadow);
 }
-
-.card {
-background: rgba(15,23,42,0.75);
-backdrop-filter: blur(14px);
-border-radius: 28px;
-padding: 44px;
-border: 1px solid rgba(255,255,255,0.08);
-box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+.kicker{
+font-family:'JetBrains Mono',monospace;
+color:var(--blue);
+font-weight:700;
+letter-spacing:.14em;
+text-transform:uppercase;
+font-size:12px;
+margin-bottom:18px;
 }
-
-.kicker {
-color: #60a5fa;
-font-weight: 800;
-letter-spacing: 0.16em;
-text-transform: uppercase;
-font-size: 0.78rem;
-margin-bottom: 18px;
+h1{
+font-family:'Saira Condensed',sans-serif;
+font-weight:900;
+text-transform:uppercase;
+margin:0 0 24px;
+font-size:clamp(38px,6vw,54px);
+line-height:.98;
+letter-spacing:.5px;
 }
-
-h1 {
-margin: 0 0 24px;
-font-size: 2.7rem;
-line-height: 1.1;
-color: #ffffff;
+h2.sub{
+font-family:'Saira Condensed',sans-serif;
+font-weight:900;
+text-transform:uppercase;
+font-size:26px;
+margin:0 0 12px;
+letter-spacing:.5px;
 }
-
-p {
-font-size: 1.05rem;
-line-height: 1.75;
-color: #cbd5f5;
-margin-bottom: 18px;
+p{font-size:16px;line-height:1.75;color:var(--ink-soft);margin-bottom:18px;}
+.divider{height:2px;background:var(--ink);opacity:.85;margin:32px 0;}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.feature{
+padding:20px;
+background:#fff;
+border:2px solid var(--ink);
+box-shadow:var(--shadow-sm);
 }
-
-.divider {
-height: 1px;
-background: rgba(255,255,255,0.1);
-margin: 32px 0;
+.feature h2{
+font-family:'Saira Condensed',sans-serif;
+font-weight:900;
+text-transform:uppercase;
+margin:0 0 8px;
+font-size:18px;
+letter-spacing:.5px;
 }
-
-.feature-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 18px;
+.feature p{margin:0;font-size:14px;line-height:1.6;}
+.store-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;}
+.store-badge{
+display:inline-flex;align-items:center;gap:12px;padding:12px 22px;min-width:190px;
+background:var(--ink);color:var(--paper2);text-decoration:none;border:2px solid var(--ink);
+box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;
 }
-
-.feature {
-padding: 18px;
-border-radius: 18px;
-background: rgba(255,255,255,0.04);
-border: 1px solid rgba(255,255,255,0.08);
+.store-badge:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--blue);}
+.store-badge .badge-ic{width:24px;height:24px;flex:0 0 auto;}
+.badge-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left;}
+.badge-txt small{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#c8cdd6;}
+.badge-txt strong{font-family:'Saira Condensed',sans-serif;font-size:19px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;}
+.back-link{
+display:inline-block;
+margin-top:28px;
+text-decoration:none;
+color:var(--ink);
+font-family:'JetBrains Mono',monospace;
+font-weight:700;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:.06em;
+border:2px solid var(--ink);
+padding:12px 18px;
+background:var(--paper2);
+box-shadow:var(--shadow-sm);
+transition:transform .15s ease;
 }
-
-.feature h2 {
-margin: 0 0 8px;
-font-size: 1rem;
-color: #ffffff;
-}
-
-.feature p {
-margin: 0;
-font-size: 0.92rem;
-line-height: 1.6;
-}
-
-.back-link {
-display: inline-block;
-margin-top: 28px;
-text-decoration: none;
-color: #60a5fa;
-font-weight: 800;
-border: 1px solid rgba(96,165,250,0.45);
-padding: 12px 18px;
-border-radius: 14px;
-}
-
-.back-link:hover {
-background: rgba(96,165,250,0.12);
-}
-
-@media (max-width: 700px) {
-.card {
-padding: 28px;
-}
-
-h1 {
-font-size: 2.1rem;
-}
-
-.feature-grid {
-grid-template-columns: 1fr;
-}
+.back-link:hover{transform:translate(-2px,-2px);}
+@media (max-width:700px){
+.card{padding:28px;}
+.feature-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
-
 <body>
-
 <div class="container">
 <div class="card">
-
 <div class="kicker">Built for efficiency</div>
-
 <h1>Complete Reports Faster</h1>
-
 <p>
 Stop spending hours writing reports after your shift. BlueLineNote helps you capture structured information while still in the field so your report is already built before you sit down to write it.
 </p>
-
 <p>
 Less time writing, fewer missed details, and more accurate reports from the start.
 </p>
-
 <div class="divider"></div>
-
 <div class="feature-grid">
 <div class="feature">
 <h2>Real-Time Capture</h2>
 <p>Document key details as they happen so nothing is lost or forgotten later.</p>
 </div>
-
 <div class="feature">
 <h2>Less After-Shift Work</h2>
 <p>Reduce time spent rewriting notes by organizing everything during the incident.</p>
 </div>
-
 <div class="feature">
 <h2>More Accurate Reports</h2>
 <p>Structured input reduces errors and helps ensure complete documentation.</p>
 </div>
 </div>
-
+<div class="divider"></div>
+<h2 class="sub">How the time comes back</h2>
+<p>
+The hours disappear in the re-doing: reading scattered notes, retyping names off a photo of a license, reconstructing the sequence from memory at the end of a shift. BlueLineNote removes the re-doing. Scan an ID and the identity fields fill themselves. Dictate the narrative at the scene while it's fresh. Mark crash damage on a vehicle diagram instead of describing it twice. The structure — NIBRS segments for incidents, MMUCC codes for crashes — builds as you work, so what's left at the end isn't writing a report. It's reviewing one.
+</p>
+<p>
+It works offline in dead zones, keeps everything on your device, and exports a clean, court-ready PDF the moment you're done.
+</p>
+<div class="store-row">
+<a href="https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561" target="_blank" rel="noopener" class="store-badge" aria-label="Download on the App Store">
+<svg class="badge-ic" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+<span class="badge-txt"><small>Download on the</small><strong>App Store</strong></span>
+</a>
+<a href="https://play.google.com/store/apps/details?id=com.bluelinenote.app" target="_blank" rel="noopener" class="store-badge" aria-label="Get it on Google Play">
+<svg class="badge-ic" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path fill="#00C3FF" d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z"/>
+<path fill="#00E676" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1z"/>
+<path fill="#FF3D47" d="M104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/>
+<path fill="#FFCE00" d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z"/>
+</svg>
+<span class="badge-txt"><small>Get it on</small><strong>Google Play</strong></span>
+</a>
+</div>
 <a href="/" class="back-link">← Back to BlueLineNote</a>
-
 </div>
 </div>
-
 </body>
 </html>
