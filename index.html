@@ -1070,6 +1070,54 @@
       color: var(--muted);
     }
 
+    .policy {
+      max-width: 840px;
+      margin-top: 34px;
+    }
+
+    .policy h3 {
+      margin-top: 38px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      font-size: 1.28rem;
+    }
+
+    .policy h3:first-of-type {
+      margin-top: 30px;
+    }
+
+    .policy p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .policy-meta {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .policy-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 38px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      background: rgba(167, 95, 53, 0.09);
+      color: var(--copper-dark);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .policy-contact a {
+      color: var(--copper-dark);
+    }
+
     .closing {
       padding: 92px 0;
     }
@@ -1421,6 +1469,7 @@
         <a href="#security">Security</a>
         <a href="#standards">Standards</a>
         <a href="#pricing">For Officers</a>
+        <a href="#privacy">Privacy</a>
         <a class="nav-cta" href="#agency-form">Request a demo</a>
       </nav>
 
@@ -1879,6 +1928,46 @@
       </div>
     </section>
 
+    <section class="section compact" id="privacy">
+      <div class="shell">
+        <div class="eyebrow reveal">Privacy</div>
+        <h2 class="section-heading reveal">Your reports stay on your device.</h2>
+        <p class="policy-meta reveal">Last updated: June 2026</p>
+
+        <div class="policy">
+          <h3 class="reveal">Your reports stay on your device</h3>
+          <p class="reveal">All reports, notes, scans, and other content you enter into BlueLineNote remain on your device and are never transmitted to the developer or any external server. The developer does not have access to your notes, reports, scans, or any content you create in the app. BlueLineNote does not provide cloud storage or remote databases for your content.</p>
+
+          <h3 class="reveal">Backup and restore</h3>
+          <p class="reveal">You can create a password-protected backup of your saved records and scans. The backup is a single encrypted file, locked with a password that only you know &mdash; the developer cannot open it. You choose where to save it (your own Files, your own cloud storage, or email) using your device&rsquo;s share sheet, and you restore by selecting that file. Backup files are never sent to or stored by the developer.</p>
+
+          <h3 class="reveal">Licensing and feature limits</h3>
+          <p class="reveal">To validate Pro purchases, activate agency seats, and enforce free-tier usage limits, the app sends a device identifier &mdash; and, for metered features, a count of how many times those features have been used &mdash; to the developer&rsquo;s server (api.bluelinenote.app).</p>
+          <p class="reveal">This information is used only to operate the free, Pro, and agency licensing. It contains no personal information and none of your report content, and it is never sold or shared with advertisers or other third parties for advertising or tracking.</p>
+
+          <h3 class="reveal">Anonymous usage analytics</h3>
+          <p class="reveal">The app collects a small amount of optional anonymous usage data &mdash; for example, which features are opened, how long the app is used, your subscription type, device model, operating system version, and app version. This data is not linked to your identity, contains no personal information and none of your report content, and is identified only by a random value that resets if the app is reinstalled. It is not sold or shared with advertisers. You can turn it off at any time under Backup &amp; Restore &rarr; Anonymous Usage.</p>
+
+          <h3 class="reveal">Legal requests</h3>
+          <p class="reveal">We may disclose the limited information we hold if required by law or in response to a valid legal request. That information is limited to a randomly generated device identifier and licensing or usage records &mdash; it is not your name, account, or any personal identifier. Your reports, notes, and scans remain on your device, are never transmitted to us, and are not accessible to us &mdash; we cannot produce that content.</p>
+
+          <h3 class="reveal">Data retention</h3>
+          <p class="reveal">We keep the limited licensing and anonymous usage data described above only as long as needed to operate the free, Pro, and agency licensing and to keep the service working. Because this data is tied only to a random identifier and contains no personal information, it is not linked to you. You can stop analytics collection at any time under Backup &amp; Restore &rarr; Anonymous Usage.</p>
+
+          <h3 class="reveal">Security</h3>
+          <p class="reveal">We use reasonable measures to protect the limited data we collect in transit to and on our server. No method of transmission or storage is perfectly secure, but because your reports, notes, and scans never leave your device, the most sensitive information you create is never exposed to us or to anyone in transit.</p>
+
+          <h3 class="reveal">Platform services</h3>
+          <p class="reveal">The app uses platform services such as in-app purchases and speech recognition. Depending on your device, these are handled by Apple or Google under their own privacy policies.</p>
+
+          <h3 class="reveal">Your responsibility</h3>
+          <p class="reveal">You are responsible for securing your device and for how you store, manage, and use any information you enter into the app. You are also responsible for following your department&rsquo;s or company&rsquo;s policies, procedures, and applicable laws governing the documentation, handling, retention, and sharing of any information you record using BlueLineNote.</p>
+
+          <p class="policy-contact reveal">Contact: <a href="mailto:support@bluelinenote.app">support@bluelinenote.app</a></p>
+        </div>
+      </div>
+    </section>
+
     <section class="closing">
       <div class="shell">
         <div class="closing-card reveal">
@@ -1896,7 +1985,7 @@
   <footer>
     <div class="shell footer-grid">
       <div class="footer-links">
-        <a href="https://marioavera.github.io/bluelinenote-privacy/">Privacy Policy</a>
+        <a href="#privacy">Privacy Policy</a>
         <a href="https://marioavera.github.io/bluelinenote-support/">Support</a>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
       </div>
