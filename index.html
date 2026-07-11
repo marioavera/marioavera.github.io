@@ -1447,6 +1447,37 @@
         transform: none;
       }
     }
+
+    .standard-link {
+      display: inline-flex;
+      margin-top: 20px;
+      color: #f4ead9;
+      font-weight: 800;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(244, 234, 217, 0.45);
+      padding-bottom: 2px;
+    }
+
+    .standard-link:hover {
+      border-bottom-color: #f4ead9;
+    }
+
+    .li-embed {
+      width: 100%;
+      max-width: 504px;
+      margin: 34px auto 0;
+    }
+
+    .li-embed iframe {
+      display: block;
+      width: 100%;
+      max-width: 504px;
+      height: 568px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--paper-2);
+    }
   </style>
 </head>
 
@@ -1726,12 +1757,14 @@
             <span>NIBRS-informed</span>
             <h3>Incident documentation</h3>
             <p>Organize offense, victim, offender, property, and related information in a structure that supports more complete report preparation.</p>
+            <a class="standard-link" href="nibrs.html">More on NIBRS documentation &rarr;</a>
           </article>
 
           <article class="standard-card reveal">
             <span>MMUCC-informed</span>
             <h3>Crash documentation</h3>
             <p>Capture collision, harmful-event, vehicle, person, injury-severity, and other crash fields through a guided mobile workflow.</p>
+            <a class="standard-link" href="crash-reporting.html">More on crash reporting &rarr;</a>
           </article>
         </div>
       </div>
@@ -1993,6 +2026,28 @@
       </div>
     </section>
 
+    <section class="section compact" id="insights">
+      <div class="shell">
+        <div class="eyebrow reveal">From LinkedIn</div>
+        <h2 class="section-heading reveal">Notes from the field.</h2>
+        <p class="section-copy reveal">
+          Perspective on field documentation, report quality, and the day-to-day realities the app is built around.
+        </p>
+
+        <div class="li-embed reveal">
+          <iframe
+            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7481327156241960960?collapsed=1"
+            height="568"
+            width="504"
+            frameborder="0"
+            allowfullscreen=""
+            title="BlueLineNote post on LinkedIn"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <section class="closing">
       <div class="shell">
         <div class="closing-card reveal">
@@ -2010,6 +2065,8 @@
   <footer>
     <div class="shell footer-grid">
       <div class="footer-links">
+        <a href="nibrs.html">NIBRS documentation</a>
+        <a href="crash-reporting.html">Crash reporting</a>
         <a href="#privacy">Privacy Policy</a>
         <a href="#support">Support</a>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
