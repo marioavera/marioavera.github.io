@@ -24,4 +24,12 @@
     <loc>https://bluelinenote.app/learn-more.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://bluelinenote.app/nibrs.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bluelinenote.app/crash-reporting.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
