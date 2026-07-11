@@ -1478,6 +1478,45 @@
       border-radius: var(--radius-md);
       background: var(--paper-2);
     }
+
+    .hero-gets {
+      display: grid;
+      gap: 11px;
+      margin-top: 30px;
+      padding: 0;
+      list-style: none;
+      max-width: 640px;
+    }
+
+    .hero-gets li {
+      position: relative;
+      padding-left: 32px;
+      color: var(--ink-2);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .hero-gets li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      display: grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: var(--copper);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .hero-gets li strong {
+      font-weight: 800;
+      color: var(--ink);
+    }
   </style>
 </head>
 
@@ -1521,15 +1560,16 @@
     <section class="hero" id="top">
       <div class="shell hero-grid">
         <div class="reveal">
-          <div class="eyebrow">Built for field operations</div>
+          <div class="eyebrow">For law enforcement agencies</div>
           <h1>
             Better documentation, before the report becomes
             <span class="accent">scattered notes and memory work.</span>
           </h1>
           <p class="hero-copy">
-            BlueLineNote gives officers one structured workflow for field notes,
-            incident documentation, crash details, report review, and agency-ready export—
-            without storing report content in the BlueLineNote cloud.
+            BlueLineNote catches missing fields before a report reaches a supervisor&mdash;so reports
+            come in more complete the first time, supervisors return less work, and officers spend less
+            time redoing paperwork and more time proactive and visible in the community, where agencies
+            need them most. Report content stays on each device.
           </p>
 
           <div class="hero-actions">
@@ -1537,10 +1577,12 @@
             <a class="btn secondary" href="#product">Explore the product</a>
           </div>
 
-          <ul class="hero-proof" aria-label="Product highlights">
-            <li>Available on iOS and Android</li>
-            <li>Offline-capable</li>
-            <li>On-device report storage</li>
+          <ul class="hero-gets" aria-label="What agencies get">
+            <li>Incident reports come out <strong>NIBRS-coded</strong></li>
+            <li>Crash reports come out <strong>MMUCC-coded</strong></li>
+            <li>Officers pick from NIBRS-coded offenses and a matching <strong>narrative template</strong> populates to help</li>
+            <li>A <strong>NIBRS HTML file</strong> your RMS personnel review before submission &mdash; requirements vary by state</li>
+            <li>Cleaner data for <strong>faster crime stats</strong>, so command can deploy where it&rsquo;s needed most</li>
           </ul>
         </div>
 
