@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NIBRS Documentation App for Officers | BlueLineNote</title>
+  <meta name="description" content="BlueLineNote is a NIBRS-informed field documentation app that helps officers organize offense, victim, offender, and property information into more complete incident reports on iOS and Android." />
+  <link rel="canonical" href="https://bluelinenote.app/nibrs.html" />
+
+  <meta name="theme-color" content="#1b1b18" />
+  <meta property="og:title" content="BlueLineNote | NIBRS-Informed Incident Documentation" />
+  <meta property="og:description" content="BlueLineNote is a NIBRS-informed field documentation app that helps officers organize offense, victim, offender, and property information into more complete incident reports on iOS and Android." />
+  <meta property="og:image" content="https://bluelinenote.app/logo.png" />
+  <meta property="og:url" content="https://bluelinenote.app/nibrs.html" />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "NIBRS Documentation App for Officers",
+    "url": "https://bluelinenote.app/nibrs.html",
+    "description": "BlueLineNote is a NIBRS-informed field documentation app that helps officers organize offense, victim, offender, and property information into more complete incident reports on iOS and Android.",
+    "isPartOf": { "@type": "WebSite", "name": "BlueLineNote", "url": "https://bluelinenote.app/" },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "BlueLineNote",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+<style>
+    :root {
+      --ink: #1b1b18;
+      --ink-2: #2b2b26;
+      --paper: #f4f0e8;
+      --paper-2: #fbf8f1;
+      --paper-3: #e8e1d4;
+      --copper: #a75f35;
+      --copper-dark: #7b4023;
+      --olive: #66705a;
+      --olive-soft: #dfe3d6;
+      --sand: #d4c3a7;
+      --line: rgba(27, 27, 24, 0.14);
+      --muted: #69685f;
+      --white: #ffffff;
+      --success: #2f6b49;
+      --warning: #8e5e18;
+      --shadow: 0 24px 70px rgba(23, 22, 19, 0.12);
+      --shadow-sm: 0 10px 30px rgba(23, 22, 19, 0.08);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(167, 95, 53, 0.08), transparent 24rem),
+        radial-gradient(circle at 88% 18%, rgba(102, 112, 90, 0.08), transparent 28rem),
+        var(--paper);
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image:
+        linear-gradient(rgba(27, 27, 24, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(27, 27, 24, 0.018) 1px, transparent 1px);
+      background-size: 30px 30px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      z-index: -1;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.08;
+      margin: 0;
+      letter-spacing: -0.035em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--copper-dark);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--copper);
+    }
+
+    .section-heading {
+      max-width: 820px;
+      margin-top: 14px;
+      font-size: clamp(2.15rem, 5vw, 4.7rem);
+    }
+
+    .section-copy {
+      max-width: 760px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section.compact {
+      padding: 72px 0;
+    }
+
+    .surface {
+      background: rgba(251, 248, 241, 0.86);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(16px);
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -100px;
+      z-index: 1000;
+      background: var(--ink);
+      color: var(--paper-2);
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 240, 232, 0.82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      object-fit: cover;
+      border: 1px solid rgba(27, 27, 24, 0.18);
+      background: var(--paper-2);
+      box-shadow: 0 6px 18px rgba(27, 27, 24, 0.08);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--copper-dark);
+    }
+
+    .nav-cta,
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      cursor: pointer;
+    }
+
+    .nav-cta {
+      min-height: 42px;
+      padding-inline: 18px;
+      background: var(--ink);
+      color: var(--paper-2);
+    }
+
+    .btn.primary {
+      background: var(--copper);
+      color: var(--white);
+      box-shadow: 0 12px 30px rgba(167, 95, 53, 0.24);
+    }
+
+    .btn.secondary {
+      color: var(--ink);
+      background: rgba(251, 248, 241, 0.8);
+      border-color: rgba(27, 27, 24, 0.16);
+    }
+
+    .btn.dark {
+      background: var(--ink);
+      color: var(--paper-2);
+    }
+
+    .btn:hover,
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      padding: 82px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.97fr);
+      gap: 58px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      max-width: 780px;
+      margin-top: 22px;
+      font-size: clamp(2.7rem, 5vw, 4.7rem);
+    }
+
+    .hero h1 .accent {
+      color: var(--copper-dark);
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: clamp(1.06rem, 1.6vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-top: 30px;
+      padding: 0;
+      list-style: none;
+      color: var(--ink-2);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .hero-proof li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .hero-proof li::before {
+      content: "";
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--olive);
+      transform: translateY(-50%);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 610px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(27, 27, 24, 0.98), rgba(43, 43, 38, 0.97));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 16%, rgba(167, 95, 53, 0.35), transparent 17rem),
+        radial-gradient(circle at 88% 78%, rgba(102, 112, 90, 0.22), transparent 20rem);
+    }
+
+    .visual-label {
+      position: absolute;
+      top: 26px;
+      left: 28px;
+      z-index: 3;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .device-main {
+      position: absolute;
+      width: 52%;
+      left: 9%;
+      top: 11%;
+      padding: 10px;
+      border-radius: 30px;
+      background: #090a0c;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.34);
+      transform: rotate(-5deg);
+      z-index: 2;
+    }
+
+    .device-main img {
+      display: block;
+      width: 100%;
+      border-radius: 22px;
+    }
+
+    .report-card {
+      position: absolute;
+      width: 46%;
+      right: 6%;
+      bottom: 7%;
+      padding: 10px;
+      border-radius: 18px;
+      background: var(--paper-2);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
+      transform: rotate(4deg);
+      z-index: 3;
+    }
+
+    .report-card img {
+      display: block;
+      border-radius: 10px;
+    }
+
+    .visual-note {
+      position: absolute;
+      right: 7%;
+      top: 13%;
+      width: 42%;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--paper-2);
+      backdrop-filter: blur(14px);
+      z-index: 4;
+    }
+
+    .visual-note strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .visual-note span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.86rem;
+    }
+
+    .trust-strip {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 248, 241, 0.7);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      padding: 12px;
+      color: var(--ink-2);
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .outcome-grid,
+    .feature-grid,
+    .agency-grid,
+    .security-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .outcome-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .outcome-card {
+      min-height: 250px;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+    }
+
+    .outcome-card .number {
+      color: var(--copper-dark);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .outcome-card h3 {
+      margin-top: 36px;
+      font-size: 1.45rem;
+    }
+
+    .outcome-card p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .workflow-panel {
+      margin-top: 42px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background: var(--ink);
+      color: var(--paper-2);
+      box-shadow: var(--shadow);
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .workflow-step {
+      position: relative;
+      min-height: 250px;
+      padding: 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .workflow-step:last-child {
+      border-right: none;
+    }
+
+    .workflow-step .step-no {
+      color: var(--sand);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .workflow-step h3 {
+      margin-top: 48px;
+      font-size: 1.5rem;
+    }
+
+    .workflow-step p {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 0.94rem;
+    }
+
+    .showcase {
+      overflow: hidden;
+      background: var(--paper-3);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .phone-stack {
+      position: relative;
+      min-height: 640px;
+    }
+
+    .phone-frame {
+      position: absolute;
+      width: 43%;
+      padding: 9px;
+      border-radius: 28px;
+      background: #101113;
+      box-shadow: 0 24px 60px rgba(28, 27, 23, 0.18);
+    }
+
+    .phone-frame img {
+      display: block;
+      border-radius: 21px;
+    }
+
+    .phone-frame.one {
+      top: 3%;
+      left: 9%;
+      transform: rotate(-7deg);
+      z-index: 2;
+    }
+
+    .phone-frame.two {
+      top: 15%;
+      right: 7%;
+      transform: rotate(6deg);
+      z-index: 3;
+    }
+
+    .phone-frame.three {
+      bottom: 0;
+      left: 30%;
+      transform: rotate(1deg);
+      z-index: 4;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .feature-row:last-child {
+      border-bottom: none;
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      color: var(--copper-dark);
+      background: rgba(167, 95, 53, 0.1);
+      font-weight: 800;
+    }
+
+    .feature-row h3 {
+      font-size: 1.08rem;
+    }
+
+    .feature-row p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .security-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .security-card {
+      padding: 30px;
+      border-radius: var(--radius-lg);
+    }
+
+    .security-card h3 {
+      font-size: 1.35rem;
+    }
+
+    .security-card p {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .security-card .mini {
+      display: inline-flex;
+      margin-bottom: 22px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--success);
+      background: rgba(47, 107, 73, 0.1);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .standards-band {
+      background: var(--olive);
+      color: var(--paper-2);
+    }
+
+    .standards-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .standards-layout .eyebrow {
+      color: #efe7d8;
+    }
+
+    .standards-layout .eyebrow::before {
+      background: var(--sand);
+    }
+
+    .standards-layout .section-copy {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .standards-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .standard-card {
+      min-height: 260px;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .standard-card span {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #f4ead9;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .standard-card h3 {
+      margin-top: 32px;
+      font-size: 1.55rem;
+    }
+
+    .standard-card p {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.94rem;
+    }
+
+    .agency-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .agency-points {
+      display: grid;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .agency-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--ink-2);
+      font-weight: 700;
+    }
+
+    .agency-point::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--copper);
+      font-size: 0.78rem;
+    }
+
+    .quote-card {
+      padding: 34px;
+      border-radius: var(--radius-xl);
+    }
+
+    .quote-card h3 {
+      font-size: 1.7rem;
+    }
+
+    .quote-card > p {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .quote-form {
+      display: grid;
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink-2);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(27, 27, 24, 0.16);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--ink);
+      padding: 14px 15px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--copper);
+      box-shadow: 0 0 0 4px rgba(167, 95, 53, 0.1);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .quote-form .btn {
+      width: 100%;
+      border: none;
+    }
+
+    .form-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .reports-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 46px;
+      align-items: center;
+      margin-top: 44px;
+    }
+
+    .report-copy-card {
+      padding: 32px;
+      border-radius: var(--radius-lg);
+    }
+
+    .report-copy-card h3 {
+      font-size: 1.5rem;
+    }
+
+    .report-copy-card p {
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .report-pages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .report-page {
+      padding: 7px;
+      border-radius: 14px;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      transform-origin: center;
+      transition: transform 180ms ease;
+    }
+
+    .report-page:nth-child(2) {
+      transform: translateY(18px);
+    }
+
+    .report-page:nth-child(3) {
+      transform: translateY(-10px);
+    }
+
+    .report-page:hover {
+      transform: translateY(-5px);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 38px;
+      max-width: 760px;
+    }
+
+    .price-card {
+      padding: 30px;
+      border-radius: var(--radius-lg);
+    }
+
+    .price-card.featured {
+      color: var(--paper-2);
+      background: var(--ink);
+      border-color: transparent;
+    }
+
+    .price-card .label {
+      color: var(--copper-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .price-card.featured .label {
+      color: var(--sand);
+    }
+
+    .price {
+      margin-top: 14px;
+      font-family: "Manrope", sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+    }
+
+    .price small {
+      font-family: "DM Sans", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .price-card p {
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .price-card.featured p {
+      color: rgba(255, 255, 255, 0.64);
+    }
+
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 210px;
+      padding: 12px 18px;
+      border-radius: 16px;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .store-badge svg {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 auto;
+    }
+
+    .store-badge small,
+    .store-badge strong {
+      display: block;
+      line-height: 1.1;
+    }
+
+    .store-badge small {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.67rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .store-badge strong {
+      margin-top: 3px;
+      font-size: 1rem;
+    }
+
+    .faq {
+      max-width: 840px;
+      margin-top: 34px;
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 0;
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::after {
+      content: "+";
+      color: var(--copper-dark);
+      font-size: 1.3rem;
+    }
+
+    .faq details[open] summary::after {
+      content: "−";
+    }
+
+    .faq p {
+      max-width: 740px;
+      padding: 0 0 24px;
+      color: var(--muted);
+    }
+
+    .policy {
+      max-width: 840px;
+      margin-top: 34px;
+    }
+
+    .policy h3 {
+      margin-top: 38px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      font-size: 1.28rem;
+    }
+
+    .policy h3:first-of-type {
+      margin-top: 30px;
+    }
+
+    .policy p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .policy-meta {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .policy-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 38px;
+      padding: 14px 20px;
+      border-radius: 999px;
+      background: rgba(167, 95, 53, 0.09);
+      color: var(--copper-dark);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .policy-contact a {
+      color: var(--copper-dark);
+    }
+
+    .closing {
+      padding: 92px 0;
+    }
+
+    .closing-card {
+      position: relative;
+      overflow: hidden;
+      padding: 58px;
+      border-radius: var(--radius-xl);
+      background: var(--copper);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .closing-card::after {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      right: -120px;
+      top: -140px;
+      border-radius: 50%;
+      border: 70px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .closing-card h2 {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      font-size: clamp(2.4rem, 5vw, 5rem);
+    }
+
+    .closing-card p {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.08rem;
+    }
+
+    .closing-card .btn {
+      position: relative;
+      z-index: 2;
+      margin-top: 28px;
+      background: var(--ink);
+      color: var(--paper-2);
+    }
+
+    footer {
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      background: rgba(251, 248, 241, 0.64);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--ink-2);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 0.83rem;
+      text-align: right;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--paper-2);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 650ms ease, transform 650ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid,
+      .showcase-grid,
+      .standards-layout,
+      .agency-wrap,
+      .reports-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 620px;
+      }
+
+      .outcome-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .showcase-grid {
+        gap: 10px;
+      }
+
+      .phone-stack {
+        min-height: 650px;
+      }
+
+      .agency-wrap {
+        gap: 30px;
+      }
+
+      nav {
+        position: fixed;
+        top: 79px;
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(251, 248, 241, 0.98);
+        box-shadow: var(--shadow-sm);
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px 12px;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .shell {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .section,
+      .hero {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 9vw, 3.4rem);
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .visual-note {
+        width: 48%;
+        right: 4%;
+        top: 8%;
+      }
+
+      .device-main {
+        width: 58%;
+        left: 5%;
+        top: 17%;
+      }
+
+      .report-card {
+        width: 52%;
+        right: 4%;
+        bottom: 5%;
+      }
+
+      .trust-grid,
+      .outcome-grid,
+      .workflow-grid,
+      .standards-cards,
+      .pricing-grid,
+      .security-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow-step {
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+      }
+
+      .workflow-step:last-child {
+        border-bottom: none;
+      }
+
+      .workflow-step h3 {
+        margin-top: 24px;
+      }
+
+      .phone-stack {
+        min-height: 540px;
+      }
+
+      .phone-frame {
+        width: 50%;
+      }
+
+      .phone-frame.one {
+        left: 2%;
+      }
+
+      .phone-frame.two {
+        right: 0;
+      }
+
+      .phone-frame.three {
+        left: 24%;
+      }
+
+      .report-pages {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .report-page:nth-child(2),
+      .report-page:nth-child(3) {
+        transform: none;
+      }
+
+      .closing-card {
+        padding: 38px 26px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-copy {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand-copy span {
+        display: none;
+      }
+
+      .hero-actions,
+      .download-row {
+        flex-direction: column;
+      }
+
+      .btn,
+      .store-badge {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 460px;
+      }
+
+      .visual-note {
+        width: 54%;
+        padding: 14px;
+      }
+
+      .visual-note span {
+        display: none;
+      }
+
+      .device-main {
+        width: 63%;
+        top: 20%;
+      }
+
+      .report-card {
+        width: 58%;
+      }
+
+      .quote-card,
+      .workflow-panel {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <style>
+    .page-hero { padding: 74px 0 34px; }
+    .page-hero .section-heading { margin-top: 16px; }
+    .breadcrumbs { display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+      color:var(--muted); font-size:0.82rem; font-weight:700;
+      letter-spacing:0.04em; text-transform:uppercase; }
+    .breadcrumbs a { color:var(--copper-dark); text-decoration:none; }
+    .breadcrumbs span { opacity:0.5; }
+    .prose { max-width: 820px; }
+    .prose h2 { margin-top: 52px; font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
+    .prose h2:first-of-type { margin-top: 8px; }
+    .prose p { margin-top: 16px; color: var(--ink-2); font-size: 1.04rem; }
+    .prose p.lead { color: var(--muted); font-size: clamp(1.06rem,1.6vw,1.22rem); }
+    .prose strong { color: var(--ink); }
+    .capture-list { display:grid; gap:14px; margin-top:26px; max-width:820px; }
+    .capture-row { display:grid; grid-template-columns:44px 1fr; gap:16px;
+      align-items:start; padding:18px 0; border-bottom:1px solid var(--line); }
+    .capture-row:last-child { border-bottom:none; }
+    .capture-row h3 { font-size:1.08rem; }
+    .capture-row p { margin-top:5px; color:var(--muted); font-size:0.95rem; }
+    .cross-links { display:grid; grid-template-columns:1fr 1fr; gap:18px;
+      margin-top:44px; }
+    .cross-card { padding:28px; border-radius:var(--radius-lg); }
+    .cross-card .label { color:var(--copper-dark); font-size:0.78rem;
+      font-weight:800; letter-spacing:0.1em; text-transform:uppercase; }
+    .cross-card h3 { margin-top:12px; font-size:1.3rem; }
+    .cross-card p { margin-top:10px; color:var(--muted); font-size:0.95rem; }
+    .cross-card a { display:inline-flex; margin-top:16px; color:var(--copper-dark);
+      font-weight:800; text-decoration:none; }
+    .cross-card a:hover { text-decoration:underline; }
+    nav a[aria-current="page"] { color:var(--copper-dark); }
+    @media (max-width:760px){ .cross-links { grid-template-columns:1fr; } }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="shell nav-wrap">
+      <a href="index.html" class="brand" aria-label="BlueLineNote home">
+        <img class="brand-mark" src="logo.png" alt="BlueLineNote logo" />
+        <span class="brand-copy">
+          <strong>BlueLineNote</strong>
+          <span>Field documentation platform</span>
+        </span>
+      </a>
+
+      <nav id="siteNav" aria-label="Primary navigation">
+        <a href="index.html#product">Product</a>
+        <a href="index.html#agencies">Agencies</a>
+        <a href="index.html#security">Security</a>
+        <a href="nibrs.html" aria-current="page">NIBRS</a>
+        <a href="crash-reporting.html">Crash</a>
+        <a href="index.html#pricing">For Officers</a>
+        <a class="nav-cta" href="index.html#agency-form">Request a demo</a>
+      </nav>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="siteNav"
+      >
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero" id="top">
+      <div class="shell">
+        <nav class="breadcrumbs reveal" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> <span>/</span> NIBRS documentation
+        </nav>
+        <div class="eyebrow reveal" style="margin-top:14px;">NIBRS-informed incident documentation</div>
+        <h1 class="section-heading reveal">A NIBRS-informed way to document incidents in the field.</h1>
+        <p class="section-copy reveal">
+          BlueLineNote is a mobile field documentation app built to help officers organize incident
+          information the way incident-based reporting expects it &mdash; offense, victim, offender,
+          property, and the details that connect them &mdash; while they are still on the call.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="btn primary" href="index.html#agency-form">Request an agency demonstration</a>
+          <a class="btn secondary" href="crash-reporting.html">See crash documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:24px;">
+      <div class="shell">
+        <div class="prose">
+          <h2 class="reveal">What NIBRS actually asks for</h2>
+          <p class="reveal">
+            NIBRS &mdash; the FBI&rsquo;s National Incident-Based Reporting System &mdash; records each
+            incident as a set of connected segments rather than a single summary category. One incident
+            can carry multiple offenses, multiple victims, offender information, property with its type
+            and value, and the relationships between them. The older Summary Reporting System that NIBRS
+            replaced counted only the most serious offense in an incident; NIBRS keeps the whole picture.
+            The practical effect for the officer is simple: more structured detail is expected at the
+            point of the incident, not reconstructed later from memory.
+          </p>
+
+          <h2 class="reveal">Where incident reports actually lose information</h2>
+          <p class="reveal">
+            Most incomplete incident reports are not the result of a weak narrative. They are missing a
+            victim type, an offender descriptor, a property category, or a relationship that nobody
+            filled in while the call was fresh &mdash; and by the time a supervisor sends the report
+            back, those details are harder to recover. BlueLineNote is designed around that specific
+            failure point: capture the structured pieces early, and the version that reaches review
+            starts more complete.
+          </p>
+
+          <h2 class="reveal">How BlueLineNote structures incident documentation</h2>
+          <p class="reveal">
+            The app organizes an incident into the same kinds of segments the reporting standard uses,
+            through a guided mobile workflow rather than a wall of codes.
+          </p>
+        </div>
+
+        <div class="capture-list">
+          <div class="capture-row reveal">
+            <div class="feature-icon">01</div>
+            <div><h3>Offense and incident details</h3>
+              <p>Organize offense and incident information in a structure that supports more complete report preparation.</p></div>
+          </div>
+          <div class="capture-row reveal">
+            <div class="feature-icon">02</div>
+            <div><h3>Victim and reporting person</h3>
+              <p>Capture victim type and injury information alongside the reporting person for the incident.</p></div>
+          </div>
+          <div class="capture-row reveal">
+            <div class="feature-icon">03</div>
+            <div><h3>Offender and suspect descriptors</h3>
+              <p>An expanded set of suspect fields so a description is not reduced to a single line in the narrative.</p></div>
+          </div>
+          <div class="capture-row reveal">
+            <div class="feature-icon">04</div>
+            <div><h3>Property and vehicle</h3>
+              <p>Record property type and disposition, plus vehicle information wherever a vehicle is involved.</p></div>
+          </div>
+          <div class="capture-row reveal">
+            <div class="feature-icon">05</div>
+            <div><h3>Notifications and narrative</h3>
+              <p>Keep notifications and a structured narrative with the rest of the record instead of scattered across notes.</p></div>
+          </div>
+          <div class="capture-row reveal">
+            <div class="feature-icon">06</div>
+            <div><h3>Report review</h3>
+              <p>Surface incomplete sections and documentation gaps before the report enters supervisor review.</p></div>
+          </div>
+        </div>
+
+        <div class="prose">
+          <h2 class="reveal">What it is &mdash; and what it is not</h2>
+          <p class="reveal">
+            BlueLineNote is <strong>NIBRS-informed</strong>, not a NIBRS certification. Final validation,
+            acceptance, and submission remain controlled by your state, your agency, and your records
+            management system. No software can guarantee acceptance across every jurisdiction and RMS.
+            What the app does is give the officer a consistent, structured way to capture the information
+            those systems will ask for, so the report that reaches them starts more complete and comes
+            back less often.
+          </p>
+          <p class="reveal">
+            Report content stays on the officer&rsquo;s device. Licensing and agency seats are validated
+            separately and never require access to what an officer writes. The RMS remains the system of
+            record; BlueLineNote is the field documentation and preparation step in front of it.
+          </p>
+        </div>
+
+        <div class="cross-links">
+          <article class="cross-card surface reveal">
+            <div class="label">Related</div>
+            <h3>Crash documentation</h3>
+            <p>For collisions, BlueLineNote uses an MMUCC-informed crash workflow with guided fields and scene diagrams.</p>
+            <a href="crash-reporting.html">MMUCC crash reporting &rarr;</a>
+          </article>
+          <article class="cross-card surface reveal">
+            <div class="label">The full app</div>
+            <h3>Field documentation platform</h3>
+            <p>Scanning, dictation, report review, saved records, and agency-ready export in one application.</p>
+            <a href="index.html#product">Explore the product &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="shell">
+        <div class="closing-card reveal">
+          <h2>Give incident documentation one consistent structure.</h2>
+          <p>Start with a conversation about your agency&rsquo;s current process and the reporting gaps you want to reduce.</p>
+          <a class="btn" href="index.html#agency-form">Request an agency demonstration</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="nibrs.html">NIBRS documentation</a>
+        <a href="crash-reporting.html">Crash reporting</a>
+        <a href="index.html#privacy">Privacy Policy</a>
+        <a href="index.html#support">Support</a>
+      </div>
+
+      <div class="footer-copy">
+        BlueLineNote LLC<br />
+        Field documentation for law enforcement<br />
+        © 2026 BlueLineNote LLC
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const siteNav = document.getElementById("siteNav");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = siteNav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+
+    siteNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        siteNav.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation");
+      });
+    });
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
