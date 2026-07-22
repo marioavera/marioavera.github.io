@@ -34,20 +34,10 @@
       "https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561",
       "https://play.google.com/store/apps/details?id=com.bluelinenote.app"
     ],
-    "offers": [
-      {
-        "@type": "Offer",
-        "price": "6.99",
-        "priceCurrency": "USD",
-        "description": "Pro Monthly"
-      },
-      {
-        "@type": "Offer",
-        "price": "59.99",
-        "priceCurrency": "USD",
-        "description": "Pro Yearly"
-      }
-    ]
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Law enforcement agencies"
+    }
   }
   </script>
 
@@ -1518,6 +1508,150 @@
       color: var(--ink);
     }
 
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 38px;
+    }
+
+    .tier-card {
+      padding: 30px;
+      border-radius: var(--radius-lg);
+    }
+
+    .tier-card.featured {
+      color: var(--paper-2);
+      background: var(--ink);
+      border: 1px solid transparent;
+      box-shadow: var(--shadow);
+    }
+
+    .tier-card .label {
+      color: var(--copper-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .tier-card.featured .label {
+      color: var(--sand);
+    }
+
+    .tier-card .price {
+      margin-top: 14px;
+      font-family: "Manrope", sans-serif;
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1.05;
+    }
+
+    .tier-card .price small {
+      display: block;
+      margin-top: 6px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      color: var(--muted);
+    }
+
+    .tier-card.featured .price small {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .tier-card p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tier-card.featured p {
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .includes-panel {
+      margin-top: 26px;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(251, 248, 241, 0.7);
+    }
+
+    .includes-panel h3 {
+      font-size: 1.3rem;
+    }
+
+    .includes-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 26px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .includes-list li {
+      position: relative;
+      padding-left: 30px;
+      color: var(--ink-2);
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .includes-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--copper);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    .includes-note {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .pricing-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .tier-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .includes-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .includes-panel {
+        padding: 22px;
+      }
+
+      .pricing-actions {
+        flex-direction: column;
+      }
+    }
+
     .demo-frame {
       max-width: 900px;
       margin: 42px auto 0;
@@ -1590,7 +1724,7 @@
         <a href="#portal">Agency Portal</a>
         <a href="#security">Security</a>
         <a href="#standards">Standards</a>
-        <a href="#pricing">For Officers</a>
+        <a href="#pricing">Pricing</a>
         <a href="#privacy">Privacy</a>
         <a href="#support">Support</a>
         <a class="nav-cta" href="#pilot">Start a pilot</a>
@@ -2094,26 +2228,62 @@
 
     <section class="section" id="pricing">
       <div class="shell">
-        <div class="eyebrow reveal">For individual officers</div>
-        <h2 class="section-heading reveal">For individual officers.</h2>
+        <div class="eyebrow reveal">Agency licensing</div>
+        <h2 class="section-heading reveal">Seat-based pricing your department can budget against.</h2>
         <p class="section-copy reveal">
-          Individual officers can download BlueLineNote directly through the App Store or Google Play.
-          Agency licensing and configuration are handled separately.
+          BlueLineNote is licensed per seat, per year. Every seat includes the full product, your
+          agency branding on exported reports, and access to your private management portal &mdash;
+          there is no separate setup fee, portal fee, or per-report charge.
         </p>
 
-        <div class="pricing-grid">
-          <article class="price-card surface reveal">
-            <div class="label">Monthly</div>
-            <div class="price">$6.99 <small>/ month</small></div>
-            <p>Full Pro access. Cancel through your app-store subscription settings.</p>
+        <div class="tier-grid">
+          <article class="tier-card surface reveal">
+            <div class="label">1 &ndash; 24 seats</div>
+            <div class="price">$149 <small>/ seat / year</small></div>
+            <p>For a single squad, a shift, or a small department licensing every officer.</p>
           </article>
 
-          <article class="price-card featured reveal">
-            <div class="label">Yearly</div>
-            <div class="price">$59.99 <small>/ year</small></div>
-            <p>Annual access at a lower effective monthly price.</p>
+          <article class="tier-card featured reveal">
+            <div class="label">25 &ndash; 99 seats</div>
+            <div class="price">$119 <small>/ seat / year</small></div>
+            <p>Department-wide deployment at a reduced per-seat rate.</p>
+          </article>
+
+          <article class="tier-card surface reveal">
+            <div class="label">100+ seats</div>
+            <div class="price">Contact us</div>
+            <p>Large agencies, multi-agency, and county-wide deployments are quoted directly.</p>
           </article>
         </div>
+
+        <div class="includes-panel reveal">
+          <h3>Every seat includes</h3>
+          <ul class="includes-list">
+            <li>Full Pro features &mdash; no trimmed agency edition</li>
+            <li>Agency branding and letterhead on exported reports</li>
+            <li>Setup and onboarding &mdash; seats, branding, and portal access configured for you</li>
+            <li>A private portal where your point of contact assigns and reclaims seats directly</li>
+            <li>A full activity trail &mdash; every seat change recorded with who requested it and when</li>
+            <li>Seat transfers at no cost when officers join or leave</li>
+            <li>Custom case-number formatting and workflow configuration</li>
+            <li>Email support for your point of contact</li>
+          </ul>
+          <p class="includes-note">
+            No setup fee. No onboarding fee. No portal fee. No per-report or per-export charge.
+            Seats are transferable, so turnover does not cost your agency a license.
+          </p>
+        </div>
+
+        <div class="pricing-actions reveal">
+          <a class="btn primary" href="mailto:sales@bluelinenote.app?subject=Agency%20Quote%20Request&body=Agency%20/%20department%3A%0AContact%20name%3A%0AWork%20email%3A%0ARole%3A%0AApproximate%20number%20of%20seats%20needed%3A%0AFiscal%20year%20start%3A%0A%0AAnything%20else%20we%20should%20know%3F%0A">Request a written quote</a>
+          <a class="btn secondary" href="#pilot">Start a 30-day pilot first</a>
+        </div>
+
+        <p class="section-copy reveal" style="margin-top:34px;">
+          Agencies that need a formal quote, W-9, or vendor documentation for procurement can request
+          it at sales@bluelinenote.app. Individual officers can download BlueLineNote directly from the
+          App Store or Google Play.
+        </p>
 
         <div class="download-row reveal">
           <a
@@ -2317,6 +2487,7 @@
         <a href="#demo">Demo</a>
         <a href="nibrs.html">NIBRS documentation</a>
         <a href="crash-reporting.html">Crash reporting</a>
+        <a href="#pricing">Agency pricing</a>
         <a href="#pilot">Agency pilot</a>
         <a href="#portal">Agency portal</a>
         <a href="#privacy">Privacy Policy</a>
