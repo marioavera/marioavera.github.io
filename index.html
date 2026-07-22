@@ -1517,6 +1517,55 @@
       font-weight: 800;
       color: var(--ink);
     }
+
+    .demo-frame {
+      max-width: 900px;
+      margin: 42px auto 0;
+      padding: 12px;
+      border-radius: var(--radius-xl);
+      background: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .video-ratio {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-ratio iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .demo-cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 480px) {
+      .demo-frame {
+        padding: 8px;
+        border-radius: var(--radius-lg);
+      }
+
+      .video-ratio {
+        border-radius: var(--radius-md);
+      }
+
+      .demo-cta {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 
@@ -1534,6 +1583,7 @@
       </a>
 
       <nav id="siteNav" aria-label="Primary navigation">
+        <a href="#demo">Demo</a>
         <a href="#product">Product</a>
         <a href="#agencies">Agencies</a>
         <a href="#pilot">Pilot Program</a>
@@ -1576,7 +1626,7 @@
 
           <div class="hero-actions">
             <a class="btn primary" href="#pilot">Start a 30-day agency pilot</a>
-            <a class="btn secondary" href="#product">Explore the product</a>
+            <a class="btn secondary" href="#demo">Watch the demo</a>
           </div>
 
           <ul class="hero-gets" aria-label="What agencies get">
@@ -1615,6 +1665,36 @@
         <div class="trust-item">Agency self-service portal</div>
         <div class="trust-item">30-day agency pilot</div>
         <div class="trust-item">MMUCC-informed crash fields</div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="shell">
+        <div class="eyebrow reveal">See it work</div>
+        <h2 class="section-heading reveal">Watch the workflow, start to finished report.</h2>
+        <p class="section-copy reveal">
+          A short walkthrough of the application &mdash; capture in the field, review for missing
+          information, and export an agency-ready report.
+        </p>
+
+        <div class="demo-frame reveal">
+          <div class="video-ratio">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/z6TkMyeQraM?rel=0&amp;modestbranding=1"
+              title="BlueLineNote product demonstration"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="demo-cta reveal">
+          <a class="btn primary" href="#pilot">Start a 30-day agency pilot</a>
+          <a class="btn secondary" href="#agency-form">Request an agency introduction</a>
+        </div>
       </div>
     </section>
 
@@ -2234,6 +2314,7 @@
   <footer>
     <div class="shell footer-grid">
       <div class="footer-links">
+        <a href="#demo">Demo</a>
         <a href="nibrs.html">NIBRS documentation</a>
         <a href="crash-reporting.html">Crash reporting</a>
         <a href="#pilot">Agency pilot</a>
