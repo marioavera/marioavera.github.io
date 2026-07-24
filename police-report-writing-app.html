@@ -1,173 +1,612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Police Report Writing App for Officers | BlueLineNote</title>
-<meta name="description" content="BlueLineNote is a police report writing app for officers who document incidents in the field — structured field notes, crash details, OCR scanning, voice notes, and report-ready narratives. On-device, no cloud. iOS and Android.">
-<link rel="canonical" href="https://bluelinenote.app/police-report-writing-app.html">
-<meta name="theme-color" content="#f6f3ec">
-<meta property="og:title" content="Police Report Writing App for Officers | BlueLineNote">
-<meta property="og:description" content="Structured field notes, crash details, OCR scanning, and report-ready narratives — on-device, no cloud. iOS and Android.">
-<meta property="og:image" content="https://bluelinenote.app/logo.png">
-<meta property="og:url" content="https://bluelinenote.app/police-report-writing-app.html">
-<meta property="og:type" content="website">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700;900&family=JetBrains+Mono:wght@400;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Police Report Writing App for Officers | BlueLineNote</title>
+  <meta
+    name="description"
+    content="A police report writing app for officers who document on the device instead of at the station. Incident reports come out NIBRS-coded, crash reports MMUCC-coded, on agency letterhead. Works offline. iOS and Android."
+  />
+  <link rel="canonical" href="https://bluelinenote.app/police-report-writing-app.html" />
 
-<style>
-:root{
---paper:#f6f3ec;
---paper2:#fdfcf8;
---ink:#101c2c;
---ink-soft:#3d4a5c;
---ink-faint:#8a93a1;
---rule:#c9c3b4;
---blue:#1a4fd6;
---blue-soft:#e8edfb;
---green:#1c7a43;
---shadow:6px 6px 0 var(--ink);
---shadow-sm:4px 4px 0 var(--ink);
-}
-*{box-sizing:border-box;}
-body{
-margin:0;
-font-family:'Public Sans',-apple-system,BlinkMacSystemFont,sans-serif;
-background:var(--paper);
-background-image:repeating-linear-gradient(0deg,transparent,transparent 31px,rgba(16,28,44,0.035) 31px,rgba(16,28,44,0.035) 32px);
-color:var(--ink);
-line-height:1.6;
-}
-.container{max-width:900px;margin:0 auto;padding:70px 20px;}
-.card{
-background:var(--paper2);
-border:2px solid var(--ink);
-padding:44px;
-box-shadow:var(--shadow);
-}
-h1{
-font-family:'Saira Condensed',sans-serif;
-font-weight:900;
-text-transform:uppercase;
-margin:0 0 24px;
-font-size:clamp(36px,6vw,52px);
-line-height:.98;
-letter-spacing:.5px;
-}
-p{font-size:16px;line-height:1.75;color:var(--ink-soft);margin-bottom:18px;}
-.highlight{color:var(--ink);font-weight:700;}
-.divider{height:2px;background:var(--ink);opacity:.85;margin:30px 0;}
-.back-link{
-display:inline-block;
-margin-bottom:24px;
-text-decoration:none;
-color:var(--ink);
-font-family:'JetBrains Mono',monospace;
-font-weight:700;
-font-size:13px;
-text-transform:uppercase;
-letter-spacing:.06em;
-border:2px solid var(--ink);
-padding:10px 16px;
-background:var(--paper2);
-box-shadow:var(--shadow-sm);
-transition:transform .15s ease;
-}
-.back-link:hover{transform:translate(-2px,-2px);}
-.feature-list{margin:22px 0 0;padding:0;list-style:none;}
-.feature-list li{
-margin-bottom:-2px;
-padding:16px 18px;
-background:#fff;
-border:2px solid var(--ink);
-color:var(--ink);
-font-weight:600;
-font-size:15px;
-}
-.feature-list li::before{
-content:"✓ ";
-font-family:'JetBrains Mono',monospace;
-color:var(--green);
-font-weight:700;
-}
-.notice{
-margin-top:14px;
-font-family:'JetBrains Mono',monospace;
-font-weight:700;
-font-size:13px;
-color:var(--ink-soft);
-border:2px solid var(--ink);
-border-left:8px solid var(--blue);
-background:var(--blue-soft);
-padding:14px 16px;
-}
-.store-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;}
-.store-badge{
-display:inline-flex;align-items:center;gap:12px;padding:12px 22px;min-width:190px;
-background:var(--ink);color:var(--paper2);text-decoration:none;border:2px solid var(--ink);
-box-shadow:var(--shadow-sm);transition:transform .15s ease,box-shadow .15s ease;
-}
-.store-badge:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--blue);}
-.store-badge .badge-ic{width:24px;height:24px;flex:0 0 auto;}
-.badge-txt{display:flex;flex-direction:column;line-height:1.15;text-align:left;}
-.badge-txt small{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#c8cdd6;}
-.badge-txt strong{font-family:'Saira Condensed',sans-serif;font-size:19px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;}
-@media (max-width:600px){
-.card{padding:28px;}
-}
-</style>
+  <meta name="theme-color" content="#1b1b18" />
+  <meta property="og:title" content="Police Report Writing App for Officers | BlueLineNote" />
+  <meta property="og:description" content="Document on the device instead of at the station. NIBRS-coded incident reports, MMUCC-coded crash reports, agency letterhead, offline capable." />
+  <meta property="og:image" content="https://bluelinenote.app/logo.png?v=2" />
+  <meta property="og:url" content="https://bluelinenote.app/police-report-writing-app.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="/logo.png?v=2" />
+  <link rel="shortcut icon" type="image/png" href="/logo.png?v=2" />
+  <link rel="apple-touch-icon" href="/logo.png?v=2" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BlueLineNote",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "iOS, Android",
+    "description": "A police report writing app for law enforcement officers. Officers document incidents and crashes on the device; output is NIBRS-coded and MMUCC-coded on agency letterhead.",
+    "url": "https://bluelinenote.app/police-report-writing-app.html",
+    "image": "https://bluelinenote.app/logo.png?v=2",
+    "downloadUrl": [
+      "https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561",
+      "https://play.google.com/store/apps/details?id=com.bluelinenote.app"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Law enforcement officers and agencies"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does the app write the report for the officer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The officer writes the narrative. BlueLineNote provides the structure, the coded fields, and a review pass that flags what is missing. Every field starts blank and is populated by the officer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work without a signal?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Core documentation works offline. Functions that depend on external services or email availability require connectivity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it a replacement for a records management system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. BlueLineNote is a mobile reporting system that sits in front of the RMS. The RMS remains the system of record."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What stays on the device?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The officer's draft. It leaves the device as a PDF, with a NIBRS-structured HTML file for RMS personnel to review. The report exists once the agency processes and files it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an individual officer use it, or is it agency only?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both. Individual officers can download it from the App Store or Google Play. Agencies license seats directly, which adds agency letterhead, a management portal, and configuration."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --ink: #1b1b18;
+      --ink-2: #2b2b26;
+      --paper: #f4f0e8;
+      --paper-2: #fbf8f1;
+      --copper: #a75f35;
+      --copper-dark: #7b4023;
+      --olive: #66705a;
+      --sand: #d4c3a7;
+      --line: rgba(27, 27, 24, 0.14);
+      --muted: #69685f;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(23, 22, 19, 0.12);
+      --shadow-sm: 0 10px 30px rgba(23, 22, 19, 0.08);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(167, 95, 53, 0.08), transparent 24rem),
+        radial-gradient(circle at 88% 18%, rgba(102, 112, 90, 0.08), transparent 28rem),
+        var(--paper);
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; }
+    a { color: inherit; }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -0.035em;
+    }
+
+    p { margin: 0; }
+
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .narrow { width: min(820px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 240, 232, 0.82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 13px; object-fit: cover;
+      border: 1px solid rgba(27, 27, 24, 0.18); background: var(--paper-2);
+    }
+
+    .brand-copy strong {
+      display: block; font-family: "Manrope", sans-serif;
+      font-size: 1rem; letter-spacing: -0.02em;
+    }
+
+    .brand-copy span {
+      display: block; margin-top: 2px; color: var(--muted);
+      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+
+    .nav-cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 42px; padding: 0 18px; border-radius: 999px;
+      background: var(--ink); color: var(--paper-2);
+      font-weight: 800; font-size: 0.92rem; text-decoration: none;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 50px; padding: 0 22px; border: 1px solid transparent;
+      border-radius: 999px; font-weight: 800; text-decoration: none;
+      transition: transform 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn.primary {
+      background: var(--copper); color: var(--white);
+      box-shadow: 0 12px 30px rgba(167, 95, 53, 0.24);
+    }
+
+    .btn.secondary {
+      color: var(--ink); background: rgba(251, 248, 241, 0.8);
+      border-color: rgba(27, 27, 24, 0.16);
+    }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--copper-dark);
+    }
+
+    .eyebrow::before {
+      content: ""; width: 28px; height: 2px;
+      border-radius: 999px; background: var(--copper);
+    }
+
+    .hero { padding: 76px 0 56px; }
+    .hero h1 { margin-top: 16px; font-size: clamp(2.4rem, 5.5vw, 4rem); }
+
+    .hero .lede {
+      max-width: 720px; margin-top: 24px; color: var(--muted);
+      font-size: clamp(1.06rem, 1.5vw, 1.26rem);
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
+    .section { padding: 60px 0; }
+    .section h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
+    .section p { margin-top: 18px; font-size: 1.05rem; color: var(--ink-2); }
+    .section p.muted { color: var(--muted); }
+
+    .checks { margin: 26px 0 0; padding: 0; list-style: none; }
+
+    .checks li {
+      position: relative; margin-top: 13px; padding-left: 32px;
+      color: var(--ink-2); font-size: 1.02rem; line-height: 1.5;
+    }
+
+    .checks li::before {
+      content: "\2713"; position: absolute; left: 0; top: 2px;
+      display: grid; place-items: center; width: 21px; height: 21px;
+      border-radius: 50%; background: var(--copper); color: #fff;
+      font-size: 0.72rem; font-weight: 800;
+    }
+
+    .checks li strong { color: var(--ink); font-weight: 800; }
+
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 36px; }
+
+    .step {
+      padding: 26px; border-right: 1px solid rgba(255,255,255,0.13); min-height: 210px;
+    }
+    .step:last-child { border-right: none; }
+    .step .no {
+      color: var(--sand); font-size: 0.76rem; font-weight: 800;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .step h3 { margin-top: 36px; font-size: 1.32rem; }
+    .step p { margin-top: 12px; color: rgba(255,255,255,0.64); font-size: 0.93rem; }
+
+    .panel {
+      margin-top: 12px; padding: 26px; border-radius: var(--radius-xl);
+      background: var(--ink); color: var(--paper-2); box-shadow: var(--shadow);
+    }
+
+    .callout {
+      margin-top: 30px; padding: 26px 30px;
+      border-left: 3px solid var(--copper);
+      background: rgba(251, 248, 241, 0.85);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-family: "Manrope", sans-serif; font-size: 1.18rem;
+      line-height: 1.4; letter-spacing: -0.02em;
+    }
+
+    .band { background: var(--olive); color: var(--paper-2); }
+    .band .eyebrow { color: #efe7d8; }
+    .band .eyebrow::before { background: var(--sand); }
+    .band p { color: rgba(255,255,255,0.75); }
+
+    .faq { margin-top: 30px; }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 20px 0; cursor: pointer; font-weight: 800; list-style: none;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--copper-dark); font-size: 1.3rem; }
+    .faq details[open] summary::after { content: "\2212"; }
+    .faq p { padding: 0 0 22px; color: var(--muted); margin-top: 0; }
+
+    .store-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 12px; min-width: 210px;
+      padding: 12px 18px; border-radius: 16px; background: var(--ink);
+      color: var(--white); text-decoration: none; box-shadow: var(--shadow-sm);
+    }
+    .store-badge svg { width: 26px; height: 26px; flex: 0 0 auto; }
+    .store-badge small, .store-badge strong { display: block; line-height: 1.1; }
+    .store-badge small {
+      color: rgba(255,255,255,0.62); font-size: 0.67rem;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .store-badge strong { margin-top: 3px; font-size: 1rem; }
+
+    .closing-card {
+      position: relative; overflow: hidden; margin-top: 20px;
+      padding: 48px; border-radius: var(--radius-xl);
+      background: var(--copper); color: var(--white); box-shadow: var(--shadow);
+    }
+    .closing-card h2 { position: relative; z-index: 2; max-width: 640px; }
+    .closing-card p { position: relative; z-index: 2; color: rgba(255,255,255,0.82); }
+    .closing-card .btn {
+      position: relative; z-index: 2; margin-top: 24px;
+      background: var(--ink); color: var(--paper-2);
+    }
+    .closing-card::after {
+      content: ""; position: absolute; width: 340px; height: 340px;
+      right: -110px; top: -120px; border-radius: 50%;
+      border: 62px solid rgba(255,255,255,0.08);
+    }
+
+    .disclaimer {
+      margin-top: 40px; padding: 22px 26px;
+      border: 1px solid var(--line); border-radius: var(--radius-md);
+      background: rgba(251, 248, 241, 0.7); color: var(--muted); font-size: 0.94rem;
+    }
+
+    footer {
+      margin-top: 70px; padding: 42px 0;
+      border-top: 1px solid var(--line); background: rgba(251, 248, 241, 0.64);
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: start; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a {
+      color: var(--ink-2); font-size: 0.88rem; font-weight: 700; text-decoration: none;
+    }
+    .footer-copy { color: var(--muted); font-size: 0.83rem; text-align: right; }
+
+    @media (max-width: 900px) {
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.13); min-height: auto; }
+      .step:last-child { border-bottom: none; }
+      .step h3 { margin-top: 20px; }
+    }
+
+    @media (max-width: 760px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-copy { text-align: left; }
+      .brand-copy span { display: none; }
+      .closing-card { padding: 32px 24px; }
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-<div class="card">
-<a href="/" class="back-link">← Back to BlueLineNote</a>
-<h1>Police Report Writing App</h1>
-<p>
-BlueLineNote is a police report writing app designed for officers who need to document incidents quickly, clearly, and accurately in the field.
-</p>
-<p>
-It replaces scattered notes, photos, and memory gaps with one structured workflow built for real-world reporting.
-</p>
-<div class="divider"></div>
-<p class="highlight">
-Built to help officers organize field notes, crash details, people involved, scanned information, and report-ready narratives in one place.
-</p>
-<ul class="feature-list">
-<li>Structured field note organization</li>
-<li>Crash note and crash detail capture — MMUCC-coded</li>
-<li>NIBRS-structured, report-ready narrative preparation</li>
-<li>Scan, voice note, and export workflow support</li>
-<li>Designed for fast documentation before final reporting</li>
-</ul>
-<div class="divider"></div>
-<p>
-Everything stays on the officer's device — no cloud storage, no accounts, no developer access. It works offline in dead zones, and exports a clean, signature-ready PDF when the report is done.
-</p>
-<div class="store-row">
-<a href="https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561" target="_blank" rel="noopener" class="store-badge" aria-label="Download on the App Store">
-<svg class="badge-ic" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-<span class="badge-txt"><small>Download on the</small><strong>App Store</strong></span>
-</a>
-<a href="https://play.google.com/store/apps/details?id=com.bluelinenote.app" target="_blank" rel="noopener" class="store-badge" aria-label="Get it on Google Play">
-<svg class="badge-ic" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-<path fill="#00C3FF" d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z"/>
-<path fill="#00E676" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1z"/>
-<path fill="#FF3D47" d="M104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/>
-<path fill="#FFCE00" d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z"/>
-</svg>
-<span class="badge-txt"><small>Get it on</small><strong>Google Play</strong></span>
-</a>
-</div>
-<div class="divider"></div>
-<p>
-BlueLineNote is a supplemental note-organization tool. It is not an official law enforcement system, records management system, or evidence management platform.
-</p>
-<p class="notice">
-Users are responsible for following their agency policies and official reporting procedures.
-</p>
-</div>
-</div>
+  <header>
+    <div class="shell nav-wrap">
+      <a href="/" class="brand" aria-label="BlueLineNote home">
+        <img class="brand-mark" src="logo.png?v=2" alt="BlueLineNote logo" />
+        <span class="brand-copy">
+          <strong>BlueLineNote</strong>
+          <span>Field documentation platform</span>
+        </span>
+      </a>
+      <a class="nav-cta" href="/#pilot">Start a pilot</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="narrow">
+        <div class="eyebrow">For officers and agencies</div>
+        <h1>Police report writing app</h1>
+        <p class="lede">
+          BlueLineNote is a police report writing app for officers who document the incident on the
+          device while they are still working it, instead of rebuilding it from notes and memory at a
+          station computer hours later. Incident reports come out NIBRS-coded, crash reports
+          MMUCC-coded, on the agency&rsquo;s letterhead.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="/#pilot">Start a 30-day agency pilot</a>
+          <a class="btn secondary" href="/#demo">Watch the 90-second demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="narrow">
+        <h2>The report gets written twice</h2>
+        <p>
+          Once in a notebook at the scene, and once at the station from whatever survived the rest of
+          the shift. The second version is the one records receives, and it is where missing elements,
+          rounded times, and paraphrased statements come from.
+        </p>
+        <p>
+          Memory does not fail all at once. The shape of the call survives; the details attach
+          themselves afterward. Sequence compresses, quotes smooth into paraphrase, descriptions drift
+          toward the typical. The officer is not aware of any of it happening.
+        </p>
+        <div class="callout">
+          Anything captured while the officer is still standing there is fixed. Anything written
+          afterward is reconstruction, however good the officer is.
+        </div>
+        <p>
+          BlueLineNote is built for the first version. Structured fields walk the officer through
+          incident, person, vehicle, property, and narrative information on the device, on scene,
+          while the information is still in front of him.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="narrow">
+        <div class="eyebrow">How it works</div>
+        <h2>Capture, organize, review, export</h2>
+        <div class="panel">
+          <div class="steps">
+            <article class="step">
+              <div class="no">Step 01</div>
+              <h3>Capture</h3>
+              <p>Scan identification, dictate notes, photograph what matters, and record structured incident or crash information on scene.</p>
+            </article>
+            <article class="step">
+              <div class="no">Step 02</div>
+              <h3>Organize</h3>
+              <p>People, vehicles, narrative, codes, and attachments group into a consistent case workflow instead of scattering across apps.</p>
+            </article>
+            <article class="step">
+              <div class="no">Step 03</div>
+              <h3>Review</h3>
+              <p>A review pass surfaces missing fields and incomplete sections before the draft reaches a supervisor.</p>
+            </article>
+            <article class="step">
+              <div class="no">Step 04</div>
+              <h3>Export</h3>
+              <p>A clean PDF on agency letterhead, plus a NIBRS-structured HTML file for records personnel to review.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="narrow">
+        <div class="eyebrow">What it does not do</div>
+        <h2>The officer writes the narrative</h2>
+        <p>
+          BlueLineNote does not generate the narrative. Every field in the application starts blank and
+          is populated by the officer. What the application contributes is structure &mdash; coded
+          fields, consistent organization, and a check for what is missing.
+        </p>
+        <p>
+          That is a deliberate design decision rather than a missing feature. A narrative has to be
+          something the officer can source, explain, and testify to, sentence by sentence, possibly
+          years later. Anything that puts words in the report the officer cannot account for moves the
+          cost of the paperwork rather than removing it.
+        </p>
+        <p class="muted">
+          More on this: <a href="/narrative.html" style="color:var(--copper-dark);font-weight:700;">what makes a police report narrative defensible</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="narrow">
+        <div class="eyebrow">Standards</div>
+        <h2>NIBRS-coded incidents, MMUCC-coded crashes</h2>
+        <p>
+          Officers select from NIBRS-coded offenses, and a matching narrative template populates to
+          help structure the write-up. Crash documentation covers collision, harmful-event, vehicle,
+          person, and injury-severity fields through a guided mobile workflow built on MMUCC.
+        </p>
+        <p>
+          Alongside the PDF, the application produces a NIBRS-structured HTML file. Records personnel
+          review it and, subject to the RMS&rsquo;s link capabilities, may use it for injection into
+          the system of record. BlueLineNote does not submit to NIBRS and does not write to the RMS.
+          Final validation, acceptance, and submission requirements vary by state and agency.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="narrow">
+        <div class="eyebrow">Data handling</div>
+        <h2>What the device holds is a draft</h2>
+        <p>
+          An officer drafts on the device. A supervisor may sign on the officer&rsquo;s device, or after
+          the draft is transmitted &mdash; either way, a signed draft is still a draft. It leaves the
+          device as a PDF for supervisor review and agency processing. The report exists when the
+          agency files it, in the agency&rsquo;s systems, not on the phone.
+        </p>
+        <ul class="checks">
+          <li><strong>No connection to CJIS systems.</strong> BlueLineNote does not connect to NCIC, III, or any CJIS system and receives no data from them.</li>
+          <li><strong>No server-side copy.</strong> BlueLineNote&rsquo;s servers validate licensing &mdash; a device identifier and, for metered features, usage counts. Not draft content, not attachments.</li>
+          <li><strong>Offline capable.</strong> Core documentation works in dead zones. Functions depending on external services or email require connectivity.</li>
+          <li><strong>Agency policy governs the rest.</strong> Retention, discovery, records handling, and device management remain subject to applicable law and agency policy.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="narrow">
+        <div class="eyebrow">Who it is for</div>
+        <h2>Individual officers and licensed agencies</h2>
+        <p>
+          An individual officer can download BlueLineNote from the App Store or Google Play and use it
+          on their own device. Agencies license seats directly, which adds department branding and
+          letterhead on exported reports, custom case-number formatting, and a private portal where
+          the agency&rsquo;s own point of contact assigns and reclaims seats without going through a
+          vendor.
+        </p>
+        <div class="store-row">
+          <a href="https://apps.apple.com/us/app/bluelinenote-field-notes/id6761442561" target="_blank" rel="noopener" class="store-badge" aria-label="Download on the App Store">
+            <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" /></svg>
+            <span><small>Download on the</small><strong>App Store</strong></span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.bluelinenote.app" target="_blank" rel="noopener" class="store-badge" aria-label="Get it on Google Play">
+            <svg viewBox="0 0 512 512" aria-hidden="true">
+              <path fill="#00C3FF" d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z" />
+              <path fill="#00E676" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1z" />
+              <path fill="#FF3D47" d="M104.6 499l220.7-221.3 60.1 60.1L104.6 499z" />
+              <path fill="#FFCE00" d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z" />
+            </svg>
+            <span><small>Get it on</small><strong>Google Play</strong></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="narrow">
+        <div class="eyebrow">Common questions</div>
+        <h2>What officers ask first</h2>
+        <div class="faq">
+          <details>
+            <summary>Does the app write the report for me?</summary>
+            <p>No. You write the narrative. BlueLineNote provides the structure, the coded fields, and a review pass that flags what is missing. Every field starts blank and is populated by you.</p>
+          </details>
+          <details>
+            <summary>Does it work without a signal?</summary>
+            <p>Core documentation works offline. Functions that depend on external services or email availability require connectivity.</p>
+          </details>
+          <details>
+            <summary>Is it a replacement for our RMS?</summary>
+            <p>No. BlueLineNote is a mobile reporting system that sits in front of the RMS. The RMS remains the system of record, and retention, validation, and submission continue through the agency's established process.</p>
+          </details>
+          <details>
+            <summary>What stays on the device?</summary>
+            <p>Your draft. It leaves the device as a PDF, with a NIBRS-structured HTML file for records personnel to review. The report exists once the agency processes and files it.</p>
+          </details>
+          <details>
+            <summary>Can I use it if my agency has not licensed it?</summary>
+            <p>Yes. Individual officers can download it directly from the App Store or Google Play. Agency licensing adds letterhead, configuration, and the management portal.</p>
+          </details>
+          <details>
+            <summary>Does it guarantee NIBRS or MMUCC acceptance?</summary>
+            <p>No software can guarantee acceptance across every jurisdiction and RMS. BlueLineNote provides structured workflows informed by national standards; final requirements remain controlled by the applicable state, agency, and system.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="narrow">
+        <div class="closing-card">
+          <h2>Run it in your agency for 30 days.</h2>
+          <p>
+            Full product, your branding, your own management portal. No commitment, and the contract
+            term starts after the pilot ends.
+          </p>
+          <a class="btn" href="/#pilot">Start a 30-day agency pilot</a>
+        </div>
+
+        <div class="disclaimer">
+          BlueLineNote is a mobile reporting system used ahead of an agency&rsquo;s records management
+          system. It is not a records management system, an evidence management platform, or an
+          official law enforcement system of record. Officers and agencies remain responsible for
+          following agency policy and official reporting procedures.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/narrative.html">Report quality</a>
+        <a href="/nibrs.html">NIBRS documentation</a>
+        <a href="/crash-reporting.html">Crash reporting</a>
+        <a href="/#pricing">Agency pricing</a>
+        <a href="/#pilot">Agency pilot</a>
+        <a href="/#privacy">Privacy Policy</a>
+        <a href="/#support">Support</a>
+      </div>
+      <div class="footer-copy">
+        BlueLineNote LLC<br />
+        Field documentation for law enforcement<br />
+        © 2026 BlueLineNote LLC
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
