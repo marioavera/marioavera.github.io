@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>What Makes a Police Report Narrative Defensible | BlueLineNote</title>
+  <meta
+    name="description"
+    content="A narrative is the part of a police report that gets tested in court. Personal knowledge, observation versus conclusion, contemporaneous capture, and attribution — what holds up on cross-examination, and what does not."
+  />
+  <link rel="canonical" href="https://bluelinenote.app/narrative.html" />
+
+  <meta name="theme-color" content="#1b1b18" />
+  <meta property="og:title" content="What Makes a Police Report Narrative Defensible" />
+  <meta property="og:description" content="Personal knowledge, observation versus conclusion, contemporaneous capture, and attribution — what holds up on cross-examination, and what does not." />
+  <meta property="og:image" content="https://bluelinenote.app/logo.png?v=2" />
+  <meta property="og:url" content="https://bluelinenote.app/narrative.html" />
+  <meta property="og:type" content="article" />
+
+  <link rel="icon" type="image/png" href="/logo.png?v=2" />
+  <link rel="apple-touch-icon" href="/logo.png?v=2" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Makes a Police Report Narrative Defensible",
+    "description": "Personal knowledge, observation versus conclusion, contemporaneous capture, and attribution — what holds up on cross-examination, and what does not.",
+    "author": {
+      "@type": "Organization",
+      "name": "BlueLineNote LLC"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BlueLineNote LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://bluelinenote.app/logo.png?v=2"
+      }
+    },
+    "mainEntityOfPage": "https://bluelinenote.app/narrative.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --ink: #1b1b18;
+      --ink-2: #2b2b26;
+      --paper: #f4f0e8;
+      --paper-2: #fbf8f1;
+      --copper: #a75f35;
+      --copper-dark: #7b4023;
+      --olive: #66705a;
+      --sand: #d4c3a7;
+      --line: rgba(27, 27, 24, 0.14);
+      --muted: #69685f;
+      --white: #ffffff;
+      --shadow-sm: 0 10px 30px rgba(23, 22, 19, 0.08);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(167, 95, 53, 0.08), transparent 24rem),
+        radial-gradient(circle at 88% 18%, rgba(102, 112, 90, 0.08), transparent 28rem),
+        var(--paper);
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; }
+    a { color: inherit; }
+
+    h1, h2, h3 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.12;
+      margin: 0;
+      letter-spacing: -0.035em;
+    }
+
+    p { margin: 0; }
+
+    .shell {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .article-shell {
+      width: min(760px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 240, 232, 0.82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      object-fit: cover;
+      border: 1px solid rgba(27, 27, 24, 0.18);
+      background: var(--paper-2);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper-2);
+      font-weight: 800;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--copper-dark);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--copper);
+    }
+
+    .article-head {
+      padding: 72px 0 34px;
+    }
+
+    .article-head h1 {
+      margin-top: 16px;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+    }
+
+    .standfirst {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+    }
+
+    .article-body {
+      padding-bottom: 40px;
+    }
+
+    .article-body p {
+      margin-top: 20px;
+      font-size: 1.06rem;
+    }
+
+    .article-body h2 {
+      margin-top: 52px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .article-body h3 {
+      margin-top: 34px;
+      font-size: 1.2rem;
+    }
+
+    .article-body ul {
+      margin: 20px 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .article-body ul li {
+      position: relative;
+      margin-top: 12px;
+      padding-left: 26px;
+      font-size: 1.04rem;
+    }
+
+    .article-body ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--olive);
+      transform: translateY(-50%);
+    }
+
+    .pull {
+      margin-top: 34px;
+      padding: 24px 28px;
+      border-left: 3px solid var(--copper);
+      background: rgba(251, 248, 241, 0.8);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.22rem;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .closing-note {
+      margin-top: 58px;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(251, 248, 241, 0.86);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .closing-note h3 { font-size: 1.3rem; }
+    .closing-note p { margin-top: 12px; color: var(--muted); }
+
+    .closing-note a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      margin-top: 20px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: var(--copper);
+      color: var(--white);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .related {
+      margin-top: 46px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .related p { color: var(--muted); font-size: 0.95rem; }
+
+    .related a {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 22px;
+      color: var(--copper-dark);
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(167, 95, 53, 0.4);
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+      background: rgba(251, 248, 241, 0.64);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--ink-2);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 0.83rem;
+      text-align: right;
+    }
+
+    @media (max-width: 760px) {
+      .article-head { padding-top: 48px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-copy { text-align: left; }
+      .brand-copy span { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="shell nav-wrap">
+      <a href="/" class="brand" aria-label="BlueLineNote home">
+        <img class="brand-mark" src="logo.png?v=2" alt="BlueLineNote logo" />
+        <span class="brand-copy">
+          <strong>BlueLineNote</strong>
+          <span>Field documentation platform</span>
+        </span>
+      </a>
+      <a class="nav-cta" href="/#pilot">Start a pilot</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="article-shell article-head">
+      <div class="eyebrow">Report quality</div>
+      <h1>What makes a police report narrative defensible</h1>
+      <p class="standfirst">
+        Most of a report is fields. The narrative is the part that gets read aloud in a courtroom,
+        line by line, by someone whose job is to find the seam in it. These are the properties that
+        hold up when that happens — and the conditions in the field that quietly erode them.
+      </p>
+    </div>
+
+    <article class="article-shell article-body">
+      <p>
+        A report serves several audiences before it ever reaches a courtroom. A supervisor reads it for
+        completeness. Records reads it for coding. A prosecutor reads it to decide whether there is a
+        case. An insurance adjuster or a records requester may read it years later. Each of them is
+        reading for something different.
+      </p>
+      <p>
+        But only one audience reads it adversarially. Defense counsel reads the narrative looking for
+        the place where the officer's account and the officer's testimony do not line up, or where the
+        report says something the officer cannot now explain. Everything below is about surviving that
+        reading.
+      </p>
+
+      <h2>1. Personal knowledge</h2>
+      <p>
+        Every sentence in a narrative implicitly claims a source. The officer saw it, heard it, smelled
+        it, measured it, or was told it by someone identified in the report. A narrative that contains
+        a statement the officer cannot source is a liability, and it is usually the first thing found
+        on cross.
+      </p>
+      <p>
+        This is the property most easily lost without anyone noticing. It erodes when a report is
+        assembled from several inputs at once — dispatch notes, another officer's account, a partner's
+        recollection, a body camera review — and the boundaries between those sources dissolve in the
+        writing. The sentence still reads well. It just no longer has a clean owner.
+      </p>
+
+      <div class="pull">
+        The question is never whether the sentence is true. It is whether the officer can say how
+        he knows it.
+      </div>
+
+      <h2>2. Observation separated from conclusion</h2>
+      <p>
+        "The driver was impaired" is a conclusion. "The driver's eyes were watery and bloodshot, his
+        speech was slurred, and I detected an odor of an alcoholic beverage emanating from his breath
+        as he spoke" is a set of observations that supports one.
+      </p>
+      <p>
+        The second version is harder to attack because there is nothing to attack — each element is
+        something the officer perceived and can describe. The first version invites the only question
+        that matters: based on what?
+      </p>
+      <p>
+        Conclusions are not forbidden. An officer is entitled to form them, and in many contexts is
+        required to. The requirement is that the observations underneath them appear in the report,
+        so that the conclusion is shown as a product of the officer's perception rather than asserted
+        on its own.
+      </p>
+
+      <h2>3. Contemporaneous capture</h2>
+      <p>
+        Memory does not fail all at once. It degrades in a specific and predictable pattern: the
+        narrative arc of the call survives, and the details attach themselves to it afterward. Sequence
+        compresses. Times round themselves off. Quotes smooth into paraphrase. Descriptions drift
+        toward the typical.
+      </p>
+      <p>
+        The officer is not aware of any of this happening. The report written three hours later at a
+        station computer reads as confidently as the one written at the scene. It is simply less
+        accurate, in ways that only surface when the report is compared against video, another
+        officer's account, or a witness's memory.
+      </p>
+      <p>
+        Anything captured while the officer is still standing there — a time, an exact phrase, a plate,
+        a position, a spontaneous statement — is fixed. Anything reconstructed afterward is
+        reconstruction, however good the officer is.
+      </p>
+
+      <h2>4. Attribution</h2>
+      <p>
+        Reports routinely contain information the officer did not personally observe: what a witness
+        said, what dispatch relayed, what a complainant reported, what another unit found. None of
+        that is a problem as long as the report says whose information it is.
+      </p>
+      <p>
+        It becomes a problem when the attribution is dropped and the relayed information reads as the
+        officer's own observation. That is the difference between a report that describes what was
+        reported to the officer and one that appears to claim the officer saw it.
+      </p>
+
+      <h2>5. The officer has to be able to testify to it</h2>
+      <p>
+        This is the test that contains all the others. Every sentence in the narrative is something
+        the officer may be asked to explain, under oath, possibly years later, with the report in
+        front of him and a copy in the hands of someone looking for inconsistency.
+      </p>
+      <p>
+        A sentence the officer cannot explain the origin of is worse than a sentence that was never
+        written. The gap is not neutral — it is an opening, and it applies to the rest of the report
+        by extension. An officer who cannot account for one paragraph has a credibility problem with
+        all of them.
+      </p>
+
+      <h2>What this means for how reports get written</h2>
+      <p>
+        Most of these properties are not lost through carelessness. They are lost through the
+        conditions under which reports are actually produced: at the end of a shift, from notes taken
+        under pressure, hours after the call, on a machine in a room full of other people finishing
+        their own paperwork.
+      </p>
+      <p>
+        Two things reliably protect them:
+      </p>
+      <ul>
+        <li>
+          <strong>Capture as close to the event as possible.</strong> Not the polished narrative — the
+          raw material. Times, exact words, positions, descriptions, plate numbers. Whatever is fixed
+          while the officer is still there does not have to be reconstructed later.
+        </li>
+        <li>
+          <strong>Structure that keeps sources distinct.</strong> When observation, statement, and
+          relayed information are captured in separate places rather than merged into prose at the
+          moment of writing, attribution survives by default rather than by the officer's discipline
+          at 0300.
+        </li>
+      </ul>
+      <p>
+        Neither of these is about writing style. They are about when and how the underlying material
+        gets recorded — which is a workflow problem before it is a writing problem.
+      </p>
+
+      <h2>A note on tools</h2>
+      <p>
+        Any tool that touches report writing should be evaluated against the list above rather than
+        against how much faster it makes the paperwork. The relevant questions are narrow:
+      </p>
+      <ul>
+        <li>After using it, can the officer still source every sentence in the narrative?</li>
+        <li>Does it preserve the distinction between what was observed and what was concluded?</li>
+        <li>Does it move capture closer to the event, or further from it?</li>
+        <li>Does attribution survive the process, or does it get smoothed away?</li>
+        <li>Can the officer explain, on the stand, how each part of the document came to exist?</li>
+      </ul>
+      <p>
+        A tool that improves speed while weakening any of these has moved the cost rather than removed
+        it. The paperwork gets done sooner and the problem shows up later, in a setting where it is
+        considerably more expensive.
+      </p>
+
+      <div class="closing-note">
+        <h3>Where BlueLineNote sits</h3>
+        <p>
+          BlueLineNote is a mobile reporting system built around the first of those two protections:
+          capture on the device, at the scene, while the officer is still there. Structured fields keep
+          observations, statements, and relayed information distinct. The officer writes the narrative.
+          The application organizes what he captured and checks it for gaps before it goes to a
+          supervisor. Incident reports come out NIBRS-coded, crash reports MMUCC-coded, on the agency's
+          letterhead, in front of the agency's RMS rather than in place of it.
+        </p>
+        <a class="btn" href="/#pilot">Start a 30-day agency pilot</a>
+      </div>
+
+      <div class="related">
+        <p>Related</p>
+        <a href="/nibrs.html">NIBRS documentation</a>
+        <a href="/crash-reporting.html">Crash reporting</a>
+        <a href="/">BlueLineNote overview</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/nibrs.html">NIBRS documentation</a>
+        <a href="/crash-reporting.html">Crash reporting</a>
+        <a href="/#pricing">Agency pricing</a>
+        <a href="/#pilot">Agency pilot</a>
+        <a href="/#privacy">Privacy Policy</a>
+        <a href="/#support">Support</a>
+      </div>
+      <div class="footer-copy">
+        BlueLineNote LLC<br />
+        Field documentation for law enforcement<br />
+        © 2026 BlueLineNote LLC
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
