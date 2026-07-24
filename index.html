@@ -10,12 +10,12 @@
     content="BlueLineNote helps law enforcement officers capture structured field information, review documentation for missing details, and produce agency-ready reports on iOS and Android."
   />
   <meta name="google-site-verification" content="3uuBkNSX73JmQw50X6nnjQklkWIZ3uU4m1b0os3ABGU" />
-  <meta name="keywords" content="law enforcement field reporting app, police report writing app, NIBRS documentation app, MMUCC crash reporting app, officer field notes app, police agency software, agency seat management portal" />
+  <meta name="keywords" content="law enforcement field reporting app, police report writing app, NIBRS documentation app, MMUCC crash reporting app, police agency software, agency seat management portal" />
   <link rel="canonical" href="https://bluelinenote.app/" />
 
   <meta name="theme-color" content="#1b1b18" />
   <meta property="og:title" content="BlueLineNote | Field Documentation for Law Enforcement" />
-  <meta property="og:description" content="Structured field documentation, report review, crash workflows, agency-ready export, and a private agency portal for seat management—without storing report content in the cloud." />
+  <meta property="og:description" content="Structured field documentation, report review, crash workflows, agency-ready export, and a private agency portal for seat management—with no server-side copy of officer drafts or reports." />
   <meta property="og:image" content="https://bluelinenote.app/logo.png" />
   <meta property="og:url" content="https://bluelinenote.app" />
   <meta property="og:type" content="website" />
@@ -1755,7 +1755,8 @@
             BlueLineNote catches missing fields before a report reaches a supervisor&mdash;so reports
             come in more complete the first time, supervisors return less work, and officers spend less
             time redoing paperwork and more time proactive and visible in the community, where agencies
-            need them most. Report content stays on each device.
+            need them most. What the device holds is a draft &mdash; the report exists once your agency
+            processes and files it.
           </p>
 
           <div class="hero-actions">
@@ -1857,7 +1858,7 @@
           <article class="outcome-card surface reveal">
             <div class="number">03 · Consistency</div>
             <h3>Give the entire shift one repeatable process.</h3>
-            <p>Officers use the same organized approach across field notes, incident reports, crashes, investigations, and supporting documentation.</p>
+            <p>Officers use the same organized approach across incident reports, crashes, investigations, and supporting documentation.</p>
           </article>
 
           <article class="outcome-card surface reveal">
@@ -1923,7 +1924,7 @@
             <div class="feature-row reveal">
               <div class="feature-icon">01</div>
               <div>
-                <h3>Structured field notes</h3>
+                <h3>Structured incident documentation</h3>
                 <p>Organized incident, victim, witness, suspect, vehicle, property, and narrative capture.</p>
               </div>
             </div>
@@ -1967,22 +1968,32 @@
     <section class="section" id="security">
       <div class="shell">
         <div class="eyebrow reveal">Security and data handling</div>
-        <h2 class="section-heading reveal">Report content stays separate from BlueLineNote licensing.</h2>
+        <h2 class="section-heading reveal">What the device holds is a draft. The report is your agency’s.</h2>
         <p class="section-copy reveal">
-          Agencies need a clear answer about where information lives. BlueLineNote is designed so report content remains on the officer’s device while licensing is validated separately.
+          Agencies need a clear answer about where information lives, and the answer starts with what a phone is
+          actually holding. An officer drafts on the device. A supervisor may sign on the officer’s device, or after
+          the draft is transmitted — either way, a signed draft is still a draft. It leaves the device as a PDF,
+          alongside a NIBRS-structured HTML file for your RMS personnel to review. The report exists when your agency
+          processes and files it, in your systems — not on the phone.
         </p>
 
         <div class="security-grid">
           <article class="security-card surface reveal">
             <span class="mini">On-device</span>
-            <h3>Report content is stored on the device.</h3>
-            <p>Notes, photos, scans, diagrams, and narrative content stay on the officer’s device. BlueLineNote does not receive or keep a copy of report content.</p>
+            <h3>The device holds the officer’s draft.</h3>
+            <p>Draft content, photos, scans, diagrams, and narrative stay on the officer’s device until the officer transmits them. BlueLineNote does not receive or keep a copy.</p>
           </article>
 
           <article class="security-card surface reveal">
             <span class="mini">Separated systems</span>
-            <h3>Licensing does not require report access.</h3>
-            <p>The backend validates individual purchases and agency seats. It does not need to receive the content officers write.</p>
+            <h3>Licensing does not require content access.</h3>
+            <p>BlueLineNote&rsquo;s servers validate individual purchases and agency seats. They receive a device identifier and, for metered features, usage counts &mdash; not draft content, report content, or attachments.</p>
+          </article>
+
+          <article class="security-card surface reveal">
+            <span class="mini">External systems</span>
+            <h3>No connection to CJIS systems.</h3>
+            <p>BlueLineNote does not connect to NCIC, III, or any CJIS system, and receives no data from them. Every field in the application starts blank; all information in a draft is entered by the officer. The device remains subject to your agency&rsquo;s mobile device management, encryption, and access-control policy, as it already is for every application on it.</p>
           </article>
 
           <article class="security-card surface reveal">
@@ -2025,6 +2036,18 @@
             <p>Capture collision, harmful-event, vehicle, person, injury-severity, and other crash fields through a guided mobile workflow.</p>
             <a class="standard-link" href="crash-reporting.html">More on crash reporting &rarr;</a>
           </article>
+
+          <article class="standard-card reveal">
+            <span>A defined role</span>
+            <h3>A mobile reporting system</h3>
+            <p>The DOJ Bureau of Justice Assistance <em>Standard Functional Specifications for Law Enforcement Records Management Systems</em>, developed by LEITSC, lists a mobile reporting system as a standard internal data exchange for incident reporting and traffic accident reporting. That is the role BlueLineNote occupies. There is no federal certification program for this category, and the specification describes a role rather than endorsing any product.</p>
+          </article>
+
+          <article class="standard-card reveal">
+            <span>Your RMS stays the record</span>
+            <h3>In front of the RMS, not in place of it</h3>
+            <p>BlueLineNote produces a NIBRS-structured HTML file alongside the PDF. Your RMS personnel review it and, subject to your RMS&rsquo;s link capabilities, may use it for injection into your system of record. BlueLineNote does not submit to NIBRS and does not write to your RMS.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -2036,7 +2059,7 @@
           <h2 class="section-heading reveal">A field documentation platform your department can evaluate and control.</h2>
           <p class="section-copy reveal">
             BlueLineNote supports seat-based agency access, centralized activation,
-            customizable branding, and a consistent officer workflow while keeping report content on each device.
+            customizable branding, and a consistent officer workflow &mdash; while drafts stay on each device until the officer transmits them.
           </p>
 
           <div class="agency-points">
@@ -2140,7 +2163,7 @@
           <article class="security-card surface reveal">
             <span class="mini">Boundaries</span>
             <h3>Seat administration only &mdash; never report content.</h3>
-            <p>The portal manages licensing. It has no path to officer reports, notes, photos, or narratives. That content stays on each officer&rsquo;s device, where neither the portal nor BlueLineNote can reach it.</p>
+            <p>The portal manages licensing. It has no path to officer drafts, reports, photos, or narratives. That content stays on the officer&rsquo;s device until transmitted to your agency, where neither the portal nor BlueLineNote can reach it.</p>
           </article>
         </div>
 
@@ -2341,13 +2364,13 @@
           </details>
 
           <details class="reveal">
-            <summary>Where is report content stored?</summary>
-            <p>BlueLineNote is designed to keep report content on the officer’s device rather than storing a server-side copy of the report in the BlueLineNote cloud.</p>
+            <summary>What is actually stored on the officer’s device?</summary>
+            <p>The officer’s draft. An officer drafts on the device; a supervisor may sign on that device or after the draft is transmitted, but a signed draft is still a draft. It leaves the device as a PDF, with a NIBRS-structured HTML file for your RMS personnel to review. The report exists once your agency processes and files it — in your systems, not on the phone. BlueLineNote stores no server-side copy of either.</p>
           </details>
 
           <details class="reveal">
-            <summary>Does agency licensing allow BlueLineNote to read officer reports?</summary>
-            <p>No. Agency licensing validates access and seat status separately from the content officers enter into reports.</p>
+            <summary>Does agency licensing allow BlueLineNote to read officer drafts or reports?</summary>
+            <p>No. Licensing validates access and seat status. BlueLineNote&rsquo;s servers receive a device identifier and, for metered features, usage counts &mdash; never the content an officer enters.</p>
           </details>
 
           <details class="reveal">
@@ -2357,12 +2380,17 @@
 
           <details class="reveal">
             <summary>Can the agency portal see our officers’ reports?</summary>
-            <p>No. The portal administers licensing and seats only. It has no access to report content, notes, photos, or narratives — that content remains on each officer’s device.</p>
+            <p>No. The portal administers licensing and seats only. It has no access to draft or report content, photos, or narratives — that content stays on the officer’s device until it is transmitted to your agency.</p>
           </details>
 
           <details class="reveal">
             <summary>Is BlueLineNote a replacement for an RMS?</summary>
-            <p>No. BlueLineNote is a field documentation and report-preparation tool. It can capture officer and supervisor sign-off on the device and carry that approval block into the exported document, but the RMS remains the system of record. Retention, validation, and submission continue through the agency’s established process and systems.</p>
+            <p>No. BlueLineNote is a mobile reporting system that sits in front of your RMS. It can capture officer and supervisor sign-off on the device and carry that approval block into the exported document, but a signed draft is still a draft — the RMS remains the system of record, and the report exists once your agency files it. Retention, validation, and submission continue through your established process and systems.</p>
+          </details>
+
+          <details class="reveal">
+            <summary>How does BlueLineNote relate to CJIS?</summary>
+            <p>BlueLineNote does not connect to NCIC, III, or any CJIS system and receives no data from them. Every field starts blank and is populated by the officer. The CJIS Security Policy applies to entities that access, process, store, or transmit Criminal Justice Information; BlueLineNote&rsquo;s servers receive no draft or report content. The device itself stays under your agency&rsquo;s existing mobile device management, encryption, and access-control policy. The FBI CJIS Security Policy, version 6.0 and later, is publicly available and may be shared without restriction &mdash; we are glad to work through it with your LASO or your state CJIS Systems Officer, who are the authorities on how it applies in your state.</p>
           </details>
 
           <details class="reveal">
@@ -2426,7 +2454,7 @@
         <div class="eyebrow reveal">Support</div>
         <h2 class="section-heading reveal">Questions, issues, or help getting started.</h2>
         <p class="section-copy reveal">
-          BlueLineNote is built for field note organization, crash documentation, and report preparation.
+          BlueLineNote is built for incident documentation, crash documentation, and report preparation.
           If you need help, have a question, or want to report an issue, write to us directly.
         </p>
 
@@ -2437,7 +2465,7 @@
           <p class="reveal">Questions about features, agency licensing and seat management, backup and restore, purchases and subscriptions, and reporting a problem with the application.</p>
 
           <h3 class="reveal">What we cannot access</h3>
-          <p class="reveal">For privacy and user protection, BlueLineNote does not provide cloud storage or developer access to user-generated notes, reports, scans, or records. We cannot retrieve, restore, or view your content &mdash; including if a device is lost or an unencrypted backup is unavailable.</p>
+          <p class="reveal">For privacy and user protection, BlueLineNote does not provide cloud storage or developer access to user-generated drafts, reports, scans, or records. We cannot retrieve, restore, or view your content &mdash; including if a device is lost or an unencrypted backup is unavailable.</p>
 
           <h3 class="reveal">Your responsibility</h3>
           <p class="reveal">Users are responsible for managing, exporting, backing up, and deleting their own data, and for following their department&rsquo;s policies for handling and retaining any information recorded using BlueLineNote.</p>
