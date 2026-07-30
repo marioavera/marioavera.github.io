@@ -1713,6 +1713,141 @@
         flex-direction: column;
       }
     }
+
+    /* ---- IT & Legal Compliance Guardrails ---- */
+    .guardrail-table {
+      margin-top: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: rgba(251, 248, 241, 0.86);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guardrail-head {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      background: var(--ink);
+      color: var(--paper-2);
+    }
+
+    .guardrail-head div {
+      padding: 18px 28px;
+      font-family: "Manrope", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .guardrail-head div:first-child {
+      color: var(--sand);
+      border-right: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .guardrail-row {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      border-top: 1px solid var(--line);
+    }
+
+    .guardrail-row:first-of-type {
+      border-top: none;
+    }
+
+    .guardrail-concern,
+    .guardrail-answer {
+      padding: 30px 28px;
+    }
+
+    .guardrail-concern {
+      border-right: 1px solid var(--line);
+      background: rgba(232, 225, 212, 0.42);
+    }
+
+    .guardrail-concern .num {
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .guardrail-concern h3 {
+      margin-top: 12px;
+      font-size: 1.32rem;
+    }
+
+    .guardrail-concern p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .guardrail-answer h3 {
+      font-size: 1.32rem;
+      color: var(--copper-dark);
+    }
+
+    .guardrail-answer p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .guardrail-answer .mini {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--success);
+      background: rgba(47, 107, 73, 0.1);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cell-label {
+      display: none;
+    }
+
+    .guardrail-note {
+      margin-top: 26px;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    @media (max-width: 760px) {
+      .guardrail-head {
+        display: none;
+      }
+
+      .guardrail-row {
+        grid-template-columns: 1fr;
+      }
+
+      .guardrail-concern {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cell-label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--copper-dark);
+      }
+
+      .guardrail-concern,
+      .guardrail-answer {
+        padding: 24px 22px;
+      }
+    }
   </style>
 </head>
 
@@ -1736,6 +1871,7 @@
         <a href="#pilot">Pilot Program</a>
         <a href="#portal">Agency Portal</a>
         <a href="#security">Security</a>
+        <a href="#guardrails">Compliance</a>
         <a href="#standards">Standards</a>
         <a href="/police-report-narrative.html">Report Quality</a>
         <a href="#pricing">Pricing</a>
@@ -1782,7 +1918,7 @@
             <li>Incident reports come out <strong>NIBRS-coded</strong></li>
             <li>Crash reports come out <strong>MMUCC-coded</strong></li>
             <li>Officers pick from NIBRS-coded offenses and a matching <strong>narrative template</strong> populates to help</li>
-            <li>A <strong>NIBRS HTML file</strong> your RMS personnel review before submission &mdash; requirements vary by state</li>
+            <li>A <strong>NIBRS XML file</strong> your RMS personnel review before submission &mdash; requirements vary by state</li>
             <li>Cleaner data for <strong>faster crime stats</strong>, so command can deploy where it&rsquo;s needed most</li>
             <li>A <strong>private agency portal</strong> where your own staff assign and reclaim seats</li>
           </ul>
@@ -1987,7 +2123,7 @@
           Agencies need a clear answer about where information lives, and the answer starts with what a phone is
           actually holding. An officer drafts on the device. A supervisor may sign on the officer’s device, or after
           the draft is transmitted — either way, a signed draft is still a draft. It leaves the device as a PDF,
-          alongside a NIBRS-structured HTML file for your RMS personnel to review. The report exists when your agency
+          alongside a NIBRS-structured XML file for your RMS personnel to review. The report exists when your agency
           processes and files it, in your systems — not on the phone.
         </p>
         <p class="section-copy reveal" style="margin-top:16px;">
@@ -2028,6 +2164,76 @@
       </div>
     </section>
 
+    <section class="section" id="guardrails">
+      <div class="shell">
+        <div class="eyebrow reveal">IT &amp; legal compliance guardrails</div>
+        <h2 class="section-heading reveal">The three questions IT and legal ask before anything else.</h2>
+        <p class="section-copy reveal">
+          Every agency evaluation runs through the same gate: what does this thing touch, where does the
+          data go, and how do we tell a working draft from the official record. Here is the concern on the
+          left and the design decision that answers it on the right.
+        </p>
+
+        <div class="guardrail-table reveal">
+          <div class="guardrail-head" aria-hidden="true">
+            <div>The compliance concern</div>
+            <div>How BlueLineNote solves it</div>
+          </div>
+
+          <div class="guardrail-row">
+            <div class="guardrail-concern">
+              <span class="cell-label">The compliance concern</span>
+              <div class="num">01</div>
+              <h3>CJIS &amp; connectivity</h3>
+              <p>Does this application reach into a criminal justice system, and does that pull the agency into a Security Addendum?</p>
+            </div>
+            <div class="guardrail-answer">
+              <span class="cell-label">How BlueLineNote solves it</span>
+              <span class="mini">Zero network touch</span>
+              <h3>The app does not query or connect to state or federal criminal justice databases.</h3>
+              <p>No NCIC, no III, no state CJIS interface. Nothing is received from those systems. Every field starts blank and is populated by the officer. Your LASO or state CJIS Systems Officer remains the authority on how the policy applies in your state, and we are glad to work through it with them.</p>
+            </div>
+          </div>
+
+          <div class="guardrail-row">
+            <div class="guardrail-concern">
+              <span class="cell-label">The compliance concern</span>
+              <div class="num">02</div>
+              <h3>Data evaporation &amp; leaks</h3>
+              <p>Where does the working draft actually live, and who else ends up holding a copy of it?</p>
+            </div>
+            <div class="guardrail-answer">
+              <span class="cell-label">How BlueLineNote solves it</span>
+              <span class="mini">Zero cloud footprint</span>
+              <h3>No draft text, photos, or voice dictations are uploaded to external cloud servers.</h3>
+              <p>BlueLineNote provides no cloud storage and keeps no server-side copy of draft or report content. Our servers see a device identifier and, for metered features, usage counts &mdash; nothing an officer typed, photographed, or dictated. There is no vendor-side repository to breach, subpoena, or produce.</p>
+            </div>
+          </div>
+
+          <div class="guardrail-row">
+            <div class="guardrail-concern">
+              <span class="cell-label">The compliance concern</span>
+              <div class="num">03</div>
+              <h3>Evidentiary integrity</h3>
+              <p>How does the agency distinguish an officer&rsquo;s working draft from the record of the agency?</p>
+            </div>
+            <div class="guardrail-answer">
+              <span class="cell-label">How BlueLineNote solves it</span>
+              <span class="mini">Clear draft-to-final separation</span>
+              <h3>Drafts stay local until they are committed straight to your official system.</h3>
+              <p>What sits on the device is a draft, and a signed draft is still a draft. It leaves as a PDF alongside a NIBRS-structured XML file for RMS personnel review, then injection. The report exists once your agency processes and files it &mdash; in your system of record, on your retention schedule.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="guardrail-note reveal">
+          Device encryption, mobile device management, access control, retention, and discovery remain
+          governed by your agency&rsquo;s policy and applicable law, as they already are for every
+          application on the device.
+        </p>
+      </div>
+    </section>
+
     <section class="section standards-band" id="standards">
       <div class="shell standards-layout">
         <div>
@@ -2064,7 +2270,7 @@
           <article class="standard-card reveal">
             <span>Your RMS stays the record</span>
             <h3>In front of the RMS, not in place of it</h3>
-            <p>BlueLineNote produces a NIBRS-structured HTML file alongside the PDF. Your RMS personnel review it and, subject to your RMS&rsquo;s link capabilities, may use it for injection into your system of record. BlueLineNote does not submit to NIBRS and does not write to your RMS.</p>
+            <p>BlueLineNote produces a NIBRS-structured XML file alongside the PDF. Your RMS personnel review it and, subject to your RMS&rsquo;s link capabilities, may use it for injection into your system of record. BlueLineNote does not submit to NIBRS and does not write to your RMS.</p>
           </article>
         </div>
       </div>
@@ -2383,7 +2589,7 @@
 
           <details class="reveal">
             <summary>What is actually stored on the officer’s device?</summary>
-            <p>The officer’s draft. An officer drafts on the device; a supervisor may sign on that device or after the draft is transmitted, but a signed draft is still a draft. It leaves the device as a PDF, with a NIBRS-structured HTML file for your RMS personnel to review. The report exists once your agency processes and files it — in your systems, not on the phone. BlueLineNote stores no server-side copy of either.</p>
+            <p>The officer’s draft. An officer drafts on the device; a supervisor may sign on that device or after the draft is transmitted, but a signed draft is still a draft. It leaves the device as a PDF, with a NIBRS-structured XML file for your RMS personnel to review. The report exists once your agency processes and files it — in your systems, not on the phone. BlueLineNote stores no server-side copy of either.</p>
           </details>
 
           <details class="reveal">
@@ -2535,6 +2741,7 @@
         <a href="/police-report-narrative.html">Report quality</a>
         <a href="nibrs.html">NIBRS documentation</a>
         <a href="crash-reporting.html">Crash reporting</a>
+        <a href="#guardrails">Compliance guardrails</a>
         <a href="#pricing">Agency pricing</a>
         <a href="#pilot">Agency pilot</a>
         <a href="#portal">Agency portal</a>
