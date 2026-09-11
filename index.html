@@ -16,10 +16,10 @@
   <title>BlueLineNote | NIBRS and MMUCC Reporting for Law Enforcement Agencies</title>
   <meta
     name="description"
-    content="A mobile reporting system for police agencies. Officers draft incident and crash reports on the PD-issued device; reports come out NIBRS-coded and MMUCC-coded on your agency letterhead. Sits in front of your RMS, not in place of it."
+    content="A mobile reporting system for police agencies. Officers draft incident and crash reports on the PD-issued device; reports come out NIBRS-coded and MMUCC-coded on your agency letterhead. Sits in front of your RMS, not in place of it. Also makers of Investigator Suite, a case documentation app for investigators."
   />
   <meta name="google-site-verification" content="3uuBkNSX73JmQw50X6nnjQklkWIZ3uU4m1b0os3ABGU" />
-  <meta name="keywords" content="law enforcement field reporting app, police report writing app, NIBRS documentation app, MMUCC crash reporting app, police agency software, agency seat management portal" />
+  <meta name="keywords" content="law enforcement field reporting app, police report writing app, NIBRS documentation app, MMUCC crash reporting app, police agency software, agency seat management portal, private investigator case management app, investigator case documentation, ID scanner app for investigators" />
   <link rel="canonical" href="https://bluelinenote.app/" />
 
   <link rel="icon" type="image/png" href="/logo.png?v=2" />
@@ -50,6 +50,41 @@
     "audience": {
       "@type": "Audience",
       "audienceType": "Law enforcement agencies"
+    }
+  }
+  </script>
+
+  <!-- Second product, described separately so search engines index it as its
+       own application rather than a paragraph inside BlueLineNote's entry. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Investigator Suite",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "iOS, Android",
+    "description": "A case documentation application for private investigators and law enforcement investigators. Case folders hold people, notes, photographs, timeline, and scanned identification. On-device ID scanning, dictation, Face ID lock, encrypted backup, English and Spanish. No account, no cloud, and no lookup against any external database.",
+    "url": "https://bluelinenote.app/#investigator-suite",
+    "image": "https://bluelinenote.app/logo.png?v=2",
+    "inLanguage": ["en", "es"],
+    "downloadUrl": [
+      "https://apps.apple.com/us/app/id6809216794",
+      "https://play.google.com/store/apps/details?id=app.investigatorsuite.investigator_suite"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "39.99",
+      "priceCurrency": "USD",
+      "description": "Three case folders free. One payment unlocks the application; no subscription."
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Private investigators and law enforcement investigators"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BlueLineNote LLC",
+      "url": "https://bluelinenote.app"
     }
   }
   </script>
@@ -1848,6 +1883,89 @@
         padding: 24px 22px;
       }
     }
+
+    /* ---- Investigator Suite: sibling-product band ----
+       Reuses the olive standards-band so the section reads as a separate
+       application rather than another BlueLineNote feature. These few rules
+       cover the pieces the existing classes do not: the two-app split, the
+       "also from" label, and the store row inside a dark band. */
+    .sibling-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #f4ead9;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .is-heading {
+      margin-top: 18px;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+    }
+
+    .is-sub {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.82);
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .is-points {
+      display: grid;
+      gap: 11px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+      max-width: 560px;
+    }
+
+    .is-points li {
+      position: relative;
+      padding-left: 32px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .is-points li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      display: grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: var(--sand);
+      color: var(--ink);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .is-points li strong {
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .standards-band .store-badge {
+      background: var(--ink);
+    }
+
+    .is-footnote {
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.86rem;
+      max-width: 560px;
+    }
   </style>
 </head>
 
@@ -1875,6 +1993,7 @@
         <a href="#standards">Standards</a>
         <a href="/police-report-narrative.html">Report Quality</a>
         <a href="#pricing">Pricing</a>
+        <a href="#investigator-suite">Investigator Suite</a>
         <a href="#privacy">Privacy</a>
         <a href="#support">Support</a>
         <a class="nav-cta" href="#pilot">Start a pilot</a>
@@ -2159,6 +2278,12 @@
             <span class="mini">Agency policy</span>
             <h3>Retention remains an agency responsibility.</h3>
             <p>Discovery, retention, records handling, and device-management obligations remain subject to applicable law and agency policy.</p>
+          </article>
+
+          <article class="security-card surface reveal">
+            <span class="mini">Same principle, second app</span>
+            <h3>Investigators get the same answer.</h3>
+            <p>The company&rsquo;s second application, <a href="#investigator-suite" style="color:var(--copper-dark);font-weight:800;">Investigator Suite</a>, is built for private investigators and case investigators on the same rule: no account, no cloud, and no lookup against any external database.</p>
           </article>
         </div>
       </div>
@@ -2571,6 +2696,119 @@
       </div>
     </section>
 
+    <!-- =====================================================================
+         INVESTIGATOR SUITE
+         ---------------------------------------------------------------------
+         Placed after pricing on purpose: a chief reading the agency pitch —
+         pilot, portal, price — gets through it uninterrupted, and this lands
+         as "the same company also makes this" rather than a detour.
+
+         Olive band so it reads as a separate application, not another
+         BlueLineNote feature. The store links are live once both apps clear
+         review; until then they resolve to the store's own "not available"
+         page, so swap them for the commented-out placeholder below if you
+         publish before approval.
+         ===================================================================== -->
+    <section class="section standards-band" id="investigator-suite">
+      <div class="shell standards-layout">
+        <div>
+          <span class="sibling-tag reveal">A second app from BlueLineNote LLC</span>
+          <h2 class="is-heading reveal">Investigator Suite</h2>
+          <p class="is-sub reveal">Case folders for investigators. On the device, and nowhere else.</p>
+
+          <p class="section-copy reveal">
+            Built for private investigators and investigators working cases rather than calls.
+            Open a case folder and everything about that case lives in one place &mdash; people,
+            notes, photographs, timeline, and the identification you scanned along the way. No
+            more one case spread across a camera roll, a voice memo, and a legal pad.
+          </p>
+
+          <ul class="is-points reveal" aria-label="What Investigator Suite does">
+            <li>Scan an ID and the text is read <strong>on the device</strong> &mdash; name, date of birth, ID number, address</li>
+            <li>Dictate a note when your hands are full; it lands straight in the folder</li>
+            <li><strong>Face ID lock</strong>, and an encrypted backup only you can open</li>
+            <li>Export a case as a PDF in <strong>English or Spanish</strong></li>
+            <li>The app <strong>looks nobody up</strong> and queries no database &mdash; you record your own work</li>
+            <li><strong>Three case folders free.</strong> One payment after that. No subscription.</li>
+          </ul>
+
+          <div class="download-row reveal">
+            <a
+              href="https://apps.apple.com/us/app/id6809216794"
+              target="_blank"
+              rel="noopener"
+              class="store-badge"
+              aria-label="Download Investigator Suite on the App Store"
+            >
+              <svg viewBox="0 0 384 512" aria-hidden="true">
+                <path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+              </svg>
+              <span>
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </span>
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=app.investigatorsuite.investigator_suite"
+              target="_blank"
+              rel="noopener"
+              class="store-badge"
+              aria-label="Get Investigator Suite on Google Play"
+            >
+              <svg viewBox="0 0 512 512" aria-hidden="true">
+                <path fill="#00C3FF" d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z" />
+                <path fill="#00E676" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1z" />
+                <path fill="#FF3D47" d="M104.6 499l220.7-221.3 60.1 60.1L104.6 499z" />
+                <path fill="#FFCE00" d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z" />
+              </svg>
+              <span>
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </span>
+            </a>
+          </div>
+
+          <!-- Pre-launch swap: comment out the download-row above and
+               uncomment this line while the apps are still in review.
+          <p class="is-footnote reveal">Coming shortly to the App Store and Google Play.
+            Email support@bluelinenote.app to be told when it lands.</p>
+          -->
+
+          <p class="is-footnote reveal">
+            Separate application, separate purchase. An agency BlueLineNote seat does not
+            include Investigator Suite, and it is not required to use it.
+          </p>
+        </div>
+
+        <div class="standards-cards">
+          <article class="standard-card reveal">
+            <span>One folder per case</span>
+            <h3>Everything about the case, together</h3>
+            <p>People, vehicles, interviews, leads, notes, photographs, and a timeline &mdash; organized in one folder instead of scattered across a phone and remembered later.</p>
+          </article>
+
+          <article class="standard-card reveal">
+            <span>Read it, don&rsquo;t type it</span>
+            <h3>On-device ID scanning</h3>
+            <p>Photograph a licence or identification card and the text is recognized on the device. You check it before it saves, because a worn card in bad light is a guess, not a fact.</p>
+          </article>
+
+          <article class="standard-card reveal">
+            <span>Locked and local</span>
+            <h3>Face ID, and nothing leaves</h3>
+            <p>Require Face ID, Touch ID, or a passcode to open the app. Case content stays on the device, and the encrypted backup is a single password-protected file only you can open.</p>
+          </article>
+
+          <article class="standard-card reveal">
+            <span>Bilingual, in full</span>
+            <h3>English and Spanish</h3>
+            <p>Switch language any time and the exported record follows &mdash; the same case, produced in whichever language it needs to be read in.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section compact" id="faq">
       <div class="shell">
         <div class="eyebrow reveal">Frequently asked questions</div>
@@ -2625,6 +2863,16 @@
           <details class="reveal">
             <summary>Can an agency test BlueLineNote with a small group?</summary>
             <p>Yes. Agencies can discuss a limited evaluation, deployment approach, seat count, branding, and workflow configuration through the agency contact form.</p>
+          </details>
+
+          <details class="reveal">
+            <summary>What is Investigator Suite, and is it included in our agency seats?</summary>
+            <p>Investigator Suite is a separate application from the same company, built for private investigators and investigators working cases rather than calls. It organizes a case into one folder &mdash; people, notes, photographs, timeline, scanned identification &mdash; with on-device ID scanning, dictation, a Face ID lock, encrypted backup, and full English and Spanish. It is a separate purchase: an agency BlueLineNote seat does not include it, and it is not required to use BlueLineNote. The first three case folders are free, then one payment unlocks it &mdash; no subscription.</p>
+          </details>
+
+          <details class="reveal">
+            <summary>Does Investigator Suite handle data the same way BlueLineNote does?</summary>
+            <p>Yes, on the same rule. No account, no cloud, and no server-side copy of case content. The application performs no lookup against any external database &mdash; every field starts blank and is filled by the investigator. The encrypted backup is a single password-protected file the investigator holds and stores wherever they choose.</p>
           </details>
         </div>
       </div>
@@ -2686,7 +2934,7 @@
           <a class="btn primary reveal" href="mailto:support@bluelinenote.app" style="margin-top:30px;">support@bluelinenote.app</a>
 
           <h3 class="reveal">What we can help with</h3>
-          <p class="reveal">Questions about features, agency licensing and seat management, backup and restore, purchases and subscriptions, and reporting a problem with the application.</p>
+          <p class="reveal">Questions about features, agency licensing and seat management, backup and restore, purchases and subscriptions, and reporting a problem with the application. The same address handles Investigator Suite.</p>
 
           <h3 class="reveal">What we cannot access</h3>
           <p class="reveal">For privacy and user protection, BlueLineNote does not provide cloud storage or developer access to user-generated drafts, reports, scans, or records. We cannot retrieve, restore, or view your content &mdash; including if a device is lost or an unencrypted backup is unavailable.</p>
@@ -2745,6 +2993,7 @@
         <a href="#pricing">Agency pricing</a>
         <a href="#pilot">Agency pilot</a>
         <a href="#portal">Agency portal</a>
+        <a href="#investigator-suite">Investigator Suite</a>
         <a href="#privacy">Privacy Policy</a>
         <a href="#support">Support</a>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
