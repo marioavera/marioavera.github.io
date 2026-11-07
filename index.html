@@ -2024,8 +2024,8 @@
       }
     }
 
-    /* Collapse the navigation into the menu button before it runs off the screen */
-    @media (max-width: 1440px) {
+    /* The navigation always lives behind the menu button: it has too many links for one row */
+    @media all {
       nav {
         position: fixed;
         top: 79px;
@@ -2152,10 +2152,6 @@
           <div class="visual-note">
             <strong>One field workflow</strong>
             <span>Capture, review, organize, and export without switching between multiple apps.</span>
-          </div>
-
-          <div class="report-card">
-            <img src="screenshot4.png" alt="Example BlueLineNote exported report" />
           </div>
         </div>
       </div>
@@ -2682,7 +2678,7 @@
         <div class="eyebrow reveal">Agency-ready output</div>
         <h2 class="section-heading reveal">Clear documentation that can carry your department’s identity.</h2>
 
-        <div class="reports-grid">
+        <div class="reports-grid" style="grid-template-columns:1fr;max-width:760px;">
           <article class="report-copy-card surface reveal">
             <h3>Custom agency presentation</h3>
             <p>
@@ -2691,13 +2687,6 @@
             </p>
             <a class="btn secondary" href="#agency-form">Discuss agency configuration</a>
           </article>
-
-          <div class="report-pages reveal" aria-label="Sample exported report pages">
-            <div class="report-page"><img src="screenshot4.png" alt="Sample report page one" loading="lazy" /></div>
-            <div class="report-page"><img src="screenshot5.png" alt="Sample report page two" loading="lazy" /></div>
-            <div class="report-page"><img src="screenshot6.png" alt="Sample report page three" loading="lazy" /></div>
-            <div class="report-page"><img src="screenshot7.png" alt="Sample report page four" loading="lazy" /></div>
-          </div>
         </div>
       </div>
     </section>
