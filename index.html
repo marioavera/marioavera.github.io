@@ -16,10 +16,10 @@
   <title>BlueLineNote | NIBRS and MMUCC Reporting for Law Enforcement Agencies</title>
   <meta
     name="description"
-    content="A mobile reporting system for police agencies. Officers draft incident and crash reports on the PD-issued device; reports come out NIBRS-coded and MMUCC-coded on your agency letterhead. Sits in front of your RMS, not in place of it. Also makers of Investigator Suite, a case documentation app for investigators."
+    content="A mobile reporting system for police agencies. Officers draft incident and crash reports on the PD-issued device; reports come out NIBRS-coded and MMUCC-coded on your agency letterhead. Sits in front of your RMS, not in place of it. Also makers of Investigator Suite, a case documentation app for investigators, and Claim Notes, a claim documentation app for insurance adjusters."
   />
   <meta name="google-site-verification" content="3uuBkNSX73JmQw50X6nnjQklkWIZ3uU4m1b0os3ABGU" />
-  <meta name="keywords" content="law enforcement field reporting app, police report writing app, NIBRS documentation app, MMUCC crash reporting app, police agency software, agency seat management portal, private investigator case management app, investigator case documentation, ID scanner app for investigators" />
+  <meta name="keywords" content="law enforcement field reporting app, police report writing app, NIBRS documentation app, MMUCC crash reporting app, police agency software, agency seat management portal, private investigator case management app, investigator case documentation, ID scanner app for investigators, insurance claim documentation app, adjuster claim notes app, VIN search app" />
   <link rel="canonical" href="https://bluelinenote.app/" />
 
   <link rel="icon" type="image/png" href="/logo.png?v=2" />
@@ -63,7 +63,7 @@
     "name": "Investigator Suite",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "iOS, Android",
-    "description": "A case documentation application for private investigators and law enforcement investigators. Case folders hold people, notes, photographs, timeline, and scanned identification. On-device ID scanning, dictation, Face ID lock, encrypted backup, English and Spanish. No account, no cloud, and no lookup against any external database.",
+    "description": "A case documentation application for private investigators and law enforcement investigators. Case folders hold people, notes, photographs, timeline, and scanned identification. On-device ID scanning, VIN Search, dictation, Face ID lock, encrypted backup, English and Spanish. No account and no cloud. Nothing about a person is looked up; the one outside request is VIN Search, which sends only the VIN to NHTSA's public vehicle decoder.",
     "url": "https://bluelinenote.app/#investigator-suite",
     "image": "https://bluelinenote.app/logo.png?v=2",
     "inLanguage": ["en", "es"],
@@ -71,15 +71,37 @@
       "https://apps.apple.com/us/app/id6809216794",
       "https://play.google.com/store/apps/details?id=app.investigatorsuite.investigator_suite"
     ],
-    "offers": {
-      "@type": "Offer",
-      "price": "39.99",
-      "priceCurrency": "USD",
-      "description": "Three case folders free. One payment unlocks the application; no subscription."
-    },
     "audience": {
       "@type": "Audience",
       "audienceType": "Private investigators and law enforcement investigators"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BlueLineNote LLC",
+      "url": "https://bluelinenote.app"
+    }
+  }
+  </script>
+
+  <!-- Third product, described separately for the same reason. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Claim Notes",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "iOS, Android",
+    "description": "A claim documentation application for independent and staff insurance adjusters. One record per claim with photographs, scanned identification, an audit activity log, and PDF export. Encrypted backup, app lock, English and Spanish.",
+    "url": "https://bluelinenote.app/#claim-notes",
+    "image": "https://bluelinenote.app/logo.png?v=2",
+    "inLanguage": ["en", "es"],
+    "downloadUrl": [
+      "https://apps.apple.com/us/app/claim-notes-insurance-claims/id6818579876",
+      "https://play.google.com/store/apps/details?id=com.bluelinenote.claimnotes"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Independent and staff insurance adjusters"
     },
     "publisher": {
       "@type": "Organization",
@@ -1994,6 +2016,7 @@
         <a href="/police-report-narrative.html">Report Quality</a>
         <a href="#pricing">Pricing</a>
         <a href="#investigator-suite">Investigator Suite</a>
+        <a href="#claim-notes">Claim Notes</a>
         <a href="https://marioavera.github.io/bluelinenote-privacy/" target="_blank" rel="noopener">Privacy</a>
         <a href="#support">Support</a>
         <a class="nav-cta" href="#pilot">Start a pilot</a>
@@ -2229,6 +2252,14 @@
                 <p>Cross-reference information against an officer’s own saved reports without using an external database.</p>
               </div>
             </div>
+
+            <div class="feature-row reveal">
+              <div class="feature-icon">06</div>
+              <div>
+                <h3>VIN Search</h3>
+                <p>Type, speak, paste, or scan a VIN through the windshield. The VIN is checked on the device, then decoded from NHTSA&rsquo;s public vehicle data &mdash; only the VIN is sent, and every search is saved on the phone.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2259,13 +2290,13 @@
           <article class="security-card surface reveal">
             <span class="mini">Separated systems</span>
             <h3>Licensing does not require content access.</h3>
-            <p>BlueLineNote&rsquo;s servers validate individual purchases and agency seats. They receive a device identifier and, for metered features, usage counts &mdash; not draft content, report content, or attachments.</p>
+            <p>BlueLineNote&rsquo;s servers validate individual purchases and agency seats. They receive a device identifier and, for metered features, usage counts &mdash; not draft content, report content, or attachments. Anonymous usage analytics are optional, and users can turn them off in the app.</p>
           </article>
 
           <article class="security-card surface reveal">
             <span class="mini">External systems</span>
             <h3>No connection to CJIS systems.</h3>
-            <p>BlueLineNote does not connect to NCIC, III, or any CJIS system, and receives no data from them. Every field in the application starts blank; all information in a draft is entered by the officer. The device remains subject to your agency&rsquo;s mobile device management, encryption, and access-control policy, as it already is for every application on it.</p>
+            <p>BlueLineNote does not connect to NCIC, III, or any CJIS system, and receives no data from them. Information in a draft is entered by the officer. The one outside lookup is the optional VIN Search, which sends only a VIN to NHTSA&rsquo;s public vPIC decoder and returns vehicle specifications &mdash; nothing about the owner. The device remains subject to your agency&rsquo;s mobile device management, encryption, and access-control policy, as it already is for every application on it.</p>
           </article>
 
           <article class="security-card surface reveal">
@@ -2283,7 +2314,7 @@
           <article class="security-card surface reveal">
             <span class="mini">Same principle, second app</span>
             <h3>Investigators get the same answer.</h3>
-            <p>The company&rsquo;s second application, <a href="#investigator-suite" style="color:var(--copper-dark);font-weight:800;">Investigator Suite</a>, is built for private investigators and case investigators on the same rule: no account, no cloud, and no lookup against any external database.</p>
+            <p>The company&rsquo;s second application, <a href="#investigator-suite" style="color:var(--copper-dark);font-weight:800;">Investigator Suite</a>, is built for private investigators and case investigators on the same rule: no account, no cloud, and nothing looked up about a person.</p>
           </article>
         </div>
       </div>
@@ -2316,7 +2347,7 @@
               <span class="cell-label">How BlueLineNote solves it</span>
               <span class="mini">Zero network touch</span>
               <h3>The app does not query or connect to state or federal criminal justice databases.</h3>
-              <p>No NCIC, no III, no state CJIS interface. Nothing is received from those systems. Every field starts blank and is populated by the officer. Your LASO or state CJIS Systems Officer remains the authority on how the policy applies in your state, and we are glad to work through it with them.</p>
+              <p>No NCIC, no III, no state CJIS interface. Nothing is received from those systems. Draft content is entered by the officer; the only outside request is the optional VIN Search, which sends a VIN to NHTSA&rsquo;s public decoder for vehicle specifications. Your LASO or state CJIS Systems Officer remains the authority on how the policy applies in your state, and we are glad to work through it with them.</p>
             </div>
           </div>
 
@@ -2331,7 +2362,7 @@
               <span class="cell-label">How BlueLineNote solves it</span>
               <span class="mini">Zero cloud footprint</span>
               <h3>No draft text, photos, or voice dictations are uploaded to external cloud servers.</h3>
-              <p>BlueLineNote provides no cloud storage and keeps no server-side copy of draft or report content. Our servers see a device identifier and, for metered features, usage counts &mdash; nothing an officer typed, photographed, or dictated. There is no vendor-side repository to breach, subpoena, or produce.</p>
+              <p>BlueLineNote provides no cloud storage and keeps no server-side copy of draft or report content. Our servers see a device identifier and, for metered features, usage counts &mdash; nothing an officer typed, photographed, or dictated. Anonymous usage analytics are optional, and users can turn them off in the app. There is no vendor-side repository to breach, subpoena, or produce.</p>
             </div>
           </div>
 
@@ -2698,16 +2729,9 @@
 
     <!-- =====================================================================
          INVESTIGATOR SUITE
-         ---------------------------------------------------------------------
-         Placed after pricing on purpose: a chief reading the agency pitch —
-         pilot, portal, price — gets through it uninterrupted, and this lands
-         as "the same company also makes this" rather than a detour.
-
-         Olive band so it reads as a separate application, not another
-         BlueLineNote feature. The store links are live once both apps clear
-         review; until then they resolve to the store's own "not available"
-         page, so swap them for the commented-out placeholder below if you
-         publish before approval.
+         Placed after pricing on purpose: the agency pitch reads uninterrupted,
+         and this lands as "the same company also makes this". Olive band so it
+         reads as a separate application.
          ===================================================================== -->
     <section class="section standards-band" id="investigator-suite">
       <div class="shell standards-layout">
@@ -2724,12 +2748,13 @@
           </p>
 
           <ul class="is-points reveal" aria-label="What Investigator Suite does">
-            <li>Scan an ID and the text is read <strong>on the device</strong> &mdash; name, date of birth, ID number, address</li>
+            <li>Scan a U.S. driver&rsquo;s license and the barcode is read <strong>on the device</strong> &mdash; name, date of birth, license number, address</li>
             <li>Dictate a note when your hands are full; it lands straight in the folder</li>
             <li><strong>Face ID lock</strong>, and an encrypted backup only you can open</li>
             <li>Export a case as a PDF in <strong>English or Spanish</strong></li>
-            <li>The app <strong>looks nobody up</strong> and queries no database &mdash; you record your own work</li>
-            <li><strong>Three case folders free.</strong> One payment after that. No subscription.</li>
+            <li>The app <strong>looks nobody up</strong> &mdash; you record your own work</li>
+            <li><strong>VIN Search</strong> decodes a vehicle from NHTSA&rsquo;s public data; only the VIN is sent</li>
+            <li><strong>Android:</strong> 7-day free trial, then monthly or yearly. <strong>iPhone:</strong> three case folders free, then one payment.</li>
           </ul>
 
           <div class="download-row reveal">
@@ -2769,12 +2794,6 @@
             </a>
           </div>
 
-          <!-- Pre-launch swap: comment out the download-row above and
-               uncomment this line while the apps are still in review.
-          <p class="is-footnote reveal">Coming shortly to the App Store and Google Play.
-            Email support@bluelinenote.app to be told when it lands.</p>
-          -->
-
           <p class="is-footnote reveal">
             Separate application, separate purchase. An agency BlueLineNote seat does not
             include Investigator Suite, and it is not required to use it.
@@ -2791,7 +2810,7 @@
           <article class="standard-card reveal">
             <span>Read it, don&rsquo;t type it</span>
             <h3>On-device ID scanning</h3>
-            <p>Photograph a licence or identification card and the text is recognized on the device. You check it before it saves, because a worn card in bad light is a guess, not a fact.</p>
+            <p>Capture the front of a license, then hold the barcode on the back up to the camera. It is read on the device, and you check it before it saves.</p>
           </article>
 
           <article class="standard-card reveal">
@@ -2804,6 +2823,96 @@
             <span>Bilingual, in full</span>
             <h3>English and Spanish</h3>
             <p>Switch language any time and the exported record follows &mdash; the same case, produced in whichever language it needs to be read in.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         CLAIM NOTES — third application, for insurance adjusters.
+         ===================================================================== -->
+    <section class="section" id="claim-notes">
+      <div class="shell agency-wrap">
+        <div>
+          <div class="eyebrow reveal">A standalone app from BlueLineNote LLC</div>
+          <h2 class="section-heading reveal">Claim Notes</h2>
+          <p class="section-copy reveal">
+            A standalone app built for independent and staff insurance adjusters, available on iPhone and Android. Each claim gets one record &mdash;
+            the loss details, photographs, scanned identification, and a log of what was done and when &mdash;
+            ready to export as a PDF.
+          </p>
+
+          <div class="agency-points">
+            <div class="agency-point reveal">One record per claim, with photographs kept as evidence</div>
+            <div class="agency-point reveal">ID scanning: front of the license, then the barcode on the back</div>
+            <div class="agency-point reveal">Built-in review flags what the claim is still missing</div>
+            <div class="agency-point reveal">An activity log for audits that cannot be deleted, only exported</div>
+            <div class="agency-point reveal">Encrypted, password-protected backup and app lock</div>
+            <div class="agency-point reveal">Full English and Spanish</div>
+            <div class="agency-point reveal">Three claims and three PDF exports free, then one payment</div>
+          </div>
+
+          <div class="download-row reveal">
+            <a
+              href="https://apps.apple.com/us/app/claim-notes-insurance-claims/id6818579876"
+              target="_blank"
+              rel="noopener"
+              class="store-badge"
+              aria-label="Download Claim Notes on the App Store"
+            >
+              <svg viewBox="0 0 384 512" aria-hidden="true">
+                <path fill="#fff" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+              </svg>
+              <span>
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </span>
+            </a>
+
+            <a
+              href="https://play.google.com/store/apps/details?id=com.bluelinenote.claimnotes"
+              target="_blank"
+              rel="noopener"
+              class="store-badge"
+              aria-label="Get Claim Notes on Google Play"
+            >
+              <svg viewBox="0 0 512 512" aria-hidden="true">
+                <path fill="#00C3FF" d="M47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0z" />
+                <path fill="#00E676" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1z" />
+                <path fill="#FF3D47" d="M104.6 499l220.7-221.3 60.1 60.1L104.6 499z" />
+                <path fill="#FFCE00" d="M472.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8z" />
+              </svg>
+              <span>
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="security-grid" style="margin-top:0;">
+          <article class="security-card surface reveal">
+            <span class="mini">Organized</span>
+            <h3>The whole claim in one place.</h3>
+            <p>Loss details, photographs, and scanned identification stay together in the claim instead of spread across a camera roll and a notepad.</p>
+          </article>
+
+          <article class="security-card surface reveal">
+            <span class="mini">Audit-ready</span>
+            <h3>A log you cannot quietly edit.</h3>
+            <p>Every action is recorded in the activity log. There is no delete &mdash; the log can only be exported.</p>
+          </article>
+
+          <article class="security-card surface reveal">
+            <span class="mini">Export</span>
+            <h3>A clean PDF of the claim.</h3>
+            <p>The scanned identification and the claim details travel together in one exported document.</p>
+          </article>
+
+          <article class="security-card surface reveal">
+            <span class="mini">Protected</span>
+            <h3>Locked, with a backup only you can open.</h3>
+            <p>App lock keeps the claims private, and the encrypted backup opens only with your password &mdash; there is no password recovery.</p>
           </article>
         </div>
       </div>
@@ -2832,7 +2941,7 @@
 
           <details class="reveal">
             <summary>Does agency licensing allow BlueLineNote to read officer drafts or reports?</summary>
-            <p>No. Licensing validates access and seat status. BlueLineNote&rsquo;s servers receive a device identifier and, for metered features, usage counts &mdash; never the content an officer enters.</p>
+            <p>No. Licensing validates access and seat status. BlueLineNote&rsquo;s servers receive a device identifier and, for metered features, usage counts &mdash; never the content an officer enters. Anonymous usage analytics are optional, and users can turn them off in the app.</p>
           </details>
 
           <details class="reveal">
@@ -2852,7 +2961,7 @@
 
           <details class="reveal">
             <summary>How does BlueLineNote relate to CJIS?</summary>
-            <p>BlueLineNote does not connect to NCIC, III, or any CJIS system and receives no data from them. Every field starts blank and is populated by the officer. The CJIS Security Policy applies to entities that access, process, store, or transmit Criminal Justice Information; BlueLineNote&rsquo;s servers receive no draft or report content. The device itself stays under your agency&rsquo;s existing mobile device management, encryption, and access-control policy. The FBI CJIS Security Policy, version 6.0 and later, is publicly available and may be shared without restriction &mdash; we are glad to work through it with your LASO or your state CJIS Systems Officer, who are the authorities on how it applies in your state.</p>
+            <p>BlueLineNote does not connect to NCIC, III, or any CJIS system and receives no data from them. Draft content is entered by the officer; the optional VIN Search sends only a VIN to NHTSA&rsquo;s public decoder. The CJIS Security Policy applies to entities that access, process, store, or transmit Criminal Justice Information; BlueLineNote&rsquo;s servers receive no draft or report content. The device itself stays under your agency&rsquo;s existing mobile device management, encryption, and access-control policy. The FBI CJIS Security Policy, version 6.0 and later, is publicly available and may be shared without restriction &mdash; we are glad to work through it with your LASO or your state CJIS Systems Officer, who are the authorities on how it applies in your state.</p>
           </details>
 
           <details class="reveal">
@@ -2867,12 +2976,17 @@
 
           <details class="reveal">
             <summary>What is Investigator Suite, and is it included in our agency seats?</summary>
-            <p>Investigator Suite is a separate application from the same company, built for private investigators and investigators working cases rather than calls. It organizes a case into one folder &mdash; people, notes, photographs, timeline, scanned identification &mdash; with on-device ID scanning, dictation, a Face ID lock, encrypted backup, and full English and Spanish. It is a separate purchase: an agency BlueLineNote seat does not include it, and it is not required to use BlueLineNote. The first three case folders are free, then one payment unlocks it &mdash; no subscription.</p>
+            <p>Investigator Suite is a separate application from the same company, built for private investigators and investigators working cases rather than calls. It organizes a case into one folder &mdash; people, notes, photographs, timeline, scanned identification &mdash; with on-device ID scanning, VIN Search, dictation, a Face ID lock, encrypted backup, and full English and Spanish. It is a separate purchase: an agency BlueLineNote seat does not include it, and it is not required to use BlueLineNote. On Android it starts with a 7-day free trial, then a monthly or yearly subscription. On iPhone the first three case folders are free, then one payment unlocks it.</p>
           </details>
 
           <details class="reveal">
             <summary>Does Investigator Suite handle data the same way BlueLineNote does?</summary>
-            <p>Yes, on the same rule. No account, no cloud, and no server-side copy of case content. The application performs no lookup against any external database &mdash; every field starts blank and is filled by the investigator. The encrypted backup is a single password-protected file the investigator holds and stores wherever they choose.</p>
+            <p>Yes, on the same rule. No account, no cloud, and no server-side copy of case content. The application looks nobody up &mdash; case content is entered by the investigator. The one outside request is VIN Search, which sends only the VIN to NHTSA&rsquo;s public decoder. The encrypted backup is a single password-protected file the investigator holds and stores wherever they choose.</p>
+          </details>
+
+          <details class="reveal">
+            <summary>What is Claim Notes?</summary>
+            <p>Claim Notes is a standalone application from the same company, built for independent and staff insurance adjusters and available on iPhone and Android. Each claim gets one record with photographs, scanned identification, a built-in review of missing information, an activity log that cannot be deleted, and PDF export, in English or Spanish. The first three claims and three PDF exports are free, then one payment unlocks it. It is separate from BlueLineNote and not included in agency seats.</p>
           </details>
         </div>
       </div>
@@ -2891,7 +3005,7 @@
           <a class="btn primary reveal" href="mailto:support@bluelinenote.app" style="margin-top:30px;">support@bluelinenote.app</a>
 
           <h3 class="reveal">What we can help with</h3>
-          <p class="reveal">Questions about features, agency licensing and seat management, backup and restore, purchases and subscriptions, and reporting a problem with the application. The same address handles Investigator Suite.</p>
+          <p class="reveal">Questions about features, agency licensing and seat management, backup and restore, purchases and subscriptions, and reporting a problem with the application. The same address handles Investigator Suite and Claim Notes.</p>
 
           <h3 class="reveal">What we cannot access</h3>
           <p class="reveal">For privacy and user protection, BlueLineNote does not provide cloud storage or developer access to user-generated drafts, reports, scans, or records. We cannot retrieve, restore, or view your content &mdash; including if a device is lost or an unencrypted backup is unavailable.</p>
@@ -2951,6 +3065,7 @@
         <a href="#pilot">Agency pilot</a>
         <a href="#portal">Agency portal</a>
         <a href="#investigator-suite">Investigator Suite</a>
+        <a href="#claim-notes">Claim Notes</a>
         <a href="https://marioavera.github.io/bluelinenote-privacy/" target="_blank" rel="noopener">Privacy Policy</a>
         <a href="#support">Support</a>
         <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
