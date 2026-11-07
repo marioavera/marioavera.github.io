@@ -2022,6 +2022,40 @@
       box-shadow: var(--shadow-sm);
     }
 
+    .app-gallery figure {
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .app-gallery figure:nth-child(2) {
+      transform: translateY(22px);
+    }
+
+    .app-gallery figure:nth-child(3) {
+      transform: translateY(-12px);
+    }
+
+    .app-gallery figure:nth-child(4) {
+      transform: translateY(12px);
+    }
+
+    .app-gallery figure:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .device-main.shot,
+    .device-second {
+      transition: transform 260ms ease;
+    }
+
+    .device-main.shot:hover {
+      transform: rotate(-3deg) translateY(-8px);
+    }
+
+    .device-second:hover {
+      transform: rotate(3deg) translateY(-8px);
+    }
+
     .app-gallery img {
       display: block;
       width: 100%;
@@ -2038,6 +2072,10 @@
 
       .app-gallery figure {
         scroll-snap-align: start;
+      }
+
+      .app-gallery figure:nth-child(n) {
+        transform: none;
       }
     }
 
